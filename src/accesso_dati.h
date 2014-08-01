@@ -19,7 +19,22 @@
  * @param[in] telefono Telefono del Circolo
  * @return Struttura appena creata
  */
-circolo_t inizializza_circolo(char nome[], char indirizzo[], char email[], int telefono);
+circolo_t *inizializza_circolo(char nome[], char indirizzo[], char email[], int telefono);
+
+/** Aggiunge un giocatore al Circolo.
+ * Crea un nuovo socio con i dati passati e lo aggancia alla lista soci del circolo
+ * @param[in] nome Nome del giocatore
+ * @param[in] cognome Cognome del giocatore
+ * @param[in] nascita Data di nascita del giocatore nel formato (gg/mm/aaaa)
+ * @param[in] tessera Numero di tessera del giocatore
+ * @param[in] telefono Numero di telefono del giocatore
+ * @param[in] email Email del giocatore
+ * @param[in,out] circolo Circolo al quale aggiungere il giocatore, viene passato per riferimento
+ * @return puntatore al giocatore appena creato, 0 in caso di fallimento
+ */
+giocatore_t *aggiungi_giocatore(char nome[], char cognome[], char nascita[],
+				int tessera, int telefono, char email[], float classifica,
+				circolo_t *circolo);
 
 /** Aggiunge un socio al Circolo.
  * Crea un nuovo socio con i dati passati e lo aggancia alla lista soci del circolo
@@ -29,10 +44,13 @@ circolo_t inizializza_circolo(char nome[], char indirizzo[], char email[], int t
  * @param[in] tessera Numero di tessera del socio
  * @param[in] telefono Numero di telefono del socio
  * @param[in] email Email del socio
+ * @param[in] retta Stato del pagamento della retta
  * @param[in,out] circolo Circolo al quale aggiungere il socio, viene passato per riferimento
  * @return successo (TRUE) o fallimento (FALSE)
  */
-bool aggiungi_socio(char nome[], char cognome[], char nascita[], int tessera, int telefono, char email[], circolo_t &circolo);
+giocatore_t *aggiungi_socio	(char nome[], char cognome[], char nascita[],
+				int tessera, int telefono, char email[], float classifica,
+				bool retta, circolo_t *circolo);
 
 /** Aggiunge un campo al Circolo.
  * Crea un nuovo campo con i dati passati e lo aggancia alla lista campi del circolo
@@ -43,15 +61,38 @@ bool aggiungi_socio(char nome[], char cognome[], char nascita[], int tessera, in
  * @param[in,out] circolo Circolo al quale aggiungere il campo;
  * @return successo (TRUE) o fallimento (FALSE)
  */
-bool aggiungi_campo(int numero, copertura_t copertura, terreno_t terreno, char note[], circolo_t &circolo);
+bool aggiungi_campo(int numero, copertura_t copertura, terreno_t terreno, char note[], circolo_t *circolo);
 
 /** Elimina il socio dal Circolo.
- * Elimina il socio passato come parametro e crea un giocatore con gli stessi dati.
- * @param[in] socio Socio da eliminare (Sotto forma di elemento GSList*)
- * @param[in,out] circolo Circolo al quale eliminare il socio
+ * Elimina il socio passato come parametro rendendolo un giocatore normale
+ * In altri termini declassa il socio a giocatore
+ * @param[in] socio Puntatore al socio da eliminare
  * @return successo (TRUE) o fallimento (FALSE)
  */
-bool elimina_socio(GSList *socio, circolo_t &circolo);
+bool elimina_socio(giocatore_t *socio);
+
+/** Elimina il giocatore dal Circolo
+ * Elimina i giocatore passato come parametro dal circolo
+ * @param[in,out] giocatore Giocatore da eliminare
+ * @param[in,out] circolo Circolo dal quale eliminare il giocatore
+ */
+bool elimina_giocatore(giocatore_t *&giocatore, circolo_t *circolo);
+
+/** Elimina il campo dal Circolo.
+ * Elimina il campo con tutte le ore a lui associate dal circolo
+ * @param[in,out] campo Campo da eliminare
+ * @param[in,out] circolo Circolo dal quale eliminare il campo
+ * @return successo (TRUE) o fallimento (FALSE)
+ */
+bool elimina_campo(campo_t *&campo, circolo_t *circolo);
+
+/** Elimina l'ora dal campo.
+ * Elimina l'ora passata come parametro dal campo
+ * @param[in,out] ora Ora da eliminare
+ * @param[in,out] campo Campo dal quale eliminare l'ora
+ * @return successo (TRUE) o fallimento (FALSE)
+ */
+bool elimina_ora(ora_t *&ora, campo_t *campo);
 
 /* Fine interfaccia del modulo accesso_dati */
 
