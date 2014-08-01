@@ -10,13 +10,13 @@
 
 /* Inizio Header del modulo Struttura dati */
 
-const int LUN_DATA	= 10; /**< Lunghezza della date (gg/mm/aaaa) */
+const int LUN_DATA	= 11; /**< Lunghezza della date (gg/mm/aaaa) */
 
 //@{
 /** Definizione dei tipi di lista.
  * Le liste del programma si appoggiano alle liste di libreria
  */
-typedef GSList *lista_ore, *lista_soci, *lista_campi;	//@}
+typedef GSList *lista_ore, *lista_giocatori, *lista_campi;	//@}
 
 /** Definizione del tipo stringa.
  * Le stringhe del programma si appoggiano alle stringhe di libreria
@@ -35,26 +35,12 @@ struct circolo_t {
 	int telefono;
 	int n_campi;
 	int n_soci;
-	lista_soci soci;
+	lista_giocatori giocatori;
 	lista_campi campi;
 };
 
-/** Struttura rappresentante i soci.
- * Ogni socio è costituito da i dati anagrafici, recapiti e un ID che identifica ogni socio
- */
-struct socio_t {
-	int ID;
-	stringa nome;
-	stringa cognome;
-	char nascita[LUN_DATA];
-	int tessera;
-	int telefono;
-	stringa email;
-	float classifica;
-};
-
 /** Struttura rappresentante i giocatori.
- * Contiene i dati del giocatore non socio
+ * Contiene i dati del giocatore se è socio il campo socio è a true, il campo retta è utilizzato solo dai soci
  */
 struct giocatore_t {
 	int ID;
@@ -66,6 +52,8 @@ struct giocatore_t {
 	stringa email;
 	float classifica;
 	stringa circolo;
+	bool socio;
+	bool retta;
 };
 
 /** Tipo che rappresenta chi ha prenotato un ora.
