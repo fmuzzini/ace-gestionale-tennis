@@ -10,13 +10,11 @@
 
 /* Inizio Header del modulo Struttura dati */
 
-const int LUN_DATA	= 11; /**< Lunghezza della date (gg/mm/aaaa) */
-
 //@{
 /** Definizione dei tipi di lista.
  * Le liste del programma si appoggiano alle liste di libreria
  */
-typedef GSList *lista_ore, *lista_giocatori, *lista_campi;	//@}
+typedef GList *lista_ore, *lista_giocatori, *lista_campi;	//@}
 
 /** Definizione del tipo stringa.
  * Le stringhe del programma si appoggiano alle stringhe di libreria
@@ -32,9 +30,10 @@ struct circolo_t {
 	stringa nome;
 	stringa indirizzo;
 	stringa email;
-	int telefono;
+	stringa telefono;
 	int n_campi;
 	int n_soci;
+	int pros_id;
 	lista_giocatori giocatori;
 	lista_campi campi;
 };
@@ -46,11 +45,11 @@ struct giocatore_t {
 	int ID;
 	stringa nome;
 	stringa cognome;
-	char nascita[LUN_DATA];
-	int tessera;
-	int telefono;
+	stringa nascita;
+	stringa tessera;
+	stringa telefono;
 	stringa email;
-	float classifica;
+	stringa classifica;
 	stringa circolo;
 	bool socio;
 	bool retta;
@@ -59,7 +58,7 @@ struct giocatore_t {
 /** Tipo che rappresenta chi ha prenotato un ora.
  * Può essere un socio, un giocatore non socio oppure il campo può essere usato per corsi o tornei
  */
-enum prenotante_t {SOCIO, GIOCATORE, CORSO, TORNEO};
+enum prenotante_t {GIOCATORE, CORSO, TORNEO};
 
 /** Struttura rappresentante le ore prenotate.
  * Ogni ora è caratterizzata dall'orario, la data, durata in minuti, il tipo di prenotante e un puntatore generico;
@@ -71,7 +70,7 @@ enum prenotante_t {SOCIO, GIOCATORE, CORSO, TORNEO};
  */
 struct ora_t {
 	int orario;
-	char data [LUN_DATA];
+	stringa data;
 	int durata;
 	prenotante_t tipo;
 	void *prenotante;
