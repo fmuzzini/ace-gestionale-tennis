@@ -1,5 +1,5 @@
 VPATH = src/
-OBJ = ACE.o accesso_dati.o
+OBJ = ACE.o accesso_dati.o file_IO.o handler.o
 LIBRERIE = gtk+-3.0
 LIBS = `pkg-config --libs $(LIBRERIE)`
 FLAGS = `pkg-config --cflags $(LIBRERIE)`
@@ -7,7 +7,7 @@ CXXFLAGS = -Wall $(FLAGS)
 
 
 ACE: $(OBJ)
-	g++ -o ACE $(OBJ) $(LIBS)
+	g++ -export-dynamic -o ACE $(OBJ) $(LIBS)
 
 -include dependencies
 
