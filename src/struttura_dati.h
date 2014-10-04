@@ -79,13 +79,13 @@ struct ora_t {
 /** Tipo che rappresenta il tipo di copertura del campo.
  * Un capo può essere indoor oppure outdoor
  */
-enum copertura_t {INDOOR, OUTDOOR};
+enum copertura_t {INDOOR = 0, OUTDOOR};
 
 /** Tipo che rappresenta il tipo di terreno.
  * Un campo può avere molte superfici, questo è un tipo generico non prevede i dettagli del terreno
  * ma li raggruppa nei tipi più significativi. Eventuali informazioni aggiuntive verranno inserite nelle note del tipo campo
  */
-enum terreno_t {ERBA, ERBA_SINTETICA, TERRA, SINTETICO, CEMENTO};
+enum terreno_t {ERBA = 0, ERBA_SINTETICA, TERRA, SINTETICO, CEMENTO};
 
 /** Struttura rappresentate i campi.
  * Ogni campo è identificato da un numero ed è caratterizzato dal tipo di terreno e se è coperto o scoperto,

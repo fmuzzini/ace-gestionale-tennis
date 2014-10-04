@@ -17,12 +17,13 @@
  * File contenente la funzione ::main
  */
 
+#include <gtk/gtk.h>
+#include <glib.h>
+
 #include <iostream>
 using namespace std;
+
 #include "struttura_dati.h"
-#include "file_IO.h"
-#include "accesso_dati.h"
-#include <gtk/gtk.h>
 
 #ifdef DEBUG_MODE
 	unsigned char MASK = 1|2;
@@ -31,6 +32,7 @@ using namespace std;
 /* Definizioni costanti del modulo */
 
 const char INTERFACCIA[] = "interfaccia/interfaccia.glade";
+const char TEMA[] = "interfaccia/tema.css";
 
 /* Fine definizioni costanti */
 
@@ -42,10 +44,19 @@ circolo_t *circolo;
  */
 int main(int argc, char *argv[])
 {
+	GdkScreen *screen = 0;
+	GtkCssProvider *stile = 0;  
+
 	gtk_init(&argc, &argv);
+
 	build = gtk_builder_new();
 	gtk_builder_add_from_file(build, INTERFACCIA, NULL);
 	gtk_builder_connect_signals(build, NULL);
+
+	screen = gdk_screen_get_default();
+	stile = gtk_css_provider_new();
+	gtk_css_provider_load_from_path(stile, TEMA, NULL);
+	gtk_style_context_add_provider_for_screen(screen, GTK_STYLE_PROVIDER(stile), GTK_STYLE_PROVIDER_PRIORITY_THEME);
 
 	gtk_main();	
 }

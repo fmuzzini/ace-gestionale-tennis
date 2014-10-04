@@ -21,8 +21,9 @@
  */
 circolo_t *inizializza_circolo(const char nome[], const char indirizzo[], const char email[], const char telefono[]);
 
-/** Aggiunge un giocatore al Circolo.
+/** Aggiunge o modifica un giocatore al Circolo.
  * Crea un nuovo socio con i dati passati e lo aggancia alla lista soci del circolo
+ * se gli si passa un vecchio giocatore giocatore modifica i dati di quest'ultimo
  * @param[in] nome Nome del giocatore
  * @param[in] cognome Cognome del giocatore
  * @param[in] nascita Data di nascita del giocatore nel formato (gg/mm/aaaa)
@@ -31,15 +32,17 @@ circolo_t *inizializza_circolo(const char nome[], const char indirizzo[], const 
  * @param[in] email Email del giocatore
  * @param[in] classifica Classifica del giocatore
  * @param[in] circolo_g Circolo di appartenenza del giocatore
+ * @param[in,out] vecchio Vecchio giocatore/socio da modificare
  * @param[in,out] circolo Circolo al quale aggiungere il giocatore, viene passato per riferimento
  * @return puntatore al giocatore appena creato, 0 in caso di fallimento
  */
 giocatore_t *aggiungi_giocatore(const char nome[], const char cognome[], const char nascita[],
 				const char tessera[], const char telefono[], const char email[], const char classifica[],
-				const char circolo_g[], circolo_t *circolo);
+				const char circolo_g[], giocatore_t *vecchio, circolo_t *circolo);
 
-/** Aggiunge un socio al Circolo.
- * Crea un nuovo socio con i dati passati e lo aggancia alla lista soci del circolo
+/** Aggiunge o modifica un socio al Circolo.
+ * Crea un nuovo socio con i dati passati e lo aggancia alla lista soci del circolo,
+ * se gli si passa un vecchio socio modifica i dati di quest'ultimo
  * @param[in] nome Nome del socio
  * @param[in] cognome Cognome del socio
  * @param[in] nascita Data di nascita del socio nel formato (gg/mm/aaaa)
@@ -48,13 +51,13 @@ giocatore_t *aggiungi_giocatore(const char nome[], const char cognome[], const c
  * @param[in] email Email del socio
  * @param[in] classifica Classifica del socio
  * @param[in] retta Stato del pagamento della retta
+ * @param[in, out] vecchio Vecchio socio/giocatore da modificare
  * @param[in,out] circolo Circolo al quale aggiungere il socio, viene passato per riferimento
  * @return successo (TRUE) o fallimento (FALSE)
  */
 giocatore_t *aggiungi_socio	(const char nome[], const char cognome[], const char nascita[],
 				const char tessera[], const char telefono[], const char email[], const char classifica[],
-				bool retta, circolo_t *circolo);
-
+				bool retta, giocatore_t *vecchio, circolo_t *circolo);
 /** Aggiunge un campo al Circolo.
  * Crea un nuovo campo con i dati passati e lo aggancia alla lista campi del circolo
  * @param[in] numero Numero identificativo del campo
@@ -64,7 +67,7 @@ giocatore_t *aggiungi_socio	(const char nome[], const char cognome[], const char
  * @param[in,out] circolo Circolo al quale aggiungere il campo;
  * @return successo (TRUE) o fallimento (FALSE)
  */
-campo_t *aggiungi_campo(int numero, copertura_t copertura, terreno_t terreno, const char note[], circolo_t *circolo);
+campo_t *aggiungi_campo(int numero, copertura_t copertura, terreno_t terreno, const char note[], campo_t *vecchio, circolo_t *circolo);
 
 /** Aggiunge un ora al campo.
  * Crea una nuova ora e la aggancia al campo
@@ -76,7 +79,14 @@ campo_t *aggiungi_campo(int numero, copertura_t copertura, terreno_t terreno, co
  * @param campo Campo al quale aggiungere l'ora
  * @return Puntatore all'ora appena creata
  */
-ora_t *aggiungi_ora(int orario, char data[], int durata, prenotante_t tipo, void *prenotante, campo_t *campo);
+ora_t *aggiungi_ora(int orario, const char data[], int durata, prenotante_t tipo, void *prenotante, campo_t *campo);
+
+/** Restituisce il nome associato all'ora.
+ * Il nome varia a seconda di che tipo è il prenotante
+ * @param[in] ora Puntatore all'ora
+ * @return Nome dell'ora
+ */
+const char *get_nome_ora(ora_t *ora);
 
 /** Elimina il socio dal Circolo.
  * Elimina il socio passato come parametro rendendolo un giocatore normale
