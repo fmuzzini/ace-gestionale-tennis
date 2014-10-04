@@ -23,7 +23,7 @@ bool salva_circolo(const circolo_t *circolo);
  * @param[in] nome Nome del circolo da caricare
  * @return puntatore al circolo caricato
  */
-circolo_t *carica_circolo(char nome[]);
+circolo_t *carica_circolo(const char nome[]);
 
 /** Carica un giocatore da file
  * Carica i dati del giocatore dal file e aggancia il giocatore
@@ -85,6 +85,21 @@ bool salva_ora(const ora_t *ora, const campo_t *campo, const circolo_t *circolo,
  * @return successo (TRUE) o fallimento (FALSE)
  */
 bool backup(const char file[], circolo_t *circolo);
+
+/** Ripristina un backup.
+ * Ripristina l'albero di directory rappresentante un circolo da
+ * un file di backup
+ * @param[in] file File di backup
+ * @return successo (TRUE) o fallimento (FALSE)
+ */
+bool ripristina(const char file[]);
+
+/** Ritorna il nome del circolo ai cui fa riferimento
+ * il file di backup
+ * @param[in] file File di backup
+ * @return Nome del circolo, 0 in caso di errori
+ */
+char *get_nome_backup(char file[]);
 
 /* Fine interfaccia del modulo file_IO */
 
