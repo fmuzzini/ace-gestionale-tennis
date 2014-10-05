@@ -27,6 +27,7 @@ extern const char GIOCATORI_DIR[] = "giocatori";	/**< Cartella dei giocatori */
 extern const char CAMPI_DIR[] = "campi";		/**< Cartella dei campi */
 const char ARCHIVIO_DIR[] = "archivio";			/**< Cartella delle ore archiviate */
 extern const char ORE_DIR[] = "ore";			/**< Cartella delle ore */
+const char FILE_EXT[] = ".txt";				/**< Estensione dei file */
 
 const char ETX = 3;					/**< End of text */
 
@@ -173,6 +174,45 @@ static istream &operator>>(istream &is, prenotante_t &t)
 	t = static_cast<prenotante_t>(tmp);
 	
 	return is;
+}
+
+char *get_file_giocatore(const char *nome_cir, int ID)
+{
+	ostringstream file;
+	file<<ID<<FILE_EXT;
+
+	char *percorso = g_build_filename(DATA_PATH, nome_cir, GIOCATORI_DIR, file.str().c_str(), NULL);
+	return percorso;
+}
+
+char *get_dir_campo(const char *nome_cir, int n)
+{
+	ostringstream numero;
+	numero<<n;
+
+	char *percorso = g_build_filename(DATA_PATH, nome_cir, CAMPI_DIR, numero.str().c_str(), NULL);
+	return percorso;
+}
+
+void elimina_sub_directory(const char *dir_)
+{
+	GDir *dir = g_dir_open(dir_, 0, NULL);
+	const char *file = 0;
+	char *file_ = 0;
+
+	while( (file = g_dir_read_name(dir)) ){
+		file_ = g_build_filename(dir_, file, NULL);
+
+		if ( g_file_test(file_, G_FILE_TEST_IS_DIR) )
+			elimina_directory(file_);
+		if ( g_file_test(file_, G_FILE_TEST_IS_REGULAR) )
+			g_remove(file_);
+
+		g_free(file_);
+	}
+
+	g_rmdir(dir_);
+	
 }
 
 /* Fine definizioni private */
@@ -541,9 +581,12 @@ ora_t *carica_ora(char file[], campo_t *campo, circolo_t *circolo)
 	f1>>tipo;
 	f1>>id;
 
+	GList *list = 0;
 	switch (tipo){
 		case GIOCATORE:
-			prenotante = (cerca_lista_int(circolo->giocatori, ID, id, giocatore_t))->data;
+			list = cerca_lista_int(circolo->giocatori, ID, id, giocatore_t);
+			prenotante = list->data;
+			g_list_free(list);
 			break;
 		case TORNEO:
 			break;
@@ -692,6 +735,52 @@ char *get_nome_backup(const char file[])
 	nome[fine-inizio+1] = '\0';
 
 	return nome;	
+}
+
+bool elimina_file_giocatore(giocatore_t *giocatore, circolo_t *circolo)
+{
+	D1(cout<<"Elimina file giocatore"<<endl);
+
+	int res;
+	char *file = get_file_giocatore(circolo->nome->str, giocatore->ID);
+	
+	res = g_remove(file);
+
+	g_free(file);
+
+	if (res == -1)
+		return false;
+
+	return true;
+}
+
+void elimina_file_campo(campo_t *campo, circolo_t *circolo)
+{
+	char *file = get_dir_campo(circolo->nome->str, campo->numero);
+	
+	elimina_sub_directory(file);
+	g_rmdir(file);
+
+	g_free(file);
+}
+
+bool elimina_file_ora(ora_t *ora, campo_t *campo, circolo_t *circolo)
+{
+	int res;
+	ostringstream nome;
+	nome<<ora->data<<"_"<<ora->orario;
+	char *dir = g_build_filename(DATA_PATH, circolo->nome->str, CAMPI_DIR, ORE_DIR, NULL);
+	char *file = g_strconcat(dir, nome.str().c_str(), ".txt", NULL);
+	
+	res = g_remove(file);
+
+	g_free(dir);
+	g_free(file);
+
+	if (res == -1)
+		return false;
+	
+	return true;
 }	
 
 /* Fine definizioni pubbliche */

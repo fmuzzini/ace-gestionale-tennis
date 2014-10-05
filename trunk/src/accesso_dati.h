@@ -102,7 +102,7 @@ bool elimina_socio(giocatore_t *socio, circolo_t *circolo);
  * @param[in,out] giocatore Giocatore da eliminare
  * @param[in,out] circolo Circolo dal quale eliminare il giocatore
  */
-bool elimina_giocatore(lista_giocatori &giocatore, circolo_t *circolo);
+bool elimina_giocatore(giocatore_t *&giocatore, circolo_t *circolo);
 
 /** Elimina il campo dal Circolo.
  * Elimina il campo con tutte le ore a lui associate dal circolo
@@ -110,7 +110,7 @@ bool elimina_giocatore(lista_giocatori &giocatore, circolo_t *circolo);
  * @param[in,out] circolo Circolo dal quale eliminare il campo
  * @return successo (TRUE) o fallimento (FALSE)
  */
-bool elimina_campo(lista_campi &campo, circolo_t *circolo);
+bool elimina_campo(campo_t *&campo, circolo_t *circolo);
 
 /** Elimina l'ora dal campo.
  * Elimina l'ora passata come parametro dal campo
@@ -118,7 +118,7 @@ bool elimina_campo(lista_campi &campo, circolo_t *circolo);
  * @param[in,out] campo Campo dal quale eliminare l'ora
  * @return successo (TRUE) o fallimento (FALSE)
  */
-bool elimina_ora(lista_ore &ora, campo_t *campo);
+bool elimina_ora(ora_t *&ora, campo_t *campo);
 
 /** Elimina il circolo dalla memoria.
  * Elimina dalla memoria i tutto il circolo
@@ -162,7 +162,7 @@ bool elimina_circolo(circolo_t *&circolo);
 	GList *tmp = lista;					\
 	while(tmp){						\
 		tipo *elemento = (tipo *) tmp->data;		\
-		if ( elemento->campo == dati )			\
+		if ( ((int) elemento->campo) == dati )			\
 			res = g_list_append(res, elemento);	\
 		tmp = g_list_next(tmp);				\
 	}							\

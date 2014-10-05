@@ -101,6 +101,28 @@ bool ripristina(const char file[]);
  */
 char *get_nome_backup(char file[]);
 
+/** Elimina il file del giocatore.
+ * @param[in] circolo Circolo a cui è associato il giocatore
+ * @param[in] giocatore Giocatore da eliminare
+ * @return Successo (TRUE) o fallimento (FALSE)
+ */
+bool elimina_file_giocatore(giocatore_t *giocatore, circolo_t *circolo);
+
+/** Elimina il file del campo.
+ * @param[in] circolo Circolo a cui è associato il campo
+ * @param[in] campo Campo da eliminare
+ * @return Successo (TRUE) o fallimento (FALSE)
+ */
+void elimina_file_campo(campo_t *campo, circolo_t *circolo);
+
+/** Elimina il file dell'ora
+ * @param[in] circolo Circolo a cui è associato il campo
+ * @param[in] campo Campo a cui è associata l'ora
+ * @param[in] ora Ora da eliminare
+ * @return Successo (TRUE) o fallimento (FALSE)
+ */
+bool elimina_file_ora(ora_t *ora, campo_t *campo, circolo_t *circolo);
+
 /* Fine interfaccia del modulo file_IO */
 
 #endif

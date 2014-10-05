@@ -139,9 +139,27 @@ void handler_mostra_ora(GtkButton *button, gpointer ora_);
  */
 void handler_visualizza_ora(GtkButton *button, gpointer ora_);
 
+/** Imposta le etichette che mostrano il numero del campo.
+ * @param[in] campo_ Campo da mostrare
+ */
 void handler_imposta_campo(GtkButton *button, gpointer campo_);
 
+/** Prenota un ora in base ai dati inseriti. 
+ */ 
 void handler_prenota_ora(GtkButton *button, gpointer user_data);
+
+/** Elimina l'ora identificata dalla cella
+ * @param[in] cella_ora Cella dell'ora da eliminare
+ */
+void handler_elimina_ora(GtkButton *button, gpointer cella_ora);
+
+/** Elimina il campo selezionato.
+ */
+void handler_elimina_campo(GtkButton *button, gpointer user_data);
+
+/** Elimina il giocatore selezionato.
+ */
+void handler_elimina_giocatore(GtkButton *button, gpointer user_data);
 
 
 } // extern "C"
