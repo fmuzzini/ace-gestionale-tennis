@@ -7,6 +7,7 @@
 #include <glib.h>
 #include "accesso_dati.h"
 #include "struttura_dati.h"
+#include "file_IO.h"
 #include "debug.h"
 
 /* Inizio definizioni delle entità private del modulo */
@@ -289,53 +290,75 @@ bool elimina_socio(giocatore_t *socio, circolo_t *circolo)
 	
 }
 
-bool elimina_giocatore(lista_giocatori &giocatore, circolo_t *circolo)
+bool elimina_giocatore(giocatore_t *&giocatore, circolo_t *circolo)
 {
+	D1(cout<<"elimina giocatore"<<endl)
+
 	if (circolo == 0) return false;
 	if (giocatore == 0) return false;
 
-	giocatore_t *giocatore_ = (giocatore_t *) giocatore->data;
+	//elimino ora associate al giocatore
+	GList *tmp = circolo->campi;
+	while(tmp != NULL){
+		campo_t *campo = (campo_t *) tmp->data;
+		GList *list = cerca_lista_int(campo->ore, prenotante, (int) giocatore, ora_t);
+		GList *tmp_ = list;
+		while(tmp_ != NULL){
+			ora_t *ora = (ora_t *) tmp_->data;
+			elimina_file_ora(ora, campo, circolo);
+			elimina_ora(ora, campo);
+
+			tmp_ = g_list_next(tmp_);	
+		}
+		g_list_free(list);
+
+		tmp = g_list_next(tmp);	
+	}
+
+	D1(cout<<"Ore associate eliminate"<<endl)
 	
-	g_string_free(giocatore_->nome, true);
-	g_string_free(giocatore_->cognome, true);
-	g_string_free(giocatore_->email, true);
+	g_string_free(giocatore->nome, true);
+	g_string_free(giocatore->cognome, true);
+	g_string_free(giocatore->email, true);
 
-	delete giocatore_;
+	delete giocatore;
 
-	circolo->giocatori = g_list_delete_link(circolo->giocatori, giocatore);
+	D1(cout<<"giocatore deallocato"<<endl)
+
+	circolo->giocatori = g_list_remove(circolo->giocatori, giocatore);
 	giocatore = 0;
 
-	return true;
-	
-	
+	D1(cout<<"giocatore eliminato dalla lista"<<endl)
+
+	return true;	
 }
 
-bool elimina_campo(lista_campi &campo, circolo_t *circolo)
+bool elimina_campo(campo_t *&campo, circolo_t *circolo)
 {
+	D1(cout<<"Elimina campo"<<endl)
+
 	if (circolo == 0) return false;
 	if (campo == 0) return false;
 
-	campo_t *campo_ = (campo_t *) campo->data;
+	g_string_free(campo->note, true);
+	g_list_free_full(campo->ore, dealloca_ora);
 
-	g_string_free(campo_->note, true);
-	g_list_free_full(campo_->ore, dealloca_ora);
+	delete campo;
 
-	delete campo_;
-
-	circolo->campi = g_list_delete_link(circolo->campi, campo);
+	circolo->campi = g_list_remove(circolo->campi, campo);
 	circolo->n_campi--;
 	campo = 0;
 	
 	return true;
 }
 
-bool elimina_ora(lista_ore &ora, campo_t *campo)
+bool elimina_ora(ora_t *&ora, campo_t *campo)
 {
 	if (campo == 0) return false;
 	if (ora == 0) return false;
 
-	dealloca_ora(ora->data);
-	campo->ore = g_list_delete_link(campo->ore, ora);
+	dealloca_ora(ora);
+	campo->ore = g_list_remove(campo->ore, ora);
 	ora = 0;
 
 	return true;
@@ -350,8 +373,8 @@ bool elimina_circolo(circolo_t *&circolo)
 	g_string_free(circolo->indirizzo, true);
 	g_string_free(circolo->email, true);
 	g_string_free(circolo->telefono, true);
-	foreach_link(circolo->campi, elimina_campo, circolo);
-	foreach_link(circolo->giocatori, elimina_giocatore, circolo);
+	g_list_foreach(circolo->campi, (GFunc) elimina_campo, circolo);
+	g_list_foreach(circolo->giocatori, (GFunc) elimina_giocatore, circolo);
 	g_list_free(circolo->campi);
 	g_list_free(circolo->giocatori);
 

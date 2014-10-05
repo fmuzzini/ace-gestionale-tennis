@@ -1033,6 +1033,22 @@ Gestionale Circolo Tennis</property>
               </packing>
             </child>
             <child>
+              <object class="GtkButton" id="button15">
+                <property name="label" translatable="yes">Elimina</property>
+                <property name="use_action_appearance">False</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <signal name="clicked" handler="handler_elimina_campo" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
               <object class="GtkButton" id="button13">
                 <property name="label" translatable="yes">Visualizza/Modifica</property>
                 <property name="use_action_appearance">False</property>
@@ -1045,7 +1061,7 @@ Gestionale Circolo Tennis</property>
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">True</property>
-                <property name="position">1</property>
+                <property name="position">2</property>
               </packing>
             </child>
           </object>
@@ -1211,6 +1227,22 @@ Gestionale Circolo Tennis</property>
               </packing>
             </child>
             <child>
+              <object class="GtkButton" id="button1">
+                <property name="label" translatable="yes">Elimina</property>
+                <property name="use_action_appearance">False</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <signal name="clicked" handler="handler_elimina_giocatore" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
               <object class="GtkButton" id="button12">
                 <property name="label" translatable="yes">Visualizza/Modifica</property>
                 <property name="use_action_appearance">False</property>
@@ -1223,7 +1255,7 @@ Gestionale Circolo Tennis</property>
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">True</property>
-                <property name="position">1</property>
+                <property name="position">2</property>
               </packing>
             </child>
           </object>
@@ -1345,10 +1377,49 @@ Gestionale Circolo Tennis</property>
             <property name="homogeneous">True</property>
             <property name="layout_style">end</property>
             <child>
-              <placeholder/>
+              <object class="GtkButton" id="button16">
+                <property name="label" translatable="yes">Annulla</property>
+                <property name="use_action_appearance">False</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
             </child>
             <child>
-              <placeholder/>
+              <object class="GtkButton" id="button17">
+                <property name="label" translatable="yes">Elimina</property>
+                <property name="use_action_appearance">False</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="button18">
+                <property name="label" translatable="yes">Visualizza/Modifica</property>
+                <property name="use_action_appearance">False</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
             </child>
           </object>
           <packing>
@@ -1998,8 +2069,8 @@ Gestionale Circolo Tennis</property>
                                 <property name="label" translatable="yes">Nome:</property>
                               </object>
                               <packing>
-                                <property name="expand">True</property>
-                                <property name="fill">True</property>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
                                 <property name="position">0</property>
                               </packing>
                             </child>
@@ -2010,21 +2081,9 @@ Gestionale Circolo Tennis</property>
                                 <property name="label" translatable="yes">label</property>
                               </object>
                               <packing>
-                                <property name="expand">True</property>
-                                <property name="fill">True</property>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
                                 <property name="position">1</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkLabel" id="label23">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="label" translatable="yes">Orario:</property>
-                              </object>
-                              <packing>
-                                <property name="expand">True</property>
-                                <property name="fill">True</property>
-                                <property name="position">2</property>
                               </packing>
                             </child>
                             <child>
@@ -2034,15 +2093,29 @@ Gestionale Circolo Tennis</property>
                                 <property name="label" translatable="yes">label</property>
                               </object>
                               <packing>
-                                <property name="expand">True</property>
-                                <property name="fill">True</property>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="pack_type">end</property>
+                                <property name="position">2</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label23">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Orario:</property>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="pack_type">end</property>
                                 <property name="position">3</property>
                               </packing>
                             </child>
                           </object>
                           <packing>
                             <property name="expand">False</property>
-                            <property name="fill">True</property>
+                            <property name="fill">False</property>
                             <property name="position">0</property>
                           </packing>
                         </child>
@@ -2057,8 +2130,8 @@ Gestionale Circolo Tennis</property>
                                 <property name="label" translatable="yes">Data:</property>
                               </object>
                               <packing>
-                                <property name="expand">True</property>
-                                <property name="fill">True</property>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
                                 <property name="position">0</property>
                               </packing>
                             </child>
@@ -2069,21 +2142,9 @@ Gestionale Circolo Tennis</property>
                                 <property name="label" translatable="yes">label</property>
                               </object>
                               <packing>
-                                <property name="expand">True</property>
-                                <property name="fill">True</property>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
                                 <property name="position">1</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkLabel" id="label27">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="label" translatable="yes">Durata:</property>
-                              </object>
-                              <packing>
-                                <property name="expand">True</property>
-                                <property name="fill">True</property>
-                                <property name="position">2</property>
                               </packing>
                             </child>
                             <child>
@@ -2093,15 +2154,29 @@ Gestionale Circolo Tennis</property>
                                 <property name="label" translatable="yes">label</property>
                               </object>
                               <packing>
-                                <property name="expand">True</property>
-                                <property name="fill">True</property>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="pack_type">end</property>
+                                <property name="position">2</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label27">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Durata:</property>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="pack_type">end</property>
                                 <property name="position">3</property>
                               </packing>
                             </child>
                           </object>
                           <packing>
                             <property name="expand">False</property>
-                            <property name="fill">True</property>
+                            <property name="fill">False</property>
                             <property name="position">1</property>
                           </packing>
                         </child>
@@ -2116,8 +2191,8 @@ Gestionale Circolo Tennis</property>
                                 <property name="label" translatable="yes">Campo:</property>
                               </object>
                               <packing>
-                                <property name="expand">True</property>
-                                <property name="fill">True</property>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
                                 <property name="position">0</property>
                               </packing>
                             </child>
@@ -2128,15 +2203,15 @@ Gestionale Circolo Tennis</property>
                                 <property name="label" translatable="yes">label</property>
                               </object>
                               <packing>
-                                <property name="expand">True</property>
-                                <property name="fill">True</property>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
                                 <property name="position">1</property>
                               </packing>
                             </child>
                           </object>
                           <packing>
                             <property name="expand">False</property>
-                            <property name="fill">True</property>
+                            <property name="fill">False</property>
                             <property name="position">2</property>
                           </packing>
                         </child>
@@ -2146,21 +2221,6 @@ Gestionale Circolo Tennis</property>
                             <property name="can_focus">False</property>
                             <property name="layout_style">end</property>
                             <child>
-                              <object class="GtkButton" id="visualizza_ora">
-                                <property name="label" translatable="yes">Visualizza</property>
-                                <property name="use_action_appearance">False</property>
-                                <property name="visible">True</property>
-                                <property name="can_focus">True</property>
-                                <property name="receives_default">True</property>
-                                <property name="use_action_appearance">False</property>
-                              </object>
-                              <packing>
-                                <property name="expand">True</property>
-                                <property name="fill">True</property>
-                                <property name="position">0</property>
-                              </packing>
-                            </child>
-                            <child>
                               <object class="GtkButton" id="eliman_ora">
                                 <property name="label" translatable="yes">Elimina</property>
                                 <property name="use_action_appearance">False</property>
@@ -2168,17 +2228,18 @@ Gestionale Circolo Tennis</property>
                                 <property name="can_focus">True</property>
                                 <property name="receives_default">True</property>
                                 <property name="use_action_appearance">False</property>
+                                <signal name="clicked" handler="handler_elimina_ora" swapped="no"/>
                               </object>
                               <packing>
-                                <property name="expand">True</property>
-                                <property name="fill">True</property>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
                                 <property name="position">1</property>
                               </packing>
                             </child>
                           </object>
                           <packing>
                             <property name="expand">False</property>
-                            <property name="fill">True</property>
+                            <property name="fill">False</property>
                             <property name="position">3</property>
                           </packing>
                         </child>
@@ -2204,8 +2265,8 @@ Gestionale Circolo Tennis</property>
                                 <property name="label" translatable="yes">Nome</property>
                               </object>
                               <packing>
-                                <property name="expand">True</property>
-                                <property name="fill">True</property>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
                                 <property name="position">0</property>
                               </packing>
                             </child>
@@ -2228,15 +2289,16 @@ Gestionale Circolo Tennis</property>
                                 </child>
                               </object>
                               <packing>
-                                <property name="expand">True</property>
-                                <property name="fill">True</property>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="pack_type">end</property>
                                 <property name="position">1</property>
                               </packing>
                             </child>
                           </object>
                           <packing>
                             <property name="expand">False</property>
-                            <property name="fill">True</property>
+                            <property name="fill">False</property>
                             <property name="position">0</property>
                           </packing>
                         </child>
@@ -2251,8 +2313,8 @@ Gestionale Circolo Tennis</property>
                                 <property name="label" translatable="yes">Orario</property>
                               </object>
                               <packing>
-                                <property name="expand">True</property>
-                                <property name="fill">True</property>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
                                 <property name="position">0</property>
                               </packing>
                             </child>
@@ -2265,14 +2327,15 @@ Gestionale Circolo Tennis</property>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
-                                <property name="fill">True</property>
+                                <property name="fill">False</property>
+                                <property name="pack_type">end</property>
                                 <property name="position">1</property>
                               </packing>
                             </child>
                           </object>
                           <packing>
                             <property name="expand">False</property>
-                            <property name="fill">True</property>
+                            <property name="fill">False</property>
                             <property name="position">1</property>
                           </packing>
                         </child>
@@ -2287,8 +2350,8 @@ Gestionale Circolo Tennis</property>
                                 <property name="label" translatable="yes">Durata</property>
                               </object>
                               <packing>
-                                <property name="expand">True</property>
-                                <property name="fill">True</property>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
                                 <property name="padding">1</property>
                                 <property name="position">0</property>
                               </packing>
@@ -2302,14 +2365,15 @@ Gestionale Circolo Tennis</property>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
-                                <property name="fill">True</property>
+                                <property name="fill">False</property>
+                                <property name="pack_type">end</property>
                                 <property name="position">1</property>
                               </packing>
                             </child>
                           </object>
                           <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
+                            <property name="expand">False</property>
+                            <property name="fill">False</property>
                             <property name="position">2</property>
                           </packing>
                         </child>
@@ -2324,8 +2388,8 @@ Gestionale Circolo Tennis</property>
                                 <property name="label" translatable="yes">Data</property>
                               </object>
                               <packing>
-                                <property name="expand">True</property>
-                                <property name="fill">True</property>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
                                 <property name="position">0</property>
                               </packing>
                             </child>
@@ -2338,14 +2402,15 @@ Gestionale Circolo Tennis</property>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
-                                <property name="fill">True</property>
+                                <property name="fill">False</property>
+                                <property name="pack_type">end</property>
                                 <property name="position">1</property>
                               </packing>
                             </child>
                           </object>
                           <packing>
                             <property name="expand">False</property>
-                            <property name="fill">True</property>
+                            <property name="fill">False</property>
                             <property name="position">3</property>
                           </packing>
                         </child>
@@ -2360,8 +2425,8 @@ Gestionale Circolo Tennis</property>
                                 <property name="label" translatable="yes">Campo:</property>
                               </object>
                               <packing>
-                                <property name="expand">True</property>
-                                <property name="fill">True</property>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
                                 <property name="position">0</property>
                               </packing>
                             </child>
@@ -2372,15 +2437,15 @@ Gestionale Circolo Tennis</property>
                                 <property name="label" translatable="yes">label</property>
                               </object>
                               <packing>
-                                <property name="expand">True</property>
-                                <property name="fill">True</property>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
                                 <property name="position">1</property>
                               </packing>
                             </child>
                           </object>
                           <packing>
                             <property name="expand">False</property>
-                            <property name="fill">True</property>
+                            <property name="fill">False</property>
                             <property name="position">4</property>
                           </packing>
                         </child>
@@ -2401,14 +2466,14 @@ Gestionale Circolo Tennis</property>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
-                                <property name="fill">True</property>
+                                <property name="fill">False</property>
                                 <property name="position">0</property>
                               </packing>
                             </child>
                           </object>
                           <packing>
                             <property name="expand">False</property>
-                            <property name="fill">True</property>
+                            <property name="fill">False</property>
                             <property name="position">5</property>
                           </packing>
                         </child>
