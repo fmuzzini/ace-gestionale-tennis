@@ -127,27 +127,6 @@ bool elimina_ora(ora_t *&ora, campo_t *campo);
  */
 bool elimina_circolo(circolo_t *&circolo);
 
-/** Cerca all'interno della lista gli elementi corrispondeti ai dati passati, il confronto è tra stringhe.
- * Restituisce una lista con gli elementi corrispondenti alla ricerca
- * @param[in] lista Lista in cui cercare
- * @param[in] campo Campo della struttuara in cui cercare
- * @param[in] dati Dato di confronto
- * @param[in] tipo Tipo della struttura
- * @return Lista con gli elementi trovati
- */
-#define cerca_lista_stringa(lista, campo, dati, tipo) 		\
-({								\
-	GList *res = 0;						\
-	GList *tmp = lista;					\
-	while(tmp){						\
-		tipo *elemento = (tipo *) tmp->data;		\
-		if ( g_strcmp0( elemento->campo, dati ) )	\
-			res = g_list_append(res, elemento);	\
-		tmp = g_list_next(tmp);				\
-	}							\
-	res;							\
-})
-
 /** Cerca all'interno della lista gli elementi corrispondeti ai dati passati, il confronto è tra interi.
  * Restituisce una lista con gli elementi corrispondenti alla ricerca
  * @param[in] lista Lista in cui cercare
