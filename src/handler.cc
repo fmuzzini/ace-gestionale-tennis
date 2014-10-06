@@ -250,7 +250,7 @@ static void inserisci_ore_vuote(int inizio, int fine, GtkGrid* tabella, campo_t 
 		D2(cout<<inizio<<endl)
 		ora_inizio = inizio + (ORA_APERTURA - 1)*60;
 
-		etichetta = GTK_WIDGET( gtk_button_new_with_label("a") );
+		etichetta = GTK_WIDGET( gtk_button_new() );
 		g_signal_connect( G_OBJECT(etichetta), segnale, G_CALLBACK(handler_mostra_ora), GINT_TO_POINTER(-ora_inizio) );
 		g_signal_connect(etichetta, segnale, G_CALLBACK(handler_imposta_campo), campo);
 		
