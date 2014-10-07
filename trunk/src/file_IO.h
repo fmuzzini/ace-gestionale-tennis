@@ -10,6 +10,15 @@
 
 /* Inizio interfaccia del modulo file_IO */
 
+
+/** Controlla se un file è nascosto.
+ * Esamina il nome del file e stabilisce se è nascosto;
+ * Funziona solo su linux
+ * @param[in] file File da esaminare
+ * @return TRUE se è nascosto, FALSE altrimenti
+ */
+bool file_nascosto(const char file[]);
+
 /** Salva su file i dati del circolo.
  * Salva nella directory del programma i dati del circolo
  * in formato testuale
@@ -76,7 +85,7 @@ ora_t *carica_ora(char file[], campo_t *campo, circolo_t *circolo);
  * @param[in] archivia Indica se l'ora deve essere archiviata
  * @return successo (TRUE) o fallimento (FALSE)
  */
-bool salva_ora(const ora_t *ora, const campo_t *campo, const circolo_t *circolo, bool archivia = false);
+bool salva_ora(const ora_t *ora, const campo_t *campo, const circolo_t *circolo);
 
 /** Crea un backup del circolo.
  * Crea un backup del circolo e lo salva sul file

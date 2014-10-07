@@ -79,7 +79,7 @@ campo_t *aggiungi_campo(int numero, copertura_t copertura, terreno_t terreno, co
  * @param campo Campo al quale aggiungere l'ora
  * @return Puntatore all'ora appena creata
  */
-ora_t *aggiungi_ora(int orario, const char data[], int durata, prenotante_t tipo, void *prenotante, campo_t *campo);
+ora_t *aggiungi_ora(int orario, const char data[], int durata, giocatore_t *prenotante, campo_t *campo);
 
 /** Restituisce il nome associato all'ora.
  * Il nome varia a seconda di che tipo è il prenotante

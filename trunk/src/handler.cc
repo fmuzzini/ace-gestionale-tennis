@@ -15,29 +15,19 @@
 #include "debug.h"
 
 extern GtkBuilder *build;
-extern circolo_t *circolo;
 
 extern const char DATA_PATH[];
-extern const char CAMPI_DIR[];
-extern const char DATI_CAMPO[];
-extern const char ORE_DIR[];
-extern const char GIOCATORI_DIR[];
 
 /* Inizio definizioni delle entità private del modulo */
 
+circolo_t *circolo;
+
 const char ESTENSIONE_BACKUP[] = ".abk";
 const char *coperture[] = {"INDOOR", "OUTDOOR"};
-const char *terreni[] = {"ERBA", "ERBA_SINTETICA", "TERRA", "SINTETICO", "CEMENTO"};
+const char *terreni[] = {"ERBA", "ERBA SINTETICA", "TERRA", "SINTETICO", "CEMENTO"};
 
 const int ORA_APERTURA = 8;
-const int ORA_CHIUSURA = 24;
-
-/** Restituisce l'id dell'handler collegato alla funzione.
- * @param[in] ist Istanza
- * @param[in] func Nome della funzione associata
- * @return Id dell'handler
- */
-#define GET_HANDLER_ID(ist, func) g_signal_handler_find(ist, G_SIGNAL_MATCH_FUNC, 0, 0, 0, (gpointer) func, 0)
+const int ORA_CHIUSURA = 23;
 
 /** Trsforma un intero in una stringa orario.
  * Prende l'intero rappresentate i minuti totali e lo
@@ -46,20 +36,6 @@ const int ORA_CHIUSURA = 24;
  * @return Stringa
  */
 #define STRINGA_ORARIO(int) g_strdup_printf("%02d:%02d", (int / 60), (int % 60) )
-
-/** Controlla se un file è nascosto.
- * Esamina il nome del file e stabilisce se è nascosto;
- * Funziona solo su linux
- * @param[in] file File da esaminare
- * @return TRUE se è nascosto, FALSE altrimenti
- */
-static inline bool file_nascosto(const char file[])
-{
-	if (file[0] == '.')
-		return true;
-	else
-		return false;
-}
 
 /** Controlla l'estensione del file.
  * Se il nome del file non ha estensione l'aggiunge
@@ -99,18 +75,6 @@ static char *get_current_name(GtkFileChooser *chooser)
 	g_free(file);
 
 	return name;
-}
-
-static void setta_stile_tabella(GtkWidget *tabella)
-{
-	gtk_widget_set_name(tabella, "ore");
-}
-
-static void setta_stile_scheletro(GtkWidget *widget)
-{
-	GtkStyleContext *stile = gtk_widget_get_style_context(widget);
-
-	gtk_style_context_add_class(stile, "scheletro");
 }
 
 /** Inserisce il giocatore nella ListStore.
@@ -171,7 +135,6 @@ static void inserisci_righe_campi(gpointer campo_, gpointer tabella_)
 	GtkGrid *tabella = (GtkGrid *) tabella_;
 	char *tmp = g_strdup_printf("%d", campo->numero);
 	GtkWidget *etichetta = GTK_WIDGET( gtk_label_new(tmp) );
-	setta_stile_scheletro(etichetta);
 	
 	gtk_grid_insert_row(tabella, 1);
 	gtk_grid_attach(tabella, etichetta, 0, 1, 1, 1);
@@ -225,8 +188,9 @@ static void inserisci_ore_vuote(int inizio, int fine, GtkGrid* tabella, campo_t 
 		D1(cout<<"scarto_inizio"<<endl)
 
 		etichetta = GTK_WIDGET( gtk_button_new() );
-		g_signal_connect( G_OBJECT(etichetta), segnale, G_CALLBACK(handler_mostra_ora), GINT_TO_POINTER(-ora_inizio) );
-		g_signal_connect(etichetta, segnale, G_CALLBACK(handler_imposta_campo), campo);
+		g_signal_connect( G_OBJECT(etichetta), segnale, G_CALLBACK(handler_mostra_ora), NULL );
+		g_object_set_data( G_OBJECT(etichetta), "campo", campo);
+		g_object_set_data( G_OBJECT(etichetta), "ora", GINT_TO_POINTER(-ora_inizio) );
 		
 		gtk_grid_attach(tabella, etichetta, inizio + 60, campo->numero, scarto_inizio, 1);
 
@@ -237,8 +201,9 @@ static void inserisci_ore_vuote(int inizio, int fine, GtkGrid* tabella, campo_t 
 		D1(cout<<"scarto_fine"<<endl)
 
 		etichetta = GTK_WIDGET( gtk_button_new() );
-		g_signal_connect( G_OBJECT(etichetta), segnale, G_CALLBACK(handler_mostra_ora), GINT_TO_POINTER(-ora_scarto_fine) );
-		g_signal_connect(etichetta, segnale, G_CALLBACK(handler_imposta_campo), campo);		
+		g_signal_connect( G_OBJECT(etichetta), segnale, G_CALLBACK(handler_mostra_ora), NULL );
+		g_object_set_data( G_OBJECT(etichetta), "campo", campo);
+		g_object_set_data( G_OBJECT(etichetta), "ora", GINT_TO_POINTER(-ora_scarto_fine) );	
 
 		gtk_grid_attach(tabella, etichetta, (fine - scarto_fine + 60), campo->numero, scarto_fine, 1);
 	}
@@ -251,8 +216,9 @@ static void inserisci_ore_vuote(int inizio, int fine, GtkGrid* tabella, campo_t 
 		ora_inizio = inizio + (ORA_APERTURA - 1)*60;
 
 		etichetta = GTK_WIDGET( gtk_button_new() );
-		g_signal_connect( G_OBJECT(etichetta), segnale, G_CALLBACK(handler_mostra_ora), GINT_TO_POINTER(-ora_inizio) );
-		g_signal_connect(etichetta, segnale, G_CALLBACK(handler_imposta_campo), campo);
+		g_signal_connect( G_OBJECT(etichetta), segnale, G_CALLBACK(handler_mostra_ora), NULL );
+		g_object_set_data( G_OBJECT(etichetta), "campo", campo);
+		g_object_set_data( G_OBJECT(etichetta), "ora", GINT_TO_POINTER(-ora_inizio) );
 		
 		gtk_grid_attach(tabella, etichetta, inizio, campo->numero, 60, 1);
 
@@ -271,6 +237,29 @@ static int controlla_formato_ora(const char *data)
 	int len = 0;
 	for (; data[len] != '\0'; len++)
 		;
+
+	D2(cout<<"len: "<<len<<endl)
+	
+	//controllo che caratteri siano numerici 
+	switch (len){
+		case 5:
+			if (data[4] < '0' || data[4] > '9')
+				return -1;
+		case 4:
+			if (data[3] < '0' || data[3] > '9')
+				return -1;
+		case 2:
+			if (data[1] < '0' || data[1] > '9')
+				return -1;
+		case 1: 
+			if (data[0] < '0' || data[0] > '9')
+				return -1;
+			break;
+		default:
+			return -1;
+	}
+
+	D1(cout<<"Tutti caratteri numerici"<<endl) 
 
 	//formato h
 	if (len == 1)
@@ -291,11 +280,18 @@ static int controlla_formato_ora(const char *data)
 		}
 
 	//formato h:mm
-	if (len == 4)
+	if (len == 4){
+		if (data[2] > '5' )
+			return -1;
+
 		return (data[0]-'0')*60 + (data[2]-'0')*10 + (data[3]-'0');
+	}
 
 	//formato hh:mm
-	if (len == 5)
+	if (len == 5){
+		if (data[3] > '5')
+			return -1;
+
 		switch (data[0]-'0'){
 			case 0:
 			case 1:
@@ -307,6 +303,7 @@ static int controlla_formato_ora(const char *data)
 			default:
 				return -1;
 		}
+	}
 	
 	return -1;		
 }
@@ -409,7 +406,7 @@ void handler_nuovo_giocatore(GtkMenuItem *item, gpointer giocatore_)
 	GtkToggleButton *toggle_socio = GTK_TOGGLE_BUTTON( gtk_builder_get_object(build, "socio_g") );
 	GtkToggleButton *toggle_retta = GTK_TOGGLE_BUTTON( gtk_builder_get_object(build, "retta_g") );
 
-	if (giocatore_ != NULL){
+	if (giocatore != NULL){
 		gtk_entry_set_text(entry_nome, giocatore->nome->str);
 		gtk_entry_set_text(entry_cognome, giocatore->cognome->str);
 		gtk_entry_set_text(entry_nascita, giocatore->nascita->str);
@@ -435,16 +432,14 @@ void handler_nuovo_giocatore(GtkMenuItem *item, gpointer giocatore_)
 
 	}
 
-	gulong handler_id = GET_HANDLER_ID(pulsante, handler_aggiungi_giocatore);
-	g_signal_handler_disconnect(pulsante, handler_id);
-	g_signal_connect(pulsante, "clicked", G_CALLBACK(handler_aggiungi_giocatore), giocatore_);	
+	g_object_set_data(pulsante, "giocatore", giocatore);	
 
 	mostra_finestra(NULL, window);
 }
 
 void handler_visualizza_giocatore(GtkButton *button, gpointer user_data)
 {
-	GtkWidget *window = GTK_WIDGET( gtk_builder_get_object(build, "elenco_g") );
+	GtkWidget *window = GTK_WIDGET( gtk_widget_get_toplevel( GTK_WIDGET(button) ) );
 	
 	GtkTreeIter iter;
 	GtkTreeModel *model;
@@ -471,8 +466,10 @@ void handler_aggiungi_giocatore(GtkButton *button, gpointer user_data)
 		finestra_errore("Circolo non inizializzato");
 		return;
 	}
-	
-	giocatore_t *vecchio_g = (giocatore_t *) user_data;
+
+	GObject *giocatore_ = gtk_builder_get_object(build, "giocatore_ok");
+	giocatore_t *vecchio_g = (giocatore_t *) g_object_get_data(giocatore_, "giocatore");
+
 	giocatore_t *giocatore = 0;
 
 	GtkEntry *entry_nome = GTK_ENTRY( gtk_builder_get_object(build, "nome_g") );
@@ -496,6 +493,11 @@ void handler_aggiungi_giocatore(GtkButton *button, gpointer user_data)
 	const char *circolo_g = gtk_entry_get_text(entry_circolo);
 	bool socio = gtk_toggle_button_get_active(toggle_socio);
 	bool retta = gtk_toggle_button_get_active(toggle_retta);
+
+	if (nome[0] == '\0' || cognome[0] == '\0'){
+		finestra_errore("Inserisci nome e cognome");
+		return;
+	}
 
 	if (socio)
 		giocatore = aggiungi_socio(nome, cognome, nascita, tessera, telefono, email, classifica, retta, vecchio_g, circolo);
@@ -556,7 +558,7 @@ void handler_nuovo_campo(GtkMenuItem *item, gpointer campo_)
 	GtkComboBox *entry_terreno = GTK_COMBO_BOX( gtk_builder_get_object(build, "terreno_c") );
 	GtkEntry *entry_note = GTK_ENTRY( gtk_builder_get_object(build, "note_c") );
 	
-	if (campo_ != NULL){
+	if (campo != NULL){
 		gtk_spin_button_set_value(entry_numero, campo->numero);
 		gtk_combo_box_set_active(entry_copertura, campo->copertura);
 		gtk_combo_box_set_active(entry_terreno, campo->terreno);
@@ -569,9 +571,7 @@ void handler_nuovo_campo(GtkMenuItem *item, gpointer campo_)
 		gtk_entry_set_text(entry_note, "");
 	}
 
-	gulong handler_id = GET_HANDLER_ID(pulsante, handler_aggiungi_campo);
-	g_signal_handler_disconnect(pulsante, handler_id);
-	g_signal_connect(pulsante, "clicked", G_CALLBACK(handler_aggiungi_campo), campo_);	
+	g_object_set_data(pulsante, "campo", campo);	
 
 
 	mostra_finestra(NULL, window);
@@ -630,8 +630,9 @@ void aggiorna_tabella_ore(GtkCalendar *calendario, gpointer user_data)
 			if ( g_strcmp0(ora->data->str, data) == 0 ){
 				const char *nome = get_nome_ora(ora);
 				GtkWidget *etichetta = GTK_WIDGET( gtk_button_new_with_label(nome) );
-				g_signal_connect(etichetta, "clicked", G_CALLBACK(handler_imposta_campo), campo);
 				g_signal_connect(etichetta, "clicked", G_CALLBACK(handler_mostra_ora), ora);
+				g_object_set_data( G_OBJECT(etichetta), "campo", campo);
+				g_object_set_data( G_OBJECT(etichetta), "ora", ora);
 
 				fine = ora->orario - (ORA_APERTURA*60);
 				inserisci_ore_vuote(inizio, fine, tabella, campo);
@@ -643,7 +644,7 @@ void aggiorna_tabella_ore(GtkCalendar *calendario, gpointer user_data)
 			tmp_o = g_list_next(tmp_o);
 		}
 	
-		fine = (ORA_CHIUSURA - ORA_APERTURA + 1)*60;
+		fine = (ORA_CHIUSURA - ORA_APERTURA)*60;
 		inserisci_ore_vuote(inizio, fine, tabella, campo);
 
 		tmp_c = g_list_next(tmp_c);
@@ -667,21 +668,19 @@ void disegna_tabella_ore()
 	gtk_container_add(finestra, GTK_WIDGET(tabella) );
 
 	gtk_grid_set_column_spacing(tabella, 1);
-	setta_stile_tabella( GTK_WIDGET(tabella) );
 
 	//colonna campi
 	gtk_grid_insert_column(tabella, 0);
 
 	//creazione colonne di tutta la giornata
-	for (int i = 0; i < ( (ORA_CHIUSURA-ORA_APERTURA)*60 ); i++)
+	for (int i = 0; i < ( (ORA_CHIUSURA-ORA_APERTURA-1)*60 ); i++)
 		gtk_grid_insert_column(tabella, 0);
 
 	//riga per gli orari
 	gtk_grid_insert_row(tabella, 0);
-	for (int i = ORA_APERTURA; i <= ORA_CHIUSURA; i++){
+	for (int i = ORA_APERTURA; i <= ORA_CHIUSURA-1; i++){
 		char *tmp = g_strdup_printf("%02d:00", i);
 		GtkWidget *etichetta = GTK_WIDGET( gtk_label_new(tmp) );
-		setta_stile_scheletro(etichetta);
 		gtk_grid_attach(tabella, etichetta, ( (i - ORA_APERTURA + 1) * 60 ), 0, 60, 1);
 		g_free(tmp);
 	}
@@ -693,30 +692,14 @@ void disegna_tabella_ore()
 	gtk_widget_show_all( GTK_WIDGET(finestra) );
 }
 
-void handler_imposta_campo(GtkButton *button, gpointer campo_)
+void handler_mostra_ora(GtkButton *button, gpointer user_data)
 {
-	D1(cout<<"imposta campo"<<endl)
+	GObject *cella = G_OBJECT(button);
+	campo_t *campo = (campo_t *) g_object_get_data(cella, "campo");
+	gpointer ora_ = g_object_get_data(cella, "ora");
 
-	campo_t *campo = (campo_t *) campo_;
+	char *campo_numero = g_strdup_printf("%d", campo->numero);
 
-	GtkLabel *label_1 = GTK_LABEL( gtk_builder_get_object(build, "campo_ora") );
-	GtkLabel *label_2 = GTK_LABEL( gtk_builder_get_object(build, "campo_ora_n") );
-
-	char *etichetta = g_strdup_printf("%d", campo->numero);
-	
-	gtk_label_set_text(label_1, etichetta);
-	gtk_label_set_text(label_2, etichetta);
-
-	g_free(etichetta);
-
-	GObject *pulsante = gtk_builder_get_object(build, "prenota");
-	gulong handler_id = GET_HANDLER_ID(pulsante, handler_prenota_ora);
-	g_signal_handler_disconnect(pulsante, handler_id);
-	g_signal_connect(pulsante, "clicked", G_CALLBACK(handler_prenota_ora), campo_);	
-}
-
-void handler_mostra_ora(GtkButton *button, gpointer ora_)
-{
 	GtkCalendar *calendario = GTK_CALENDAR( gtk_builder_get_object(build, "calendario") );
 	GtkWidget *box_n = GTK_WIDGET( gtk_builder_get_object(build, "ora_nuova") );
 	GtkWidget *box_v = GTK_WIDGET( gtk_builder_get_object(build, "ora_esistente") );
@@ -734,6 +717,7 @@ void handler_mostra_ora(GtkButton *button, gpointer ora_)
 		GtkEntry *orario = GTK_ENTRY( gtk_builder_get_object(build, "orario_ora_n") );
 		GtkEntry *durata = GTK_ENTRY( gtk_builder_get_object(build, "durata_ora_n") );
 		GtkEntry *data = GTK_ENTRY( gtk_builder_get_object(build, "data_ora_n") );
+		GtkLabel *campo_label = GTK_LABEL( gtk_builder_get_object(build, "campo_ora_n") );
 
 		char *orario_ = STRINGA_ORARIO( -GPOINTER_TO_INT(ora_) );
 		char *data_ = g_strdup_printf("%02d-%02d-%04d", giorno, mese, anno);
@@ -742,9 +726,13 @@ void handler_mostra_ora(GtkButton *button, gpointer ora_)
 		gtk_entry_set_text(orario, orario_ );
 		gtk_entry_set_text(durata, "01:00");
 		gtk_entry_set_text(data, data_);
+		gtk_label_set_text(campo_label, campo_numero);
+
+		g_object_set_data( G_OBJECT(box_n), "campo", campo);
 
 		g_free(orario_);
 		g_free(data_);
+		g_free(campo_numero);
 		
 		gtk_widget_set_visible(box_n, TRUE);
 		gtk_widget_set_visible(box_v, FALSE);
@@ -760,6 +748,7 @@ void handler_mostra_ora(GtkButton *button, gpointer ora_)
 	GtkLabel *orario = GTK_LABEL( gtk_builder_get_object(build, "orario_ora") );
 	GtkLabel *data = GTK_LABEL( gtk_builder_get_object(build, "data_ora") );
 	GtkLabel *durata = GTK_LABEL( gtk_builder_get_object(build, "durata_ora") );
+	GtkLabel *campo_label = GTK_LABEL( gtk_builder_get_object(build, "campo_ora") );
 
 	char *orario_ = STRINGA_ORARIO(ora->orario);
 	char *durata_ = STRINGA_ORARIO(ora->durata);
@@ -767,18 +756,27 @@ void handler_mostra_ora(GtkButton *button, gpointer ora_)
 	gtk_label_set_text(nome, get_nome_ora(ora));
 	gtk_label_set_text(orario, orario_);
 	gtk_label_set_text(data, ora->data->str);
-	gtk_label_set_text(durata, durata_);	
+	gtk_label_set_text(durata, durata_);
+	gtk_label_set_text(campo_label, campo_numero);
+
+	g_object_set_data( G_OBJECT(box_v), "ora", ora);
+	g_object_set_data( G_OBJECT(box_v), "campo", campo);	
 
 	gtk_widget_set_visible(box_v, TRUE);
 	gtk_widget_set_visible(box_n, FALSE);
 
 	g_free(orario_);
 	g_free(durata_);
+	g_free(campo_numero);
 }
 
-void handler_prenota_ora(GtkButton *button, gpointer campo_)
+void handler_prenota_ora(GtkButton *button, gpointer user_data)
 {
 	D1(cout<<"prenota ora"<<endl)
+
+	GObject *box_n = gtk_builder_get_object(build, "ora_nuova");
+
+	gpointer campo_ = g_object_get_data(box_n, "campo");
 
 	GtkComboBox *selezione = GTK_COMBO_BOX( gtk_builder_get_object(build, "nome_ora_n") );
 	GtkEntry *entry_orario = GTK_ENTRY( gtk_builder_get_object(build, "orario_ora_n") );
@@ -809,11 +807,15 @@ void handler_prenota_ora(GtkButton *button, gpointer campo_)
 	giocatore_t *giocatore = 0;
 	GtkTreeIter iter;
 	GtkTreeModel *model = gtk_combo_box_get_model(selezione);
-	gtk_combo_box_get_active_iter(selezione, &iter);
+	
+	if ( !gtk_combo_box_get_active_iter(selezione, &iter) ){
+		finestra_errore("Selezionare un giocatore");
+		return;
+	}
+
 	gtk_tree_model_get(model, &iter, 7, &giocatore, -1);
 
-	ora_t *ora = aggiungi_ora(orario, data, durata, GIOCATORE, giocatore, campo);
-	D2(cout<<ora<<endl)
+	ora_t *ora = aggiungi_ora(orario, data, durata, giocatore, campo);
 	salva_ora(ora, campo, circolo);
 
 	aggiorna_tabella_ore(NULL, NULL);	
@@ -826,8 +828,10 @@ void handler_aggiungi_campo(GtkButton *button, gpointer user_data)
 		return;
 	}
 
+	GObject *campo_ = gtk_builder_get_object(build, "campo_ok");
+	campo_t *vecchio_c = (campo_t *) g_object_get_data(campo_, "campo");
+
 	campo_t *campo = 0;
-	campo_t *vecchio_c = (campo_t *) user_data;
 
 	GtkSpinButton *entry_numero = GTK_SPIN_BUTTON( gtk_builder_get_object(build, "numero_c") );
 	GtkComboBox *entry_copertura = GTK_COMBO_BOX( gtk_builder_get_object(build, "copertura_c") );
@@ -838,6 +842,15 @@ void handler_aggiungi_campo(GtkButton *button, gpointer user_data)
 	copertura_t copertura = (copertura_t) gtk_combo_box_get_active(entry_copertura);
 	terreno_t terreno = (terreno_t) gtk_combo_box_get_active(entry_terreno);
 	const char *note = gtk_entry_get_text(entry_note);
+
+	GList *list = cerca_lista_int(circolo->campi, numero, numero, campo_t);
+
+	if (list != NULL){
+		finestra_errore("numero campo già prsente");
+		return;
+	}
+
+	g_list_free(list);
 
 	campo = aggiungi_campo(numero, copertura, terreno, note, vecchio_c, circolo);
 
@@ -898,7 +911,7 @@ void handler_carica_circolo(GtkButton *button, gpointer user_data)
 
 	GtkTreeIter iter;
 	GtkTreeModel *model;
-	GDir *dir;
+	//GDir *dir;
 	char *circolo_sel = 0;
 	GtkWidget *window = GTK_WIDGET( gtk_builder_get_object(build, "carica_circolo") );
 	GtkTreeView *view = GTK_TREE_VIEW( gtk_builder_get_object(build, "circolo_view") );
@@ -912,7 +925,7 @@ void handler_carica_circolo(GtkButton *button, gpointer user_data)
 	
 	circolo = carica_circolo(circolo_sel);
 	
-	if (circolo == 0){
+	/*if (circolo == 0){
 		finestra_errore("Impossibile caricare il circolo");
 		g_free(circolo_sel);
 		return;
@@ -994,11 +1007,11 @@ void handler_carica_circolo(GtkButton *button, gpointer user_data)
 	
 		g_dir_close(dir);
 
-	} // if (dir != NULL)
+	}*/ // if (dir != NULL)
 
 	g_free(circolo_sel);
-	g_free(campo);
-	g_free(campi);
+	//g_free(campo);
+	//g_free(campi);
 	nascondi_finestra(window, NULL, NULL);
 	disegna_tabella_ore();	
 }
@@ -1032,7 +1045,7 @@ void handler_backup(GtkMenuItem *button, gpointer user_data)
 void handler_ripristina(GtkMenuItem *button, gpointer user_data)
 {
 	gint response;
-	bool stato = true;
+	bool stato = false;
 	char *file = 0;
 	GtkFileChooser *scegli_file = GTK_FILE_CHOOSER( gtk_builder_get_object(build, "scegli_file") );
 	
@@ -1070,7 +1083,10 @@ void handler_file_ok(GtkWidget *widget, GdkEvent *event, gpointer user_data)
 void handler_elenco_giocatori(GtkMenuItem *button, gpointer user_data)
 {
 	GtkWidget *window = GTK_WIDGET( gtk_builder_get_object(build, "elenco_g") );
+	GtkTreeView *view = GTK_TREE_VIEW( gtk_builder_get_object(build, "giocatori_view") );
 	GtkListStore *list = GTK_LIST_STORE( gtk_builder_get_object(build, "giocatori") );
+
+	gtk_tree_view_set_model(view, GTK_TREE_MODEL(list) );
 	
 	gtk_list_store_clear(list);
 
@@ -1082,14 +1098,19 @@ void handler_elenco_giocatori(GtkMenuItem *button, gpointer user_data)
 
 void handler_elenco_soci(GtkMenuItem *button, gpointer user_data)
 {
-	GtkWidget *window = GTK_WIDGET( gtk_builder_get_object(build, "elenco_s") );
-	GtkListStore *list = GTK_LIST_STORE( gtk_builder_get_object(build, "giocatori") );
+	GtkWidget *window = GTK_WIDGET( gtk_builder_get_object(build, "elenco_g") );
+	GtkTreeView *view = GTK_TREE_VIEW( gtk_builder_get_object(build, "giocatori_view") );
+	GtkListStore *list = GTK_LIST_STORE( gtk_builder_get_object(build, "soci") );
+
+	gtk_tree_view_set_model(view, GTK_TREE_MODEL(list) );
 
 	GList *soci = cerca_lista_int(circolo->giocatori, socio, true, giocatore_t);
 
 	gtk_list_store_clear(list);
 
 	g_list_foreach(soci, insert_list_giocatore, list);
+
+	g_list_free(soci);
 
 	gtk_widget_show_all(window);
 }
@@ -1106,15 +1127,30 @@ void handler_elenco_campi(GtkMenuItem *button, gpointer user_data)
 	gtk_widget_show_all(window);
 }
 
-void handler_elimina_ora(GtkButton *button, gpointer cella_ora)
+void handler_elimina_ora(GtkButton *button, gpointer user_data)
 {
-	GObject *ora = G_OBJECT(cella_ora);
+	if ( !alert("Sei sicuro di voler eliminare l'ora?") )
+		return;
+	
+	GObject *box_v = gtk_builder_get_object(build, "ora_esistente");
+
+	campo_t *campo = (campo_t *) g_object_get_data(box_v, "campo");
+	ora_t *ora = (ora_t *) g_object_get_data(box_v, "ora");
+
+	D1(cout<<campo<<endl);
+	D2(cout<<ora<<endl);
+
+	elimina_file_ora(ora, campo, circolo);
+	elimina_ora(ora, campo);
 
 	aggiorna_tabella_ore(NULL, NULL);
 }
 
 void handler_elimina_campo(GtkButton *button, gpointer user_data)
 {
+	if ( !alert("Sei sicuro di voler eliminare il campo?") )
+		return;
+	
 	GtkTreeIter iter;
 	GtkTreeModel *model;
 	campo_t *campo = 0;
@@ -1137,6 +1173,9 @@ void handler_elimina_campo(GtkButton *button, gpointer user_data)
 
 void handler_elimina_giocatore(GtkButton *button, gpointer user_data)
 {
+	if ( !alert("Sei sicuro di voler eliminare il giocatore?") )
+		return;
+
 	GtkTreeIter iter;
 	GtkTreeModel *model;
 	giocatore_t *giocatore = 0;

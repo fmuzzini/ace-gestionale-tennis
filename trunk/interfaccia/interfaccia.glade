@@ -1074,363 +1074,6 @@ Gestionale Circolo Tennis</property>
       </object>
     </child>
   </object>
-  <object class="GtkWindow" id="elenco_g">
-    <property name="can_focus">False</property>
-    <signal name="delete-event" handler="nascondi_finestra" swapped="no"/>
-    <child>
-      <object class="GtkBox" id="box30">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="orientation">vertical</property>
-        <child>
-          <object class="GtkScrolledWindow" id="scrolledwindow1">
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="hscrollbar_policy">never</property>
-            <property name="shadow_type">in</property>
-            <property name="min_content_height">200</property>
-            <child>
-              <object class="GtkTreeView" id="giocatori_view">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="model">giocatori</property>
-                <property name="headers_clickable">False</property>
-                <property name="search_column">0</property>
-                <child internal-child="selection">
-                  <object class="GtkTreeSelection" id="treeview-selection"/>
-                </child>
-                <child>
-                  <object class="GtkTreeViewColumn" id="col_nome">
-                    <property name="resizable">True</property>
-                    <property name="title" translatable="yes">Nome</property>
-                    <property name="expand">True</property>
-                    <child>
-                      <object class="GtkCellRendererText" id="cellrenderertext2"/>
-                      <attributes>
-                        <attribute name="text">0</attribute>
-                      </attributes>
-                    </child>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkTreeViewColumn" id="col_cognome">
-                    <property name="resizable">True</property>
-                    <property name="title" translatable="yes">Cognome</property>
-                    <property name="expand">True</property>
-                    <child>
-                      <object class="GtkCellRendererText" id="cellrenderertext3"/>
-                      <attributes>
-                        <attribute name="text">1</attribute>
-                      </attributes>
-                    </child>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkTreeViewColumn" id="col_nascita">
-                    <property name="resizable">True</property>
-                    <property name="title" translatable="yes">Nascita</property>
-                    <property name="expand">True</property>
-                    <child>
-                      <object class="GtkCellRendererText" id="cellrenderertext4"/>
-                      <attributes>
-                        <attribute name="text">2</attribute>
-                      </attributes>
-                    </child>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkTreeViewColumn" id="col_classifica">
-                    <property name="resizable">True</property>
-                    <property name="title" translatable="yes">Classifica</property>
-                    <property name="expand">True</property>
-                    <child>
-                      <object class="GtkCellRendererText" id="cellrenderertext5"/>
-                      <attributes>
-                        <attribute name="text">3</attribute>
-                      </attributes>
-                    </child>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkTreeViewColumn" id="col_circolo">
-                    <property name="resizable">True</property>
-                    <property name="title" translatable="yes">Circolo</property>
-                    <property name="expand">True</property>
-                    <child>
-                      <object class="GtkCellRendererText" id="cellrenderertext6"/>
-                      <attributes>
-                        <attribute name="text">4</attribute>
-                      </attributes>
-                    </child>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkTreeViewColumn" id="col_socio">
-                    <property name="title" translatable="yes">Socio</property>
-                    <property name="expand">True</property>
-                    <child>
-                      <object class="GtkCellRendererToggle" id="cellrenderertoggle1">
-                        <property name="activatable">False</property>
-                      </object>
-                      <attributes>
-                        <attribute name="active">5</attribute>
-                      </attributes>
-                    </child>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkTreeViewColumn" id="col_retta">
-                    <property name="visible">False</property>
-                    <property name="resizable">True</property>
-                    <property name="title" translatable="yes">Retta Pagata</property>
-                    <property name="expand">True</property>
-                    <child>
-                      <object class="GtkCellRendererToggle" id="cella_retta">
-                        <property name="activatable">False</property>
-                      </object>
-                      <attributes>
-                        <attribute name="active">6</attribute>
-                      </attributes>
-                    </child>
-                  </object>
-                </child>
-              </object>
-            </child>
-          </object>
-          <packing>
-            <property name="expand">True</property>
-            <property name="fill">True</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkButtonBox" id="buttonbox2">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="spacing">5</property>
-            <property name="homogeneous">True</property>
-            <property name="layout_style">end</property>
-            <child>
-              <object class="GtkButton" id="button11">
-                <property name="label" translatable="yes">Annulla</property>
-                <property name="use_action_appearance">False</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="use_action_appearance">False</property>
-                <signal name="clicked" handler="handler_annulla" swapped="no"/>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="button1">
-                <property name="label" translatable="yes">Elimina</property>
-                <property name="use_action_appearance">False</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="use_action_appearance">False</property>
-                <signal name="clicked" handler="handler_elimina_giocatore" swapped="no"/>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="button12">
-                <property name="label" translatable="yes">Visualizza/Modifica</property>
-                <property name="use_action_appearance">False</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="use_action_appearance">False</property>
-                <signal name="clicked" handler="handler_visualizza_giocatore" swapped="no"/>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">2</property>
-              </packing>
-            </child>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">1</property>
-          </packing>
-        </child>
-      </object>
-    </child>
-  </object>
-  <object class="GtkWindow" id="elenco_s">
-    <property name="can_focus">False</property>
-    <signal name="delete-event" handler="nascondi_finestra" swapped="no"/>
-    <child>
-      <object class="GtkBox" id="box33">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="orientation">vertical</property>
-        <child>
-          <object class="GtkScrolledWindow" id="scrolledwindow3">
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="hscrollbar_policy">never</property>
-            <property name="shadow_type">in</property>
-            <property name="min_content_height">200</property>
-            <child>
-              <object class="GtkTreeView" id="treeview3">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="model">giocatori</property>
-                <property name="headers_clickable">False</property>
-                <property name="search_column">0</property>
-                <child internal-child="selection">
-                  <object class="GtkTreeSelection" id="treeview-selection6"/>
-                </child>
-                <child>
-                  <object class="GtkTreeViewColumn" id="col_nome_s">
-                    <property name="resizable">True</property>
-                    <property name="title" translatable="yes">Nome</property>
-                    <property name="expand">True</property>
-                    <child>
-                      <object class="GtkCellRendererText" id="cellrenderertext10"/>
-                      <attributes>
-                        <attribute name="text">0</attribute>
-                      </attributes>
-                    </child>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkTreeViewColumn" id="col_cognome_s">
-                    <property name="resizable">True</property>
-                    <property name="title" translatable="yes">Cognome</property>
-                    <property name="expand">True</property>
-                    <child>
-                      <object class="GtkCellRendererText" id="cellrenderertext11"/>
-                      <attributes>
-                        <attribute name="text">1</attribute>
-                      </attributes>
-                    </child>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkTreeViewColumn" id="col_nascita_s">
-                    <property name="resizable">True</property>
-                    <property name="title" translatable="yes">Nascita</property>
-                    <property name="expand">True</property>
-                    <child>
-                      <object class="GtkCellRendererText" id="cellrenderertext12"/>
-                      <attributes>
-                        <attribute name="text">2</attribute>
-                      </attributes>
-                    </child>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkTreeViewColumn" id="col_classifica_s">
-                    <property name="resizable">True</property>
-                    <property name="title" translatable="yes">Classifica</property>
-                    <property name="expand">True</property>
-                    <child>
-                      <object class="GtkCellRendererText" id="cellrenderertext13"/>
-                      <attributes>
-                        <attribute name="text">3</attribute>
-                      </attributes>
-                    </child>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkTreeViewColumn" id="col_retta_s">
-                    <property name="resizable">True</property>
-                    <property name="title" translatable="yes">Retta Pagata</property>
-                    <property name="expand">True</property>
-                    <child>
-                      <object class="GtkCellRendererToggle" id="cella_retta1">
-                        <property name="activatable">False</property>
-                      </object>
-                      <attributes>
-                        <attribute name="active">6</attribute>
-                      </attributes>
-                    </child>
-                  </object>
-                </child>
-              </object>
-            </child>
-          </object>
-          <packing>
-            <property name="expand">True</property>
-            <property name="fill">True</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkButtonBox" id="buttonbox4">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="spacing">5</property>
-            <property name="homogeneous">True</property>
-            <property name="layout_style">end</property>
-            <child>
-              <object class="GtkButton" id="button16">
-                <property name="label" translatable="yes">Annulla</property>
-                <property name="use_action_appearance">False</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="use_action_appearance">False</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="button17">
-                <property name="label" translatable="yes">Elimina</property>
-                <property name="use_action_appearance">False</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="use_action_appearance">False</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="button18">
-                <property name="label" translatable="yes">Visualizza/Modifica</property>
-                <property name="use_action_appearance">False</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="use_action_appearance">False</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">2</property>
-              </packing>
-            </child>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">1</property>
-          </packing>
-        </child>
-      </object>
-    </child>
-  </object>
   <object class="GtkDialog" id="errore">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
@@ -1539,6 +1182,199 @@ Gestionale Circolo Tennis</property>
       <!-- column-name giocatore -->
       <column type="gpointer"/>
     </columns>
+  </object>
+  <object class="GtkWindow" id="elenco_g">
+    <property name="can_focus">False</property>
+    <signal name="delete-event" handler="nascondi_finestra" swapped="no"/>
+    <child>
+      <object class="GtkBox" id="box30">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow1">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="hscrollbar_policy">never</property>
+            <property name="shadow_type">in</property>
+            <property name="min_content_height">200</property>
+            <child>
+              <object class="GtkTreeView" id="giocatori_view">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="model">giocatori</property>
+                <property name="headers_clickable">False</property>
+                <property name="search_column">0</property>
+                <child internal-child="selection">
+                  <object class="GtkTreeSelection" id="treeview-selection"/>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn" id="col_nome">
+                    <property name="resizable">True</property>
+                    <property name="title" translatable="yes">Nome</property>
+                    <property name="expand">True</property>
+                    <child>
+                      <object class="GtkCellRendererText" id="cellrenderertext2"/>
+                      <attributes>
+                        <attribute name="text">0</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn" id="col_cognome">
+                    <property name="resizable">True</property>
+                    <property name="title" translatable="yes">Cognome</property>
+                    <property name="expand">True</property>
+                    <child>
+                      <object class="GtkCellRendererText" id="cellrenderertext3"/>
+                      <attributes>
+                        <attribute name="text">1</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn" id="col_nascita">
+                    <property name="resizable">True</property>
+                    <property name="title" translatable="yes">Nascita</property>
+                    <property name="expand">True</property>
+                    <child>
+                      <object class="GtkCellRendererText" id="cellrenderertext4"/>
+                      <attributes>
+                        <attribute name="text">2</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn" id="col_classifica">
+                    <property name="resizable">True</property>
+                    <property name="title" translatable="yes">Classifica</property>
+                    <property name="expand">True</property>
+                    <child>
+                      <object class="GtkCellRendererText" id="cellrenderertext5"/>
+                      <attributes>
+                        <attribute name="text">3</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn" id="col_circolo">
+                    <property name="resizable">True</property>
+                    <property name="title" translatable="yes">Circolo</property>
+                    <property name="expand">True</property>
+                    <child>
+                      <object class="GtkCellRendererText" id="cellrenderertext6"/>
+                      <attributes>
+                        <attribute name="text">4</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn" id="col_socio">
+                    <property name="title" translatable="yes">Socio</property>
+                    <property name="expand">True</property>
+                    <child>
+                      <object class="GtkCellRendererToggle" id="cellrenderertoggle1">
+                        <property name="activatable">False</property>
+                      </object>
+                      <attributes>
+                        <attribute name="active">5</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn" id="col_retta">
+                    <property name="resizable">True</property>
+                    <property name="title" translatable="yes">Retta Pagata</property>
+                    <property name="expand">True</property>
+                    <child>
+                      <object class="GtkCellRendererToggle" id="cella_retta">
+                        <property name="activatable">False</property>
+                      </object>
+                      <attributes>
+                        <attribute name="active">6</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButtonBox" id="buttonbox2">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="spacing">5</property>
+            <property name="homogeneous">True</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkButton" id="button11">
+                <property name="label" translatable="yes">Annulla</property>
+                <property name="use_action_appearance">False</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <signal name="clicked" handler="handler_annulla" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="button1">
+                <property name="label" translatable="yes">Elimina</property>
+                <property name="use_action_appearance">False</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <signal name="clicked" handler="handler_elimina_giocatore" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="button12">
+                <property name="label" translatable="yes">Visualizza/Modifica</property>
+                <property name="use_action_appearance">False</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <signal name="clicked" handler="handler_visualizza_giocatore" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
   </object>
   <object class="GtkImage" id="image3">
     <property name="visible">True</property>
@@ -2275,6 +2111,7 @@ Gestionale Circolo Tennis</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="model">giocatori</property>
+                                <property name="active">0</property>
                                 <child>
                                   <object class="GtkCellRendererText" id="cellrenderertext14"/>
                                   <attributes>
@@ -2577,5 +2414,25 @@ Gestionale Circolo Tennis</property>
       <action-widget response="-9">button10</action-widget>
       <action-widget response="-8">ok_scegli_file</action-widget>
     </action-widgets>
+  </object>
+  <object class="GtkListStore" id="soci">
+    <columns>
+      <!-- column-name Nome -->
+      <column type="gchararray"/>
+      <!-- column-name Cognome -->
+      <column type="gchararray"/>
+      <!-- column-name Nascita -->
+      <column type="gchararray"/>
+      <!-- column-name Classifica -->
+      <column type="gchararray"/>
+      <!-- column-name Circolo -->
+      <column type="gchararray"/>
+      <!-- column-name Socio -->
+      <column type="gboolean"/>
+      <!-- column-name Retta -->
+      <column type="gboolean"/>
+      <!-- column-name giocatore -->
+      <column type="gpointer"/>
+    </columns>
   </object>
 </interface>
