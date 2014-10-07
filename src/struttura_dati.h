@@ -55,11 +55,6 @@ struct giocatore_t {
 	bool retta;
 };
 
-/** Tipo che rappresenta chi ha prenotato un ora.
- * Può essere un socio, un giocatore non socio oppure il campo può essere usato per corsi o tornei
- */
-enum prenotante_t {GIOCATORE, CORSO, TORNEO};
-
 /** Struttura rappresentante le ore prenotate.
  * Ogni ora è caratterizzata dall'orario, la data, durata in minuti, il tipo di prenotante e un puntatore generico;
  * Il puntatore generico punterà a un dato diverso a seconda del tipo di prenotante :
@@ -72,8 +67,7 @@ struct ora_t {
 	int orario;
 	stringa data;
 	int durata;
-	prenotante_t tipo;
-	void *prenotante;
+	giocatore_t *prenotante;
 };
 
 /** Tipo che rappresenta il tipo di copertura del campo.

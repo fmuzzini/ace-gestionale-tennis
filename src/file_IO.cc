@@ -20,13 +20,13 @@ using namespace std;
 
 /* Inizio definizioni delle entità private del modulo */
 
-const char DATI_CIRCOLO[] = "circolo.txt";		/**< File contenente i dati del circolo */
-extern const char DATI_CAMPO[] = "campo.txt";		/**< File contenente i dati del campo */
 extern const char DATA_PATH[] = "data";			/**< Directory dove il programma memorizza i dati */
-extern const char GIOCATORI_DIR[] = "giocatori";	/**< Cartella dei giocatori */
-extern const char CAMPI_DIR[] = "campi";		/**< Cartella dei campi */
+const char DATI_CIRCOLO[] = "circolo.txt";		/**< File contenente i dati del circolo */
+const char DATI_CAMPO[] = "campo.txt";			/**< File contenente i dati del campo */
+const char GIOCATORI_DIR[] = "giocatori";		/**< Cartella dei giocatori */
+const char CAMPI_DIR[] = "campi";			/**< Cartella dei campi */
 const char ARCHIVIO_DIR[] = "archivio";			/**< Cartella delle ore archiviate */
-extern const char ORE_DIR[] = "ore";			/**< Cartella delle ore */
+const char ORE_DIR[] = "ore";				/**< Cartella delle ore */
 const char FILE_EXT[] = ".txt";				/**< Estensione dei file */
 
 const char ETX = 3;					/**< End of text */
@@ -164,28 +164,99 @@ static istream &operator>>(istream &is, terreno_t &t)
 	return is;
 }
 
-/** Operatore per la lettura del tipo prenotante_t.
- * Utilizza un intero temporaneo e lo converte
+/** Ritorna la directory del circolo.
+ * @param[in] nome_cir Nome del circolo
+ * @return Percorso della directory
  */
-static istream &operator>>(istream &is, prenotante_t &t)
+static char *get_dir_circolo(const char *nome_cir)
 {
-	int tmp;
-	is>>tmp;
-	t = static_cast<prenotante_t>(tmp);
-	
-	return is;
+	return g_build_filename(DATA_PATH, nome_cir, NULL);
 }
 
-char *get_file_giocatore(const char *nome_cir, int ID)
+/** Ritorna il file del circolo.
+ * @param[in] nome_cir Nome del circolo
+ * @return Percorso del file
+ */
+static char *get_file_circolo(const char *nome_cir)
+{
+	char *dir = get_dir_circolo(nome_cir);
+	char *file = g_build_filename(dir, DATI_CIRCOLO, NULL);
+
+	g_free(dir);
+
+	return file;
+}
+
+/** Ritorna la directory dell'ora.
+ * @param[in] nome_cir Nome del Circolo
+ * @param[in] campo Numero del campo
+ * @return Percorso della directory
+ */
+static char *get_dir_ora(const char *nome_cir, int campo)
+{
+	ostringstream numero;
+	numero<<campo;
+
+	return g_build_filename(DATA_PATH, nome_cir, CAMPI_DIR, numero.str().c_str(), ORE_DIR, NULL);
+}
+
+/** Ritorna il file dell'ora.
+ * @param[in] nome_cir Nome del circolo
+ * @param[in] campo Numero del campo
+ * @param[in] ora Ora
+ * @return Percorso al file dell'ora
+ */
+static char *get_file_ora(const char *nome_cir, int campo, const ora_t *ora)
+{
+	D1(cout<<"get_file_ora"<<endl)
+	ostringstream file;
+	file<<ora->data->str<<"_"<<ora->orario<<FILE_EXT;
+
+	D2(cout<<file<<endl);
+	
+	char *dir = get_dir_ora(nome_cir, campo);
+
+	char *percorso = g_build_filename(dir, file.str().c_str(), NULL);
+
+	g_free(dir);
+
+	return percorso;
+}
+
+/** Ritorna la directory del giocatore.
+ * @param[in] nome_cir Nome del circolo
+ * @return Percorso della directory
+ */
+static char *get_dir_giocatore(const char *nome_cir)
+{
+	return g_build_filename(DATA_PATH, nome_cir, GIOCATORI_DIR, NULL);
+}
+
+/** Ritorna il file del giocatore.
+ * @param[in] nome_cir Nome del circolo
+ * @param[in] ID Id del giocatore
+ * @return Percorso del file
+ */
+static char *get_file_giocatore(const char *nome_cir, int ID)
 {
 	ostringstream file;
 	file<<ID<<FILE_EXT;
 
-	char *percorso = g_build_filename(DATA_PATH, nome_cir, GIOCATORI_DIR, file.str().c_str(), NULL);
+	char *dir = get_dir_giocatore(nome_cir);
+
+	char *percorso = g_build_filename(dir, file.str().c_str(), NULL);
+
+	g_free(dir);	
+
 	return percorso;
 }
 
-char *get_dir_campo(const char *nome_cir, int n)
+/** Ritorna la directory del campo.
+ * @param[in] nome_cir Nome del circolo
+ * @param[in] n Numero del campo
+ * @return Percorso della directory
+ */
+static char *get_dir_campo(const char *nome_cir, int n)
 {
 	ostringstream numero;
 	numero<<n;
@@ -194,7 +265,26 @@ char *get_dir_campo(const char *nome_cir, int n)
 	return percorso;
 }
 
-void elimina_sub_directory(const char *dir_)
+/** Ritorna il file del campo.
+ * @param[in] nome_cir Nome Circolo
+ * @param[in] n Numero campo
+ * @return Percorso del file
+ */
+static char *get_file_campo(const char *nome_cir, int n)
+{
+	char *dir = get_dir_campo(nome_cir, n);
+
+	char *file = g_build_filename(dir, DATI_CAMPO, NULL);	
+	
+	g_free(dir);
+
+	return file;
+}
+
+/** Elimina ricorsivamente le sottodirectory della directory passata.
+ * @param[in] dir_ Directory alla quale eliminare le sotto directory
+ */
+static void elimina_sub_directory(const char *dir_)
 {
 	GDir *dir = g_dir_open(dir_, 0, NULL);
 	const char *file = 0;
@@ -204,7 +294,7 @@ void elimina_sub_directory(const char *dir_)
 		file_ = g_build_filename(dir_, file, NULL);
 
 		if ( g_file_test(file_, G_FILE_TEST_IS_DIR) )
-			elimina_directory(file_);
+			elimina_sub_directory(file_);
 		if ( g_file_test(file_, G_FILE_TEST_IS_REGULAR) )
 			g_remove(file_);
 
@@ -219,20 +309,25 @@ void elimina_sub_directory(const char *dir_)
 
 /* Inizio definizioni delle funzioni pubbliche */
 
+bool file_nascosto(const char file[])
+{
+	if (file[0] == '.')
+		return true;
+	else
+		return false;
+}
+
 bool salva_circolo(const circolo_t *circolo)
 {
-	const char *nome = circolo->nome->str;
-	char *file = 0;
-	char *dir = 0;
+	char *file = get_file_circolo(circolo->nome->str);
+	char *dir = get_dir_circolo(circolo->nome->str);
 
 	if (circolo == 0) return false;
 
 	//Controllo esistenza cartella del circolo, se non esiste la crea
-	dir = g_build_filename(DATA_PATH, nome, NULL);
 	if ( !controlla_directory(dir) ) return false;
 
 	//Apertura file per la scrittura
-	file = g_build_filename(dir, DATI_CIRCOLO, NULL);
 	ofstream f1(file);
 
 	g_free(dir);
@@ -268,16 +363,17 @@ bool salva_circolo(const circolo_t *circolo)
 
 circolo_t *carica_circolo(const char nome[])
 {
+	//Caricamento dati Circolo
 	circolo_t *circolo = 0;
 	char *testo = 0;
-	char **campi = 0;
+	char **campi_c = 0;
 	int size = 0;
-	char *file = g_build_filename(DATA_PATH, nome, DATI_CIRCOLO, NULL);
+	char *file_c = get_file_circolo(nome);
 	
-	ifstream f1(file);
+	ifstream f1(file_c);
 	if (!f1){
 		D1(cout<<"Errore apertura file"<<endl)
-		D2(cout<<"File: "<<file<<endl)
+		D2(cout<<"File: "<<file_c<<endl)
 		return 0;
 	}
 
@@ -291,40 +387,130 @@ circolo_t *carica_circolo(const char nome[])
 	
 	//Recupero informazioni
 	f1.getline(testo, size, EOF);
-	campi = g_strsplit(testo, "\n", 0);
+	campi_c = g_strsplit(testo, "\n", 0);
 
 	//Chiusura file
 	f1.close();
 
 	//Creazione circolo
-	circolo = inizializza_circolo(campi[0], campi[1], campi[2], campi[3]);
+	circolo = inizializza_circolo(campi_c[0], campi_c[1], campi_c[2], campi_c[3]);
 
 	//Deallocazione memoria utilizzata
-	g_strfreev(campi);
-	g_free(file);
+	g_strfreev(campi_c);
+	g_free(file_c);
 	delete[] testo;
+
+
+	//Caricamento giocatori del circolo
+	const char *file_g = 0;
+	char *n_dir_g = get_dir_giocatore(nome);
+	GDir *dir_g = g_dir_open(n_dir_g, 0, NULL);
+
+	if (dir_g != NULL){
+
+		while( (file_g = g_dir_read_name(dir_g)) ){
+			if ( file_nascosto(file_g) )
+				continue;
+			
+			char *giocatore = g_build_filename(n_dir_g, file_g, NULL);
+	
+			carica_giocatore(giocatore, circolo);
+
+			D1(cout<<"Giocatore caricato"<<endl)
+			D2(cout<<giocatore<<endl)
+
+			g_free(giocatore);
+		}
+	
+		g_dir_close(dir_g);
+	}
+
+	g_free(n_dir_g);
+
+
+	//Caricamento campi del circolo
+	const char *file = 0;
+	campo_t *campo_caricato = 0;	
+	char *ora = 0;
+	char *dati = 0;
+	char *campo = 0;
+	char *campi = g_build_filename(DATA_PATH, nome, CAMPI_DIR, NULL);
+	GDir *dir = g_dir_open(campi, 0, NULL);
+	
+	if (dir != NULL){
+
+		while( (file = g_dir_read_name(dir)) ){
+			if ( file_nascosto(file) )
+				continue;
+	
+			campo = g_build_filename(campi, file, NULL);
+	
+			if ( !g_file_test(campo, G_FILE_TEST_IS_DIR) ){
+				g_free(campo);
+				continue;
+			}
+	
+			dati = g_build_filename(campo, DATI_CAMPO, NULL);
+	
+			campo_caricato = carica_campo(dati, circolo);
+
+			D1(cout<<"Campo caricato"<<endl)
+			D2(cout<<dati<<endl)
+	
+			g_free(dati);
+	
+			dati = g_build_filename(campo, ORE_DIR, NULL); 
+
+			g_free(campo);
+
+			GDir *dir_ore = g_dir_open(dati, 0, NULL);
+	
+			if (dir_ore == NULL){
+				g_free(dati);
+				continue;
+			}
+			
+			while( (file = g_dir_read_name(dir_ore)) ){
+				if ( file_nascosto(file) )
+					continue;
+	
+				ora = g_build_filename(dati, file, NULL);
+				
+				carica_ora(ora, campo_caricato, circolo);
+
+				D1(cout<<"Ora caricata"<<endl)
+				D2(cout<<ora<<endl)
+		
+				g_free(ora);
+			}
+	
+			g_dir_close(dir_ore);
+			g_free(dati);
+	
+		}
+	
+		g_dir_close(dir);
+
+	} // if (dir != NULL)
+
+	g_free(campi);
 
 	return circolo;
 }
 
 bool salva_giocatore(const giocatore_t *giocatore, const circolo_t *circolo)
 {
-	char *dir = g_build_filename(DATA_PATH, circolo->nome->str, GIOCATORI_DIR, NULL);
-	char *file = 0;
-	
-	//ID sotto forma di stringa
-	ostringstream id;
-	id<<(giocatore->ID);
+	char *dir = get_dir_giocatore(circolo->nome->str);
+	char *file = get_file_giocatore(circolo->nome->str, giocatore->ID);
 	
 	if (giocatore == 0) return false;
 	if (circolo == 0) return false;
 
 	if ( !controlla_directory(dir) ) return false;
 
-	file = g_strconcat(dir, "/", id.str().c_str(), ".txt", NULL);
-	ofstream f1(file);
-
 	g_free(dir);
+
+	ofstream f1(file);
 
 	if (!f1){
 		D1(cout<<"Errore nell'apertura del file"<<endl)
@@ -334,7 +520,7 @@ bool salva_giocatore(const giocatore_t *giocatore, const circolo_t *circolo)
 	}
 
 	//Scrittura file
-	f1<<id.str().c_str()<<endl;
+	f1<<giocatore->ID<<endl;
 	f1<<giocatore->nome->str<<endl;
 	f1<<giocatore->cognome->str<<endl;
 	f1<<giocatore->nascita->str<<endl;
@@ -408,22 +594,17 @@ giocatore_t *carica_giocatore(const char file[], circolo_t *circolo)
 
 bool salva_campo(const campo_t *campo, const circolo_t *circolo)
 {
-	//numero sotto forma di stringa
-	ostringstream numero;
-	numero<<(campo->numero);
-
-	char *dir = g_build_filename(DATA_PATH, circolo->nome->str, CAMPI_DIR, numero.str().c_str(), NULL);
-	char *file = 0;
+	char *dir = get_dir_campo(circolo->nome->str, campo->numero);
+	char *file = get_file_campo(circolo->nome->str, campo->numero);
 
 	if (campo == 0) return false;
 	if (circolo == 0) return false;
 
 	if ( !controlla_directory(dir) ) return false;
 
-	file = g_build_filename(dir, DATI_CAMPO, NULL);
-	ofstream f1(file);
-
 	g_free(dir);
+
+	ofstream f1(file);
 
 	if (!f1){
 		D1(cout<<"Errore nell'apertura del file"<<endl)
@@ -433,7 +614,7 @@ bool salva_campo(const campo_t *campo, const circolo_t *circolo)
 	}
 
 	//Scrittura file
-	f1<<numero.str().c_str()<<endl;
+	f1<<campo->numero<<endl;
 	f1<<campo->copertura<<endl;
 	f1<<campo->terreno<<endl;
 	f1<<campo->note->str<<endl;
@@ -494,41 +675,19 @@ campo_t *carica_campo(const char file[], circolo_t *circolo)
 	return campo;
 }
 
-bool salva_ora(const ora_t *ora, const campo_t *campo, const circolo_t *circolo, bool archivia)
+bool salva_ora(const ora_t *ora, const campo_t *campo, const circolo_t *circolo)
 {
-	//numero sotto forma di stringa
-	ostringstream numero, orario;
-	numero<<(campo->numero);
-	orario<<(ora->orario);
-	
 	int prenotante;
-	char *dir;
-	char *file = 0;
-
-	if (archivia)	
-		dir = g_build_filename(DATA_PATH, circolo->nome->str, CAMPI_DIR, numero.str().c_str(), ARCHIVIO_DIR, NULL);
-	else
-		dir = g_build_filename(DATA_PATH, circolo->nome->str, CAMPI_DIR, numero.str().c_str(), ORE_DIR, NULL);
-	
-
+	char *dir = get_dir_ora(circolo->nome->str, campo->numero);
+	char *file = get_file_ora(circolo->nome->str, campo->numero, ora);
 	
 	if (ora == 0) return false;
 	if (campo == 0) return false;
 
 	if ( !controlla_directory(dir) ) return false;
 
-	switch (ora->tipo){
-		case GIOCATORE:
-			prenotante = ((giocatore_t *) ora->prenotante)->ID;
-			break;
-		case TORNEO:
-			break;
-		case CORSO:
-			break;
-	}
+	prenotante = ora->prenotante->ID;
 
-
-	file = g_strconcat(dir, "/", ora->data->str, "_", orario.str().c_str(), ".txt", NULL);
 	ofstream f1(file);
 
 	g_free(dir);
@@ -541,10 +700,9 @@ bool salva_ora(const ora_t *ora, const campo_t *campo, const circolo_t *circolo,
 	}
 
 	//Scrittura file
-	f1<<orario.str().c_str()<<endl;
+	f1<<ora->orario<<endl;
 	f1<<ora->data->str<<endl;
 	f1<<ora->durata<<endl;
-	f1<<ora->tipo<<endl;
 	f1<<prenotante<<endl;
 
 	if (!f1){
@@ -563,11 +721,12 @@ bool salva_ora(const ora_t *ora, const campo_t *campo, const circolo_t *circolo,
 
 ora_t *carica_ora(char file[], campo_t *campo, circolo_t *circolo)
 {
+	D1(cout<<"Carica ora"<<endl)
+
 	ora_t *ora;
 	char data[11];
 	int orario, durata, id;
-	prenotante_t tipo;
-	void *prenotante;
+	giocatore_t *prenotante;
 
 	ifstream f1(file);
 	if (!f1){
@@ -578,27 +737,18 @@ ora_t *carica_ora(char file[], campo_t *campo, circolo_t *circolo)
 	f1>>orario;
 	f1>>data;
 	f1>>durata;
-	f1>>tipo;
 	f1>>id;
 
 	GList *list = 0;
-	switch (tipo){
-		case GIOCATORE:
-			list = cerca_lista_int(circolo->giocatori, ID, id, giocatore_t);
-			prenotante = list->data;
-			g_list_free(list);
-			break;
-		case TORNEO:
-			break;
-		case CORSO:
-			break;
-	}
+	list = cerca_lista_int(circolo->giocatori, ID, id, giocatore_t);
+	prenotante = (giocatore_t *) list->data;
+	g_list_free(list);
 
 	//Chiusura file
 	f1.close();
 
 	//Creazione circolo
-	ora = aggiungi_ora(orario, data, durata, tipo, prenotante, campo);
+	ora = aggiungi_ora(orario, data, durata, prenotante, campo);
 
 	return ora;
 }
@@ -649,7 +799,7 @@ bool ripristina(const char file[])
 	int inizio, fine;
 	ofstream fout;
 	
-	while( f1.peek() == EOF ){
+	while( f1.peek() != EOF ){
 		f1.getline(markup, 10, ' ');
 	
 		inizio = f1.tellg();
@@ -766,15 +916,16 @@ void elimina_file_campo(campo_t *campo, circolo_t *circolo)
 
 bool elimina_file_ora(ora_t *ora, campo_t *campo, circolo_t *circolo)
 {
+	D1(cout<<"Elimina file ora"<<endl)
+	
 	int res;
-	ostringstream nome;
-	nome<<ora->data<<"_"<<ora->orario;
-	char *dir = g_build_filename(DATA_PATH, circolo->nome->str, CAMPI_DIR, ORE_DIR, NULL);
-	char *file = g_strconcat(dir, nome.str().c_str(), ".txt", NULL);
+
+	char *file = get_file_ora(circolo->nome->str, 1, ora);
+
+	D2(cout<<file<<endl);
 	
 	res = g_remove(file);
 
-	g_free(dir);
 	g_free(file);
 
 	if (res == -1)

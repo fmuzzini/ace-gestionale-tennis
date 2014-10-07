@@ -139,11 +139,6 @@ void handler_mostra_ora(GtkButton *button, gpointer ora_);
  */
 void handler_visualizza_ora(GtkButton *button, gpointer ora_);
 
-/** Imposta le etichette che mostrano il numero del campo.
- * @param[in] campo_ Campo da mostrare
- */
-void handler_imposta_campo(GtkButton *button, gpointer campo_);
-
 /** Prenota un ora in base ai dati inseriti. 
  */ 
 void handler_prenota_ora(GtkButton *button, gpointer user_data);

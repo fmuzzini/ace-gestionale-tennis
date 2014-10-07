@@ -12,23 +12,6 @@
 
 /* Inizio definizioni delle entità private del modulo */
 
-/** Chiama la funzione per ogni elemento della lista.
- * A differenza di g_list_foreach passa proprio l'elemento della lista (GList*)
- * e non i dati veri e propri (GList*->data)
- * viene utilizzata per eliminare tutti i campi o giocatori dal circolo
- * @param[in] list Lista
- * @param[in] fun Funzione da chiamare
- * @param[in] data Dati da passare alla funzione insieme all'elemento
- */
-static void foreach_link(GList *list, bool(*fun)(GList *&, circolo_t *), circolo_t *data)
-{
-	GList *tmp;
-	while(list){
-		tmp = list;
-		fun(list, data);
-		list = g_list_next(tmp);
-	}
-}
 
 /** Funzione usata per deallocare le ore.
  * Utile anche per la deallocazione della lista ore quando si elimina un campo
@@ -235,7 +218,7 @@ campo_t *aggiungi_campo(int numero, copertura_t copertura, terreno_t terreno, co
 	return campo;
 }
 
-ora_t *aggiungi_ora(int orario, const char data[], int durata, prenotante_t tipo, void *prenotante, campo_t *campo)
+ora_t *aggiungi_ora(int orario, const char data[], int durata, giocatore_t *prenotante, campo_t *campo)
 {
 	//Controllo validità campo
 	if (campo == 0) return 0;
@@ -249,7 +232,6 @@ ora_t *aggiungi_ora(int orario, const char data[], int durata, prenotante_t tipo
 	ora->orario = orario;
 	ora->data = g_string_new(data);
 	ora->durata = durata;
-	ora->tipo = tipo;
 	ora->prenotante = prenotante;
 	D1(cout<<"Informazioni inserite"<<endl)
 
@@ -265,16 +247,7 @@ const char *get_nome_ora(ora_t *ora)
 	if (ora == NULL)
 		return 0;
 
-	switch (ora->tipo){
-		case GIOCATORE:
-			return ((giocatore_t *) ora->prenotante)->cognome->str;
-		case CORSO:
-
-		case TORNEO:
-
-		default:
-			return 0;
-	}
+	return ora->prenotante->cognome->str;
 }
 
 bool elimina_socio(giocatore_t *socio, circolo_t *circolo)
@@ -354,6 +327,8 @@ bool elimina_campo(campo_t *&campo, circolo_t *circolo)
 
 bool elimina_ora(ora_t *&ora, campo_t *campo)
 {
+	D1(cout<<"Elimina ora"<<endl)
+
 	if (campo == 0) return false;
 	if (ora == 0) return false;
 

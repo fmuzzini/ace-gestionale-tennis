@@ -1,7 +1,11 @@
 /**
  * @mainpage ACE gestionale Circolo Tennis.
- * Programma per la gestione di Circoli Tennis.
- * Permette la gestione dei campi, dei tornei, dei corsi.
+ * Programma per la gestione di Campi da Tennis.
+ * Permette la gestione deelle prenotazioni dei campi.
+ * 
+ * Consente di creare un Circolo e di aggiungere ad esso
+ * campi e giocatori.
+ * E poi possibile gestire la prenotazione di tali campi
  *
  * Richede le librerie GTK+-3.0 e Glib-2.0 per essere eseguito
  * Di seguito link al sito ufficiale delle librerie
@@ -32,31 +36,26 @@ using namespace std;
 /* Definizioni costanti del modulo */
 
 const char INTERFACCIA[] = "interfaccia/interfaccia.glade";
-const char TEMA[] = "interfaccia/tema.css";
 
 /* Fine definizioni costanti */
 
 GtkBuilder *build;
-circolo_t *circolo;
 
 /** Funzione principale.
  * Carica e inizializza i vari componenti del programma e lancia l'interfaccia grafica
  */
 int main(int argc, char *argv[])
 {
-	GdkScreen *screen = 0;
-	GtkCssProvider *stile = 0;  
-
 	gtk_init(&argc, &argv);
 
 	build = gtk_builder_new();
+
+	g_assert(build);
+	
 	gtk_builder_add_from_file(build, INTERFACCIA, NULL);
 	gtk_builder_connect_signals(build, NULL);
 
-	screen = gdk_screen_get_default();
-	stile = gtk_css_provider_new();
-	gtk_css_provider_load_from_path(stile, TEMA, NULL);
-	gtk_style_context_add_provider_for_screen(screen, GTK_STYLE_PROVIDER(stile), GTK_STYLE_PROVIDER_PRIORITY_THEME);
-
 	gtk_main();	
+
+	return 0;
 }
