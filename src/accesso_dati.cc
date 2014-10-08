@@ -51,6 +51,8 @@ static int inserisci_in_ordine_campo(gconstpointer a, gconstpointer b)
  */
 static int confronta_data(const char *a, const char *b)
 {
+	//Parte a confrontare l'anno, se è uguale passa al mese e così via
+	//viene considerato il formato gg-mm-aaaa
 	for (int i = 0; i < 4; i++)
 		if ( a[6+i] != b[6+i] )
 			return ( a[6+i] - b[6+i] );

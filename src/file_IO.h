@@ -143,6 +143,12 @@ void elimina_file_circolo(const char *nome_cir);
  */
 bool circolo_esistente(const char *nome_cir);
 
+/** Ritorna la directory del circolo.
+ * @param[in] nome_cir Nome del circolo
+ * @return Percorso della directory
+ */
+char *get_dir_circolo(const char *nome_cir);
+
 /* Fine interfaccia del modulo file_IO */
 
 #endif

@@ -157,6 +157,10 @@ void handler_elimina_campo(GtkButton *button, gpointer user_data);
  */
 void handler_elimina_giocatore(GtkButton *button, gpointer user_data);
 
+/** Elimina il circolo selezionato
+ */
+void handler_elimina_circolo(GtkButton *button, gpointer user_data);
+
 
 } // extern "C"
 
