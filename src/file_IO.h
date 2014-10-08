@@ -108,7 +108,7 @@ bool ripristina(const char file[]);
  * @param[in] file File di backup
  * @return Nome del circolo, 0 in caso di errori
  */
-char *get_nome_backup(char file[]);
+char *get_nome_backup(const char file[]);
 
 /** Elimina il file del giocatore.
  * @param[in] circolo Circolo a cui è associato il giocatore
@@ -131,6 +131,17 @@ void elimina_file_campo(campo_t *campo, circolo_t *circolo);
  * @return Successo (TRUE) o fallimento (FALSE)
  */
 bool elimina_file_ora(ora_t *ora, campo_t *campo, circolo_t *circolo);
+
+/** Elimina l'intera struttura delle directory rapprensentanti il circolo.
+ * @param[in] nome_cir Nome del circolo
+ */
+void elimina_file_circolo(const char *nome_cir);
+
+/** Controlla se esiste un circolo con tale nome
+ * @param[in] nome_cir Nome del circolo
+ * @return esito
+ */
+bool circolo_esistente(const char *nome_cir);
 
 /* Fine interfaccia del modulo file_IO */
 

@@ -854,6 +854,8 @@ bool ripristina(const char file[])
 
 char *get_nome_backup(const char file[])
 {
+	D1(cout<<"get nome backup"<<endl)
+
 	ifstream f1(file);
 	if (!f1){
 		D1(cout<<"impossibile aprire il file"<<endl)
@@ -861,16 +863,21 @@ char *get_nome_backup(const char file[])
 		return 0;
 	}
 
+	f1>>noskipws;
+
 	char c;
 	while ( (f1>>c) && (c != '=') )
 		;
 
 	int inizio = f1.tellg();
+	D2(cout<<"inizio: "<<inizio<<endl)
 
 	while ( (f1>>c) && (c != '>') )
 		;
 
 	int fine = f1.tellg();
+	fine--;
+	D2(cout<<"fine: "<<fine<<endl)
 
 	if (!f1){
 		D1(cout<<"file corrotto"<<endl)
@@ -882,7 +889,9 @@ char *get_nome_backup(const char file[])
 	f1.seekg(inizio, f1.beg);
 	for (int i = 0; i<(fine-inizio); i++)
 		f1>>nome[i];
-	nome[fine-inizio+1] = '\0';
+	nome[fine-inizio] = '\0';
+
+	D2(cout<<"Nome backup: "<<nome<<endl)
 
 	return nome;	
 }
@@ -932,6 +941,27 @@ bool elimina_file_ora(ora_t *ora, campo_t *campo, circolo_t *circolo)
 		return false;
 	
 	return true;
+}
+
+void elimina_file_circolo(const char *nome_cir)
+{
+	char *dir = get_dir_circolo(nome_cir);
+	
+	elimina_sub_directory(dir);
+	g_rmdir(dir);
+
+	g_free(dir);
+}
+
+bool circolo_esistente(const char *nome_cir)
+{
+	char *dir = get_dir_circolo(nome_cir);
+
+	bool stato = g_file_test(dir, G_FILE_TEST_IS_DIR);
+
+	g_free(dir);
+	
+	return stato;
 }	
 
 /* Fine definizioni pubbliche */
