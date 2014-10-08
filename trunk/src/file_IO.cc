@@ -92,13 +92,16 @@ static bool backup_file(ofstream &f1, const char file[])
 		return false;
 	}
 	
+	//Scrittura markup
 	f1<<"<file "<<file<<">"<<endl;
 	
+	//Scrittura contenuto file
 	while( !f2.eof() ){
 		f2>>noskipws>>buf;
 		f1.flush();
 	}
 
+	//Indico la fine del markup e quindi del file scritto
 	f1<<ETX<<endl;
 
 	f2.close();
@@ -162,15 +165,6 @@ static istream &operator>>(istream &is, terreno_t &t)
 	t = static_cast<terreno_t>(tmp);
 
 	return is;
-}
-
-/** Ritorna la directory del circolo.
- * @param[in] nome_cir Nome del circolo
- * @return Percorso della directory
- */
-static char *get_dir_circolo(const char *nome_cir)
-{
-	return g_build_filename(DATA_PATH, nome_cir, NULL);
 }
 
 /** Ritorna il file del circolo.
@@ -315,6 +309,11 @@ bool file_nascosto(const char file[])
 		return true;
 	else
 		return false;
+}
+
+char *get_dir_circolo(const char *nome_cir)
+{
+	return g_build_filename(DATA_PATH, nome_cir, NULL);
 }
 
 bool salva_circolo(const circolo_t *circolo)

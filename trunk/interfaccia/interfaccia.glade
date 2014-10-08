@@ -756,6 +756,71 @@ Gestionale Circolo Tennis</property>
       </object>
     </child>
   </object>
+  <object class="GtkWindow" id="aiuto">
+    <property name="width_request">450</property>
+    <property name="height_request">550</property>
+    <property name="can_focus">False</property>
+    <property name="window_position">center-on-parent</property>
+    <signal name="destroy-event" handler="nascondi_finestra" swapped="no"/>
+    <child>
+      <object class="GtkBox" id="box33">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow3">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="shadow_type">in</property>
+            <child>
+              <object class="GtkTextView" id="textview1">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="editable">False</property>
+                <property name="buffer">textbuffer1</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButtonBox" id="buttonbox4">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkButton" id="button16">
+                <property name="label">gtk-cancel</property>
+                <property name="use_action_appearance">False</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <property name="use_stock">True</property>
+                <signal name="delete-event" handler="nascondi_finestra" swapped="no"/>
+                <signal name="clicked" handler="handler_annulla" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="pack_type">end</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
   <object class="GtkDialog" id="alert">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
@@ -841,6 +906,12 @@ Gestionale Circolo Tennis</property>
       <column type="gpointer"/>
     </columns>
   </object>
+  <object class="GtkListStore" id="circoli">
+    <columns>
+      <!-- column-name nome -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
   <object class="GtkWindow" id="carica_circolo">
     <property name="can_focus">False</property>
     <signal name="delete-event" handler="nascondi_finestra" swapped="no"/>
@@ -903,6 +974,23 @@ Gestionale Circolo Tennis</property>
               </packing>
             </child>
             <child>
+              <object class="GtkButton" id="button17">
+                <property name="label">gtk-delete</property>
+                <property name="use_action_appearance">False</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <property name="use_stock">True</property>
+                <signal name="clicked" handler="handler_elimina_circolo" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
               <object class="GtkButton" id="button9">
                 <property name="label" translatable="yes">Carica</property>
                 <property name="use_action_appearance">False</property>
@@ -915,7 +1003,7 @@ Gestionale Circolo Tennis</property>
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">True</property>
-                <property name="position">1</property>
+                <property name="position">2</property>
               </packing>
             </child>
           </object>
@@ -927,12 +1015,6 @@ Gestionale Circolo Tennis</property>
         </child>
       </object>
     </child>
-  </object>
-  <object class="GtkListStore" id="circoli">
-    <columns>
-      <!-- column-name nome -->
-      <column type="gchararray"/>
-    </columns>
   </object>
   <object class="GtkWindow" id="elenco_c">
     <property name="can_focus">False</property>
@@ -1073,115 +1155,6 @@ Gestionale Circolo Tennis</property>
         </child>
       </object>
     </child>
-  </object>
-  <object class="GtkDialog" id="errore">
-    <property name="can_focus">False</property>
-    <property name="border_width">5</property>
-    <property name="type_hint">dialog</property>
-    <signal name="delete-event" handler="nascondi_finestra" swapped="no"/>
-    <child internal-child="vbox">
-      <object class="GtkBox" id="dialog-vbox1">
-        <property name="can_focus">False</property>
-        <property name="orientation">vertical</property>
-        <property name="spacing">2</property>
-        <child internal-child="action_area">
-          <object class="GtkButtonBox" id="dialog-action_area1">
-            <property name="can_focus">False</property>
-            <property name="layout_style">end</property>
-            <child>
-              <placeholder/>
-            </child>
-            <child>
-              <object class="GtkButton" id="button3">
-                <property name="label">gtk-close</property>
-                <property name="use_action_appearance">False</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="use_action_appearance">False</property>
-                <property name="use_stock">True</property>
-                <signal name="clicked" handler="handler_annulla" swapped="no"/>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">1</property>
-              </packing>
-            </child>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="pack_type">end</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkBox" id="box23">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <child>
-              <object class="GtkImage" id="image2">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="stock">gtk-dialog-error</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel" id="errore_m">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">label</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="padding">10</property>
-                <property name="position">1</property>
-              </packing>
-            </child>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">1</property>
-          </packing>
-        </child>
-      </object>
-    </child>
-    <action-widgets>
-      <action-widget response="0">button3</action-widget>
-    </action-widgets>
-  </object>
-  <object class="GtkFileFilter" id="filefilter1">
-    <patterns>
-      <pattern>*.abk</pattern>
-    </patterns>
-  </object>
-  <object class="GtkListStore" id="giocatori">
-    <columns>
-      <!-- column-name Nome -->
-      <column type="gchararray"/>
-      <!-- column-name Cognome -->
-      <column type="gchararray"/>
-      <!-- column-name Nascita -->
-      <column type="gchararray"/>
-      <!-- column-name Classifica -->
-      <column type="gchararray"/>
-      <!-- column-name Circolo -->
-      <column type="gchararray"/>
-      <!-- column-name Socio -->
-      <column type="gboolean"/>
-      <!-- column-name Retta -->
-      <column type="gboolean"/>
-      <!-- column-name giocatore -->
-      <column type="gpointer"/>
-    </columns>
   </object>
   <object class="GtkWindow" id="elenco_g">
     <property name="can_focus">False</property>
@@ -1375,6 +1348,115 @@ Gestionale Circolo Tennis</property>
         </child>
       </object>
     </child>
+  </object>
+  <object class="GtkDialog" id="errore">
+    <property name="can_focus">False</property>
+    <property name="border_width">5</property>
+    <property name="type_hint">dialog</property>
+    <signal name="delete-event" handler="nascondi_finestra" swapped="no"/>
+    <child internal-child="vbox">
+      <object class="GtkBox" id="dialog-vbox1">
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox" id="dialog-action_area1">
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <object class="GtkButton" id="button3">
+                <property name="label">gtk-close</property>
+                <property name="use_action_appearance">False</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <property name="use_stock">True</property>
+                <signal name="clicked" handler="handler_annulla" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="box23">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkImage" id="image2">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="stock">gtk-dialog-error</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="errore_m">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">label</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="padding">10</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <action-widgets>
+      <action-widget response="0">button3</action-widget>
+    </action-widgets>
+  </object>
+  <object class="GtkFileFilter" id="filefilter1">
+    <patterns>
+      <pattern>*.abk</pattern>
+    </patterns>
+  </object>
+  <object class="GtkListStore" id="giocatori">
+    <columns>
+      <!-- column-name Nome -->
+      <column type="gchararray"/>
+      <!-- column-name Cognome -->
+      <column type="gchararray"/>
+      <!-- column-name Nascita -->
+      <column type="gchararray"/>
+      <!-- column-name Classifica -->
+      <column type="gchararray"/>
+      <!-- column-name Circolo -->
+      <column type="gchararray"/>
+      <!-- column-name Socio -->
+      <column type="gboolean"/>
+      <!-- column-name Retta -->
+      <column type="gboolean"/>
+      <!-- column-name giocatore -->
+      <column type="gpointer"/>
+    </columns>
   </object>
   <object class="GtkImage" id="image3">
     <property name="visible">True</property>
@@ -2449,5 +2531,31 @@ Per istruzioni più dettagliate aprire Aiuto.</property>
       <!-- column-name giocatore -->
       <column type="gpointer"/>
     </columns>
+  </object>
+  <object class="GtkTextBuffer" id="textbuffer1">
+    <property name="text" translatable="yes">Per iniziare Creare o Caricare un circolo.
+-Caricamento circolo:
+	Selezionare Carica Circolo dal menù File
+	Selezionare il circolo da caricare.
+- Creazione Circolo:
+	Selezionare Nuovo circolo dal menu File.
+	Inserire le informazioni del circolo
+
+Successivamente alla creazione 
+il circolo deve essere popolato da campi e giocatori
+Per fare ciò selezionare gli appositi comandi dal menù Modifica
+
+Per Visualizzare campi e giocatori
+utilizzare il menù Visualizza.
+
+-Prenotazione campi
+	Per prenotare un campo selezionare la data dal calendario
+	Selezionare un'ora dalla tabella
+	In basso a destra selezionare il giocatore prenotante
+	Se necessario modificare ora e durata
+	Premere Prenota
+
+Le ore prenotate sono visualizzate nella tabella
+Cliccando su di esse è possibile eliminarle.</property>
   </object>
 </interface>
