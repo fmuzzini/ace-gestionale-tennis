@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>ACE:  File sorgente handler.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.ico"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">ACE
+   </div>
+   <div id="projectbrief">Gestionale Circolo Tennis</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.8.1.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Pagina&#160;Principale</span></a></li>
+      <li><a href="annotated.html"><span>Classi</span></a></li>
+      <li class="current"><a href="files.html"><span>File</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Elenco&#160;dei&#160;file</span></a></li>
+      <li><a href="globals.html"><span>Elementi&#160;dei&#160;file</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tutto</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classi</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>File</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funzioni</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variabili</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Ridefinizioni di tipo (typedef)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Tipi enumerati (enum)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valori del tipo enumerato</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Definizioni</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pagine</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">handler.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="handler_8h.html">Vai alla documentazione di questo file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef HANDLER</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define HANDLER</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;gtk/gtk.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/* Inizio interfaccia del modulo handler */</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keywordtype">void</span> <a class="code" href="handler_8cc.html#abef113ade0ebf32552faf22013fb51e6" title="Mostra a video la finestra.">mostra_finestra</a>(GtkMenuItem *actived, gpointer finestra);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;gboolean <a class="code" href="handler_8cc.html#a3cea95cc33a7419edc4bc03872da2c2c" title="Nasconde la finestra.">nascondi_finestra</a>(GtkWidget *widget, GdkEvent *event, gpointer user_data);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">void</span> <a class="code" href="handler_8cc.html#a8713b519a311ec08fc899e7fa176f963" title="Mostra una finestra di errore.">finestra_errore</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> messaggio[]);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="handler_8cc.html#a242b4c7315a053af14f55798531abfeb" title="Mostra una finestra di dialogo con i pulsanti SI e NO.">alert</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> messaggio[]);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordtype">void</span> <a class="code" href="handler_8cc.html#a1327446bd6ffbd129400ab552dfba9d0" title="Modifica i campi in base al bottone.">socio_toggle</a>(GtkToggleButton *button, gpointer user_data);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;gboolean <a class="code" href="handler_8cc.html#a8286acf71d1039361e5401bcd560fa05" title="Esce dal programma.">handler_esci</a>(GtkWidget *widget, GdkEvent *event, gpointer user_data);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">void</span> <a class="code" href="handler_8cc.html#a258ab9e0f53bf7ca6ceff4985b713cc9" title="Setta sul primo elemento il ComboBox.">set_active</a>(GtkWidget *widget, gpointer user_data);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordtype">void</span> <a class="code" href="handler_8cc.html#ac17b4a4911f229ea2ba71dfac6ed1688" title="Chiude la finestra.">handler_annulla</a>(GtkButton *button, gpointer user_data);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keywordtype">void</span> <a class="code" href="handler_8cc.html#a1855f2711061454499303f82de47ff24" title="Setta i campi della finestra agg_giocatore.">handler_nuovo_giocatore</a>(GtkMenuItem *item, gpointer giocatore_);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">void</span> <a class="code" href="handler_8cc.html#ac75d3e710277af666e435741cf424851" title="Visualizza il giocatore selezionato.">handler_visualizza_giocatore</a>(GtkButton *button, gpointer user_data);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keywordtype">void</span> <a class="code" href="handler_8cc.html#ac26586ea6efeec6681706d1a8775adc0" title="Aggiunge/Modifica con i campi inseriri il giocatore.">handler_aggiungi_giocatore</a>(GtkButton *button, gpointer user_data);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keywordtype">void</span> <a class="code" href="handler_8cc.html#af7e31c6ad8bb85081abc321db03c1a2b" title="Crea un nuovo circolo con i campi inseriti.">handler_inizializza_cir</a>(GtkButton *button, gpointer user_data);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keywordtype">void</span> <a class="code" href="handler_8cc.html#a5f471e1128fa122a4509ca3864973ac6" title="Setta i campi della finestra agg_campo.">handler_nuovo_campo</a>(GtkMenuItem *item, gpointer campo_);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keywordtype">void</span> <a class="code" href="handler_8cc.html#a2a4e6d3e35ade8b29eee9e145a389599" title="Visualizza il campo selezionato.">handler_visualizza_campo</a>(GtkButton *button, gpointer user_data);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keywordtype">void</span> <a class="code" href="handler_8cc.html#ab161e7dfc521058bc5bd03f723a106a8" title="Aggiorna la tabella delle ore.">aggiorna_tabella_ore</a>(GtkCalendar *calendario, gpointer user_data);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keywordtype">void</span> <a class="code" href="handler_8cc.html#a952e1263d42c2a3e4df7cb4189d52379" title="Disegna la base della tabella ore.">disegna_tabella_ore</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keywordtype">void</span> <a class="code" href="handler_8cc.html#a98d459bf3ec2ccdc08f817e8e0968eda" title="Aggiunge/Modifica con i campi inseriri il campo.">handler_aggiungi_campo</a>(GtkButton *button, gpointer user_data);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keywordtype">void</span> <a class="code" href="handler_8cc.html#aded29031447ee02a9663617b8f55f5b0" title="Crea l&#39;elenco dei circoli caricabili e lo mostra.">handler_apri_circolo</a>(GtkMenuItem *button, gpointer user_data);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keywordtype">void</span> <a class="code" href="handler_8cc.html#ad40d4d29e5f9fb374a70fbe0782de844" title="Carica il circolo selezionato.">handler_carica_circolo</a>(GtkButton *button, gpointer user_data);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keywordtype">void</span> <a class="code" href="handler_8cc.html#ae4e35b5616a0c03b917a249c90559c6f" title="Mostra la finestra per il salvataggio del backup.">handler_backup</a>(GtkMenuItem *button, gpointer user_data);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keywordtype">void</span> <a class="code" href="handler_8cc.html#a0a32ee04423fecb673625467453ff022" title="Mostra la finestra per il ripristino di un backup.">handler_ripristina</a>(GtkMenuItem *button, gpointer user_data);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keywordtype">void</span> <a class="code" href="handler_8cc.html#a9548c9622a866b65c0edaa564709569e" title="Controlla il nome del file selezionato per controllarne l&#39;estensione.">handler_file_ok</a>(GtkWidget *widget, GdkEvent *event, gpointer user_data);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keywordtype">void</span> <a class="code" href="handler_8cc.html#ae54e9229d008986ba7fa4c4684e2e8cc" title="Visualizza l&#39;elenco dei giocatori.">handler_elenco_giocatori</a>(GtkMenuItem *button, gpointer user_data);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="keywordtype">void</span> <a class="code" href="handler_8cc.html#a639967c965bffe9ce114421fc755c2c8" title="Visualizza l&#39;elenco dei soci.">handler_elenco_soci</a>(GtkMenuItem *button, gpointer user_data);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="keywordtype">void</span> <a class="code" href="handler_8cc.html#a5b268caeacbd48bffabc35d7db9726e8" title="Visualizza l&#39;elenco dei campi.">handler_elenco_campi</a>(GtkMenuItem *button, gpointer user_data);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="keywordtype">void</span> <a class="code" href="handler_8cc.html#aab2674f9e310187d1f2718e13a440729" title="Mostra i dati dell&#39;ora.">handler_mostra_ora</a>(GtkButton *button, gpointer ora_);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="keywordtype">void</span> <a class="code" href="handler_8h.html#a48b362c06cc6ad6b7fd914ae802d7165" title="Visualizza il prenotante dell&#39;ora.">handler_visualizza_ora</a>(GtkButton *button, gpointer ora_);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="keywordtype">void</span> <a class="code" href="handler_8cc.html#aec22e99260660fa8b092cf2cd98ff945" title="Prenota un ora in base ai dati inseriti.">handler_prenota_ora</a>(GtkButton *button, gpointer user_data);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="keywordtype">void</span> <a class="code" href="handler_8cc.html#a8e8ff4a92a5e36caf50e67d3b8e8c479" title="Elimina l&#39;ora identificata dalla cella.">handler_elimina_ora</a>(GtkButton *button, gpointer cella_ora);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="keywordtype">void</span> <a class="code" href="handler_8cc.html#a37d8fb1647e44c328835c9b48ea379d2" title="Elimina il campo selezionato.">handler_elimina_campo</a>(GtkButton *button, gpointer user_data);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="keywordtype">void</span> <a class="code" href="handler_8cc.html#a38852a03eed259563c4c9c3e5da5f72d" title="Elimina il giocatore selezionato.">handler_elimina_giocatore</a>(GtkButton *button, gpointer user_data);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="keywordtype">void</span> <a class="code" href="handler_8cc.html#ae2b24768fc6d42406937fb283c9992ae" title="Elimina il circolo selezionato.">handler_elimina_circolo</a>(GtkButton *button, gpointer user_data);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;} <span class="comment">// extern &quot;C&quot;</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="comment">/* Fine interfaccia del modulo handler */</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generato Mer 8 Ott 2014 19:12:40 per ACE da &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
+</body>
+</html>

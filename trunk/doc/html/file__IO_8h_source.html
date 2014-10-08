@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>ACE:  File sorgente file_IO.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.ico"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">ACE
+   </div>
+   <div id="projectbrief">Gestionale Circolo Tennis</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.8.1.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Pagina&#160;Principale</span></a></li>
+      <li><a href="annotated.html"><span>Classi</span></a></li>
+      <li class="current"><a href="files.html"><span>File</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Elenco&#160;dei&#160;file</span></a></li>
+      <li><a href="globals.html"><span>Elementi&#160;dei&#160;file</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tutto</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classi</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>File</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funzioni</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variabili</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Ridefinizioni di tipo (typedef)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Tipi enumerati (enum)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valori del tipo enumerato</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Definizioni</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pagine</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">file_IO.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="file__IO_8h.html">Vai alla documentazione di questo file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef FILE_IO</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FILE_IO</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="struttura__dati_8h.html" title="Header contenente le strutture dati comuni.">struttura_dati.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/* Inizio interfaccia del modulo file_IO */</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="file__IO_8cc.html#a5be4d4dad972d003a60acda0a2e90339" title="Controlla se un file è nascosto.">file_nascosto</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> file[]);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="file__IO_8cc.html#a09f4d48bb1bddd3b628ba62f8d276c49" title="Salva su file i dati del circolo.">salva_circolo</a>(<span class="keyword">const</span> <a class="code" href="structcircolo__t.html" title="Struttura reppresentante il Circolo.">circolo_t</a> *<a class="code" href="handler_8cc.html#afdb5d4cc28256fee3f79b189c6a6ef58">circolo</a>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<a class="code" href="structcircolo__t.html" title="Struttura reppresentante il Circolo.">circolo_t</a> *<a class="code" href="file__IO_8cc.html#ae58c887a1fc340538de88e9c46ff3100" title="Carica da file i dati del circolo Carica dalla directory del programma i dati del circolo...">carica_circolo</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> nome[]);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<a class="code" href="structgiocatore__t.html" title="Struttura rappresentante i giocatori.">giocatore_t</a> *<a class="code" href="file__IO_8cc.html#ad16db5f64f651d7614e4b39e29289c88" title="Carica un giocatore da file Carica i dati del giocatore dal file e aggancia il giocatore al circolo...">carica_giocatore</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> file[], <a class="code" href="structcircolo__t.html" title="Struttura reppresentante il Circolo.">circolo_t</a> *<a class="code" href="handler_8cc.html#afdb5d4cc28256fee3f79b189c6a6ef58">circolo</a>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="file__IO_8cc.html#aef6d85bdb65df00e55be504b21ea5a12" title="Salva il giocatore su file.">salva_giocatore</a>(<span class="keyword">const</span> <a class="code" href="structgiocatore__t.html" title="Struttura rappresentante i giocatori.">giocatore_t</a> *giocatore, <span class="keyword">const</span> <a class="code" href="structcircolo__t.html" title="Struttura reppresentante il Circolo.">circolo_t</a> *<a class="code" href="handler_8cc.html#afdb5d4cc28256fee3f79b189c6a6ef58">circolo</a>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="file__IO_8cc.html#a1946bbd82e8da6a23d39f144da47261c" title="Salva il campo su file Salva il campo su un file nella directory del circolo.">salva_campo</a>(<span class="keyword">const</span> <a class="code" href="structcampo__t.html" title="Struttura rappresentate i campi.">campo_t</a> *campo, <span class="keyword">const</span> <a class="code" href="structcircolo__t.html" title="Struttura reppresentante il Circolo.">circolo_t</a> *<a class="code" href="handler_8cc.html#afdb5d4cc28256fee3f79b189c6a6ef58">circolo</a>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<a class="code" href="structcampo__t.html" title="Struttura rappresentate i campi.">campo_t</a> *<a class="code" href="file__IO_8cc.html#a48aa2e48d9f514715dfb3e0426874085" title="Carica il campo da file.">carica_campo</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> file[], <a class="code" href="structcircolo__t.html" title="Struttura reppresentante il Circolo.">circolo_t</a> *<a class="code" href="handler_8cc.html#afdb5d4cc28256fee3f79b189c6a6ef58">circolo</a>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<a class="code" href="structora__t.html" title="Struttura rappresentante le ore prenotate.">ora_t</a> *<a class="code" href="file__IO_8cc.html#a6a67616e7c83305dc149ecbfe9e3554f" title="Carica l&#39;ora dal file.">carica_ora</a>(<span class="keywordtype">char</span> file[], <a class="code" href="structcampo__t.html" title="Struttura rappresentate i campi.">campo_t</a> *campo, <a class="code" href="structcircolo__t.html" title="Struttura reppresentante il Circolo.">circolo_t</a> *<a class="code" href="handler_8cc.html#afdb5d4cc28256fee3f79b189c6a6ef58">circolo</a>);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="file__IO_8cc.html#ab7a55ef58177bf8857c1d1121ce6c637" title="Salva l&#39;ora su file.">salva_ora</a>(<span class="keyword">const</span> <a class="code" href="structora__t.html" title="Struttura rappresentante le ore prenotate.">ora_t</a> *ora, <span class="keyword">const</span> <a class="code" href="structcampo__t.html" title="Struttura rappresentate i campi.">campo_t</a> *campo, <span class="keyword">const</span> <a class="code" href="structcircolo__t.html" title="Struttura reppresentante il Circolo.">circolo_t</a> *<a class="code" href="handler_8cc.html#afdb5d4cc28256fee3f79b189c6a6ef58">circolo</a>);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="file__IO_8cc.html#a6b5cce7059635c9b27474d6b4d54d4f6" title="Crea un backup del circolo.">backup</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> file[], <a class="code" href="structcircolo__t.html" title="Struttura reppresentante il Circolo.">circolo_t</a> *<a class="code" href="handler_8cc.html#afdb5d4cc28256fee3f79b189c6a6ef58">circolo</a>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="file__IO_8cc.html#af656044d932e2dc1a62b5a39576d1f0e" title="Ripristina un backup.">ripristina</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> file[]);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keywordtype">char</span> *<a class="code" href="file__IO_8cc.html#a76f8fd85c112dc80647fa4892339570c" title="Ritorna il nome del circolo ai cui fa riferimento il file di backup.">get_nome_backup</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> file[]);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="file__IO_8cc.html#a80f1a81cceb1888d0c0f1dba4a465ed1" title="Elimina il file del giocatore.">elimina_file_giocatore</a>(<a class="code" href="structgiocatore__t.html" title="Struttura rappresentante i giocatori.">giocatore_t</a> *giocatore, <a class="code" href="structcircolo__t.html" title="Struttura reppresentante il Circolo.">circolo_t</a> *<a class="code" href="handler_8cc.html#afdb5d4cc28256fee3f79b189c6a6ef58">circolo</a>);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="keywordtype">void</span> <a class="code" href="file__IO_8cc.html#ae0db214f2e6d02992b5a15f693352ed8" title="Elimina il file del campo.">elimina_file_campo</a>(<a class="code" href="structcampo__t.html" title="Struttura rappresentate i campi.">campo_t</a> *campo, <a class="code" href="structcircolo__t.html" title="Struttura reppresentante il Circolo.">circolo_t</a> *<a class="code" href="handler_8cc.html#afdb5d4cc28256fee3f79b189c6a6ef58">circolo</a>);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="file__IO_8cc.html#aa4be40bc80a7ce416b6b3270455775d4" title="Elimina il file dell&#39;ora.">elimina_file_ora</a>(<a class="code" href="structora__t.html" title="Struttura rappresentante le ore prenotate.">ora_t</a> *ora, <a class="code" href="structcampo__t.html" title="Struttura rappresentate i campi.">campo_t</a> *campo, <a class="code" href="structcircolo__t.html" title="Struttura reppresentante il Circolo.">circolo_t</a> *<a class="code" href="handler_8cc.html#afdb5d4cc28256fee3f79b189c6a6ef58">circolo</a>);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="keywordtype">void</span> <a class="code" href="file__IO_8cc.html#a75d94cb4abf6c12c555117417dbd21c1" title="Elimina l&#39;intera struttura delle directory rapprensentanti il circolo.">elimina_file_circolo</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *nome_cir);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="file__IO_8cc.html#a51256bf33628453f9e0e7c99b76e7374" title="Controlla se esiste un circolo con tale nome.">circolo_esistente</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *nome_cir);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="keywordtype">char</span> *<a class="code" href="file__IO_8cc.html#aa82e7288bfea5165a7d63b66eaea48d5" title="Ritorna la directory del circolo.">get_dir_circolo</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *nome_cir);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment">/* Fine interfaccia del modulo file_IO */</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generato Mer 8 Ott 2014 19:12:40 per ACE da &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
+</body>
+</html>

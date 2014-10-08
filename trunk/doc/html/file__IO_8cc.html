@@ -1,0 +1,2245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>ACE: Riferimenti per il file file_IO.cc</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.ico"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">ACE
+   </div>
+   <div id="projectbrief">Gestionale Circolo Tennis</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.8.1.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Pagina&#160;Principale</span></a></li>
+      <li><a href="annotated.html"><span>Classi</span></a></li>
+      <li class="current"><a href="files.html"><span>File</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Elenco&#160;dei&#160;file</span></a></li>
+      <li><a href="globals.html"><span>Elementi&#160;dei&#160;file</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tutto</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classi</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>File</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funzioni</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variabili</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Ridefinizioni di tipo (typedef)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Tipi enumerati (enum)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valori del tipo enumerato</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Definizioni</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pagine</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funzioni</a> &#124;
+<a href="#var-members">Variabili</a>  </div>
+  <div class="headertitle">
+<div class="title">Riferimenti per il file file_IO.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>File contentente il modulo file_IO.  
+<a href="#details">Continua...</a></p>
+<div class="textblock"><code>#include &lt;glib.h&gt;</code><br/>
+<code>#include &lt;glib/gstdio.h&gt;</code><br/>
+<code>#include &lt;cstdlib&gt;</code><br/>
+<code>#include &lt;fstream&gt;</code><br/>
+<code>#include &lt;sstream&gt;</code><br/>
+<code>#include &quot;<a class="el" href="file__IO_8h_source.html">file_IO.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="accesso__dati_8h_source.html">accesso_dati.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="struttura__dati_8h_source.html">struttura_dati.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="debug_8h_source.html">debug.h</a>&quot;</code><br/>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:aac1855264c07df3797f68fe2e8c92600"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#aac1855264c07df3797f68fe2e8c92600">controlla_directory</a> (const char path[])</td></tr>
+<tr class="memdesc:aac1855264c07df3797f68fe2e8c92600"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controlla l'esistenza della directory e se non esiste la crea.  <a href="#aac1855264c07df3797f68fe2e8c92600"></a><br/></td></tr>
+<tr class="memitem:a8d9c9967c67e1748ed3abc168fd0387a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#a8d9c9967c67e1748ed3abc168fd0387a">backup_file</a> (ofstream &amp;f1, const char file[])</td></tr>
+<tr class="memdesc:a8d9c9967c67e1748ed3abc168fd0387a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copia il file nello stream.  <a href="#a8d9c9967c67e1748ed3abc168fd0387a"></a><br/></td></tr>
+<tr class="memitem:a6e2db1940f05de9ecb47aabc582f21ad"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#a6e2db1940f05de9ecb47aabc582f21ad">backup_dir</a> (ofstream &amp;f1, const char cartella[])</td></tr>
+<tr class="memdesc:a6e2db1940f05de9ecb47aabc582f21ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copia la cartella nello stream.  <a href="#a6e2db1940f05de9ecb47aabc582f21ad"></a><br/></td></tr>
+<tr class="memitem:af38d16c9199443fd7c34b26fa2d4e7e0"><td class="memItemLeft" align="right" valign="top">static istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#af38d16c9199443fd7c34b26fa2d4e7e0">operator&gt;&gt;</a> (istream &amp;is, <a class="el" href="struttura__dati_8h.html#ad0f5a2191c29d4cd4c52506513493755">copertura_t</a> &amp;c)</td></tr>
+<tr class="memdesc:af38d16c9199443fd7c34b26fa2d4e7e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operatore per la lettura del tipo copertura_t.  <a href="#af38d16c9199443fd7c34b26fa2d4e7e0"></a><br/></td></tr>
+<tr class="memitem:ac4ff66902af0718f2e7ee39fe55a71f3"><td class="memItemLeft" align="right" valign="top">static istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#ac4ff66902af0718f2e7ee39fe55a71f3">operator&gt;&gt;</a> (istream &amp;is, <a class="el" href="struttura__dati_8h.html#a0c12af1750520ca1d5e0a1b120ed33b7">terreno_t</a> &amp;t)</td></tr>
+<tr class="memdesc:ac4ff66902af0718f2e7ee39fe55a71f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operatore per la lettura del tipo terreno_t.  <a href="#ac4ff66902af0718f2e7ee39fe55a71f3"></a><br/></td></tr>
+<tr class="memitem:ab55bf4cf291db643b75f0bcfeb2bc2c9"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#ab55bf4cf291db643b75f0bcfeb2bc2c9">get_file_circolo</a> (const char *nome_cir)</td></tr>
+<tr class="memdesc:ab55bf4cf291db643b75f0bcfeb2bc2c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ritorna il file del circolo.  <a href="#ab55bf4cf291db643b75f0bcfeb2bc2c9"></a><br/></td></tr>
+<tr class="memitem:a03b8142b4f95d1627df5e0f52e53f6ca"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#a03b8142b4f95d1627df5e0f52e53f6ca">get_dir_ora</a> (const char *nome_cir, int campo)</td></tr>
+<tr class="memdesc:a03b8142b4f95d1627df5e0f52e53f6ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ritorna la directory dell'ora.  <a href="#a03b8142b4f95d1627df5e0f52e53f6ca"></a><br/></td></tr>
+<tr class="memitem:a8a13d72c3cb10a5bf8b1397b0dc17c5e"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#a8a13d72c3cb10a5bf8b1397b0dc17c5e">get_file_ora</a> (const char *nome_cir, int campo, const <a class="el" href="structora__t.html">ora_t</a> *ora)</td></tr>
+<tr class="memdesc:a8a13d72c3cb10a5bf8b1397b0dc17c5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ritorna il file dell'ora.  <a href="#a8a13d72c3cb10a5bf8b1397b0dc17c5e"></a><br/></td></tr>
+<tr class="memitem:a46e5fbfc2de2a13577465c4714f9f92c"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#a46e5fbfc2de2a13577465c4714f9f92c">get_dir_giocatore</a> (const char *nome_cir)</td></tr>
+<tr class="memdesc:a46e5fbfc2de2a13577465c4714f9f92c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ritorna la directory del giocatore.  <a href="#a46e5fbfc2de2a13577465c4714f9f92c"></a><br/></td></tr>
+<tr class="memitem:a9c562f044dccef37a99e8301cddfe32f"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#a9c562f044dccef37a99e8301cddfe32f">get_file_giocatore</a> (const char *nome_cir, int ID)</td></tr>
+<tr class="memdesc:a9c562f044dccef37a99e8301cddfe32f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ritorna il file del giocatore.  <a href="#a9c562f044dccef37a99e8301cddfe32f"></a><br/></td></tr>
+<tr class="memitem:a44e4811fccd8c6536e391767ec5159af"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#a44e4811fccd8c6536e391767ec5159af">get_dir_campo</a> (const char *nome_cir, int n)</td></tr>
+<tr class="memdesc:a44e4811fccd8c6536e391767ec5159af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ritorna la directory del campo.  <a href="#a44e4811fccd8c6536e391767ec5159af"></a><br/></td></tr>
+<tr class="memitem:acfd577bf437af73a5b4e83d32911a9f6"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#acfd577bf437af73a5b4e83d32911a9f6">get_file_campo</a> (const char *nome_cir, int n)</td></tr>
+<tr class="memdesc:acfd577bf437af73a5b4e83d32911a9f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ritorna il file del campo.  <a href="#acfd577bf437af73a5b4e83d32911a9f6"></a><br/></td></tr>
+<tr class="memitem:a0f46dea7b759350133eea572963509ff"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#a0f46dea7b759350133eea572963509ff">elimina_sub_directory</a> (const char *dir_)</td></tr>
+<tr class="memdesc:a0f46dea7b759350133eea572963509ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina ricorsivamente le sottodirectory della directory passata.  <a href="#a0f46dea7b759350133eea572963509ff"></a><br/></td></tr>
+<tr class="memitem:a5be4d4dad972d003a60acda0a2e90339"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#a5be4d4dad972d003a60acda0a2e90339">file_nascosto</a> (const char file[])</td></tr>
+<tr class="memdesc:a5be4d4dad972d003a60acda0a2e90339"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controlla se un file è nascosto.  <a href="#a5be4d4dad972d003a60acda0a2e90339"></a><br/></td></tr>
+<tr class="memitem:aa82e7288bfea5165a7d63b66eaea48d5"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#aa82e7288bfea5165a7d63b66eaea48d5">get_dir_circolo</a> (const char *nome_cir)</td></tr>
+<tr class="memdesc:aa82e7288bfea5165a7d63b66eaea48d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ritorna la directory del circolo.  <a href="#aa82e7288bfea5165a7d63b66eaea48d5"></a><br/></td></tr>
+<tr class="memitem:a09f4d48bb1bddd3b628ba62f8d276c49"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#a09f4d48bb1bddd3b628ba62f8d276c49">salva_circolo</a> (const <a class="el" href="structcircolo__t.html">circolo_t</a> *<a class="el" href="handler_8cc.html#afdb5d4cc28256fee3f79b189c6a6ef58">circolo</a>)</td></tr>
+<tr class="memdesc:a09f4d48bb1bddd3b628ba62f8d276c49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Salva su file i dati del circolo.  <a href="#a09f4d48bb1bddd3b628ba62f8d276c49"></a><br/></td></tr>
+<tr class="memitem:ae58c887a1fc340538de88e9c46ff3100"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcircolo__t.html">circolo_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#ae58c887a1fc340538de88e9c46ff3100">carica_circolo</a> (const char nome[])</td></tr>
+<tr class="memdesc:ae58c887a1fc340538de88e9c46ff3100"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carica da file i dati del circolo Carica dalla directory del programma i dati del circolo.  <a href="#ae58c887a1fc340538de88e9c46ff3100"></a><br/></td></tr>
+<tr class="memitem:aef6d85bdb65df00e55be504b21ea5a12"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#aef6d85bdb65df00e55be504b21ea5a12">salva_giocatore</a> (const <a class="el" href="structgiocatore__t.html">giocatore_t</a> *giocatore, const <a class="el" href="structcircolo__t.html">circolo_t</a> *<a class="el" href="handler_8cc.html#afdb5d4cc28256fee3f79b189c6a6ef58">circolo</a>)</td></tr>
+<tr class="memdesc:aef6d85bdb65df00e55be504b21ea5a12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Salva il giocatore su file.  <a href="#aef6d85bdb65df00e55be504b21ea5a12"></a><br/></td></tr>
+<tr class="memitem:ad16db5f64f651d7614e4b39e29289c88"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgiocatore__t.html">giocatore_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#ad16db5f64f651d7614e4b39e29289c88">carica_giocatore</a> (const char file[], <a class="el" href="structcircolo__t.html">circolo_t</a> *<a class="el" href="handler_8cc.html#afdb5d4cc28256fee3f79b189c6a6ef58">circolo</a>)</td></tr>
+<tr class="memdesc:ad16db5f64f651d7614e4b39e29289c88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carica un giocatore da file Carica i dati del giocatore dal file e aggancia il giocatore al circolo.  <a href="#ad16db5f64f651d7614e4b39e29289c88"></a><br/></td></tr>
+<tr class="memitem:a1946bbd82e8da6a23d39f144da47261c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#a1946bbd82e8da6a23d39f144da47261c">salva_campo</a> (const <a class="el" href="structcampo__t.html">campo_t</a> *campo, const <a class="el" href="structcircolo__t.html">circolo_t</a> *<a class="el" href="handler_8cc.html#afdb5d4cc28256fee3f79b189c6a6ef58">circolo</a>)</td></tr>
+<tr class="memdesc:a1946bbd82e8da6a23d39f144da47261c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Salva il campo su file Salva il campo su un file nella directory del circolo.  <a href="#a1946bbd82e8da6a23d39f144da47261c"></a><br/></td></tr>
+<tr class="memitem:a48aa2e48d9f514715dfb3e0426874085"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcampo__t.html">campo_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#a48aa2e48d9f514715dfb3e0426874085">carica_campo</a> (const char file[], <a class="el" href="structcircolo__t.html">circolo_t</a> *<a class="el" href="handler_8cc.html#afdb5d4cc28256fee3f79b189c6a6ef58">circolo</a>)</td></tr>
+<tr class="memdesc:a48aa2e48d9f514715dfb3e0426874085"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carica il campo da file.  <a href="#a48aa2e48d9f514715dfb3e0426874085"></a><br/></td></tr>
+<tr class="memitem:ab7a55ef58177bf8857c1d1121ce6c637"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#ab7a55ef58177bf8857c1d1121ce6c637">salva_ora</a> (const <a class="el" href="structora__t.html">ora_t</a> *ora, const <a class="el" href="structcampo__t.html">campo_t</a> *campo, const <a class="el" href="structcircolo__t.html">circolo_t</a> *<a class="el" href="handler_8cc.html#afdb5d4cc28256fee3f79b189c6a6ef58">circolo</a>)</td></tr>
+<tr class="memdesc:ab7a55ef58177bf8857c1d1121ce6c637"><td class="mdescLeft">&#160;</td><td class="mdescRight">Salva l'ora su file.  <a href="#ab7a55ef58177bf8857c1d1121ce6c637"></a><br/></td></tr>
+<tr class="memitem:a6a67616e7c83305dc149ecbfe9e3554f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structora__t.html">ora_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#a6a67616e7c83305dc149ecbfe9e3554f">carica_ora</a> (char file[], <a class="el" href="structcampo__t.html">campo_t</a> *campo, <a class="el" href="structcircolo__t.html">circolo_t</a> *<a class="el" href="handler_8cc.html#afdb5d4cc28256fee3f79b189c6a6ef58">circolo</a>)</td></tr>
+<tr class="memdesc:a6a67616e7c83305dc149ecbfe9e3554f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carica l'ora dal file.  <a href="#a6a67616e7c83305dc149ecbfe9e3554f"></a><br/></td></tr>
+<tr class="memitem:a6b5cce7059635c9b27474d6b4d54d4f6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#a6b5cce7059635c9b27474d6b4d54d4f6">backup</a> (const char file[], <a class="el" href="structcircolo__t.html">circolo_t</a> *<a class="el" href="handler_8cc.html#afdb5d4cc28256fee3f79b189c6a6ef58">circolo</a>)</td></tr>
+<tr class="memdesc:a6b5cce7059635c9b27474d6b4d54d4f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea un backup del circolo.  <a href="#a6b5cce7059635c9b27474d6b4d54d4f6"></a><br/></td></tr>
+<tr class="memitem:af656044d932e2dc1a62b5a39576d1f0e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#af656044d932e2dc1a62b5a39576d1f0e">ripristina</a> (const char file[])</td></tr>
+<tr class="memdesc:af656044d932e2dc1a62b5a39576d1f0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ripristina un backup.  <a href="#af656044d932e2dc1a62b5a39576d1f0e"></a><br/></td></tr>
+<tr class="memitem:a76f8fd85c112dc80647fa4892339570c"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#a76f8fd85c112dc80647fa4892339570c">get_nome_backup</a> (const char file[])</td></tr>
+<tr class="memdesc:a76f8fd85c112dc80647fa4892339570c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ritorna il nome del circolo ai cui fa riferimento il file di backup.  <a href="#a76f8fd85c112dc80647fa4892339570c"></a><br/></td></tr>
+<tr class="memitem:a80f1a81cceb1888d0c0f1dba4a465ed1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#a80f1a81cceb1888d0c0f1dba4a465ed1">elimina_file_giocatore</a> (<a class="el" href="structgiocatore__t.html">giocatore_t</a> *giocatore, <a class="el" href="structcircolo__t.html">circolo_t</a> *<a class="el" href="handler_8cc.html#afdb5d4cc28256fee3f79b189c6a6ef58">circolo</a>)</td></tr>
+<tr class="memdesc:a80f1a81cceb1888d0c0f1dba4a465ed1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina il file del giocatore.  <a href="#a80f1a81cceb1888d0c0f1dba4a465ed1"></a><br/></td></tr>
+<tr class="memitem:ae0db214f2e6d02992b5a15f693352ed8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#ae0db214f2e6d02992b5a15f693352ed8">elimina_file_campo</a> (<a class="el" href="structcampo__t.html">campo_t</a> *campo, <a class="el" href="structcircolo__t.html">circolo_t</a> *<a class="el" href="handler_8cc.html#afdb5d4cc28256fee3f79b189c6a6ef58">circolo</a>)</td></tr>
+<tr class="memdesc:ae0db214f2e6d02992b5a15f693352ed8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina il file del campo.  <a href="#ae0db214f2e6d02992b5a15f693352ed8"></a><br/></td></tr>
+<tr class="memitem:aa4be40bc80a7ce416b6b3270455775d4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#aa4be40bc80a7ce416b6b3270455775d4">elimina_file_ora</a> (<a class="el" href="structora__t.html">ora_t</a> *ora, <a class="el" href="structcampo__t.html">campo_t</a> *campo, <a class="el" href="structcircolo__t.html">circolo_t</a> *<a class="el" href="handler_8cc.html#afdb5d4cc28256fee3f79b189c6a6ef58">circolo</a>)</td></tr>
+<tr class="memdesc:aa4be40bc80a7ce416b6b3270455775d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina il file dell'ora.  <a href="#aa4be40bc80a7ce416b6b3270455775d4"></a><br/></td></tr>
+<tr class="memitem:a75d94cb4abf6c12c555117417dbd21c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#a75d94cb4abf6c12c555117417dbd21c1">elimina_file_circolo</a> (const char *nome_cir)</td></tr>
+<tr class="memdesc:a75d94cb4abf6c12c555117417dbd21c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina l'intera struttura delle directory rapprensentanti il circolo.  <a href="#a75d94cb4abf6c12c555117417dbd21c1"></a><br/></td></tr>
+<tr class="memitem:a51256bf33628453f9e0e7c99b76e7374"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#a51256bf33628453f9e0e7c99b76e7374">circolo_esistente</a> (const char *nome_cir)</td></tr>
+<tr class="memdesc:a51256bf33628453f9e0e7c99b76e7374"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controlla se esiste un circolo con tale nome.  <a href="#a51256bf33628453f9e0e7c99b76e7374"></a><br/></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="var-members"></a>
+Variabili</h2></td></tr>
+<tr class="memitem:a4498167a41f7467a5dddeb2bfaea59b6"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#a4498167a41f7467a5dddeb2bfaea59b6">DATA_PATH</a> [] = &quot;data&quot;</td></tr>
+<tr class="memdesc:a4498167a41f7467a5dddeb2bfaea59b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Directory dove il programma memorizza i dati.  <a href="#a4498167a41f7467a5dddeb2bfaea59b6"></a><br/></td></tr>
+<tr class="memitem:a5a1a7a8b73922583ea389cdc7b12575c"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#a5a1a7a8b73922583ea389cdc7b12575c">DATI_CIRCOLO</a> [] = &quot;circolo.txt&quot;</td></tr>
+<tr class="memdesc:a5a1a7a8b73922583ea389cdc7b12575c"><td class="mdescLeft">&#160;</td><td class="mdescRight">File contenente i dati del circolo.  <a href="#a5a1a7a8b73922583ea389cdc7b12575c"></a><br/></td></tr>
+<tr class="memitem:a99f3c14c7a2142b632d6fe6ecdf09f6d"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#a99f3c14c7a2142b632d6fe6ecdf09f6d">DATI_CAMPO</a> [] = &quot;campo.txt&quot;</td></tr>
+<tr class="memdesc:a99f3c14c7a2142b632d6fe6ecdf09f6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">File contenente i dati del campo.  <a href="#a99f3c14c7a2142b632d6fe6ecdf09f6d"></a><br/></td></tr>
+<tr class="memitem:a113e87d03f38fe75cedb3d5709ae9282"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#a113e87d03f38fe75cedb3d5709ae9282">GIOCATORI_DIR</a> [] = &quot;giocatori&quot;</td></tr>
+<tr class="memdesc:a113e87d03f38fe75cedb3d5709ae9282"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cartella dei giocatori.  <a href="#a113e87d03f38fe75cedb3d5709ae9282"></a><br/></td></tr>
+<tr class="memitem:a2ff7122334a9754353adef957ff1007f"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#a2ff7122334a9754353adef957ff1007f">CAMPI_DIR</a> [] = &quot;campi&quot;</td></tr>
+<tr class="memdesc:a2ff7122334a9754353adef957ff1007f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cartella dei campi.  <a href="#a2ff7122334a9754353adef957ff1007f"></a><br/></td></tr>
+<tr class="memitem:a4e41eb5148197c7f1dd04e765e648feb"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#a4e41eb5148197c7f1dd04e765e648feb">ARCHIVIO_DIR</a> [] = &quot;archivio&quot;</td></tr>
+<tr class="memdesc:a4e41eb5148197c7f1dd04e765e648feb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cartella delle ore archiviate.  <a href="#a4e41eb5148197c7f1dd04e765e648feb"></a><br/></td></tr>
+<tr class="memitem:a5da5b71bb34d1b4eed8ed9eb40e3f682"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#a5da5b71bb34d1b4eed8ed9eb40e3f682">ORE_DIR</a> [] = &quot;ore&quot;</td></tr>
+<tr class="memdesc:a5da5b71bb34d1b4eed8ed9eb40e3f682"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cartella delle ore.  <a href="#a5da5b71bb34d1b4eed8ed9eb40e3f682"></a><br/></td></tr>
+<tr class="memitem:ab0b03ad19de1e26bd0293def15f73d75"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#ab0b03ad19de1e26bd0293def15f73d75">FILE_EXT</a> [] = &quot;.txt&quot;</td></tr>
+<tr class="memdesc:ab0b03ad19de1e26bd0293def15f73d75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estensione dei file.  <a href="#ab0b03ad19de1e26bd0293def15f73d75"></a><br/></td></tr>
+<tr class="memitem:a38d19e747bdb249f2c8b044ab34b1876"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file__IO_8cc.html#a38d19e747bdb249f2c8b044ab34b1876">ETX</a> = 3</td></tr>
+<tr class="memdesc:a38d19e747bdb249f2c8b044ab34b1876"><td class="mdescLeft">&#160;</td><td class="mdescRight">End of text.  <a href="#a38d19e747bdb249f2c8b044ab34b1876"></a><br/></td></tr>
+</table>
+<a name="details" id="details"></a><h2>Descrizione dettagliata</h2>
+<div class="textblock"><p>File contentente il modulo file_IO. </p>
+<p>Fornisce i metodi per il caricamento/salvataggio su/da file </p>
+</div><h2>Documentazione delle funzioni</h2>
+<a class="anchor" id="a6b5cce7059635c9b27474d6b4d54d4f6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool backup </td>
+          <td>(</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>file</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcircolo__t.html">circolo_t</a> *&#160;</td>
+          <td class="paramname"><em>circolo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crea un backup del circolo. </p>
+<p>Crea un backup del circolo e lo salva sul file </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>File nel quale salvare il backup </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">circolo</td><td>Circolo da salvare </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>successo (TRUE) o fallimento (FALSE) </dd></dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <span class="keywordflow">if</span> (circolo == 0)</div>
+<div class="line">                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">bool</span> stato;</div>
+<div class="line">        ofstream fout(file);</div>
+<div class="line">        <span class="keywordflow">if</span> (!fout){</div>
+<div class="line">                <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;Errore nella creazione del file&quot;</span>&lt;&lt;endl)</div>
+<div class="line">                <a class="code" href="debug_8h.html#a43e8ca05b2c0abb00d31e535b4186b7e" title="Mostra stato variabili ed errori veri e propri.">D2</a>(cout&lt;&lt;&quot;File: &quot;&lt;&lt;file&lt;&lt;endl)</div>
+<div class="line">                return false;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">char</span> *cartella = g_build_filename(DATA_PATH, circolo-&gt;nome-&gt;str, NULL);</div>
+<div class="line"></div>
+<div class="line">        fout&lt;&lt;&quot;&lt;ACE BACKUP circolo=&quot;&lt;&lt;circolo-&gt;nome-&gt;str&lt;&lt;&quot;&gt;&quot;&lt;&lt;endl;</div>
+<div class="line">        </div>
+<div class="line">        stato = <a class="code" href="file__IO_8cc.html#a6e2db1940f05de9ecb47aabc582f21ad" title="Copia la cartella nello stream.">backup_dir</a>(fout, cartella);</div>
+<div class="line"></div>
+<div class="line">        g_free(cartella);</div>
+<div class="line">        fout.close();</div>
+<div class="line"></div>
+<div class="line">        return stato;</div>
+<div class="line">        </div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a6e2db1940f05de9ecb47aabc582f21ad"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool backup_dir </td>
+          <td>(</td>
+          <td class="paramtype">ofstream &amp;&#160;</td>
+          <td class="paramname"><em>f1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>cartella</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copia la cartella nello stream. </p>
+<p>Copia il contenuto della cartella compresi i file nello stream </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">f1</td><td>Stream nel quale copiare la cartella </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cartella</td><td>Cartella da copiare </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>successo (TRUE) o fallimento (FALSE) </dd></dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <span class="keywordflow">if</span> (!f1){</div>
+<div class="line">                <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;Lo stream passato non è valido&quot;</span>&lt;&lt;endl)</div>
+<div class="line">                return false;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        GDir *dir = g_dir_open(cartella, 0, NULL);</div>
+<div class="line">        const <span class="keywordtype">char</span> *file = 0;</div>
+<div class="line">        <span class="keywordtype">char</span> *file_ = 0;</div>
+<div class="line">        </div>
+<div class="line">        f1&lt;&lt;&quot;&lt;cartella &quot;&lt;&lt;cartella&lt;&lt;&quot;&gt;&quot;&lt;&lt;endl;  </div>
+<div class="line"></div>
+<div class="line">        while( (file = g_dir_read_name(dir)) ){</div>
+<div class="line">                file_ = g_build_filename(cartella, file, NULL);</div>
+<div class="line"></div>
+<div class="line">                <span class="keywordflow">if</span> ( g_file_test(file_, G_FILE_TEST_IS_DIR) )</div>
+<div class="line">                        <a class="code" href="file__IO_8cc.html#a6e2db1940f05de9ecb47aabc582f21ad" title="Copia la cartella nello stream.">backup_dir</a>(f1, file_);</div>
+<div class="line">                <span class="keywordflow">if</span> ( g_file_test(file_, G_FILE_TEST_IS_REGULAR) )</div>
+<div class="line">                        <a class="code" href="file__IO_8cc.html#a8d9c9967c67e1748ed3abc168fd0387a" title="Copia il file nello stream.">backup_file</a>(f1, file_);</div>
+<div class="line"></div>
+<div class="line">                g_free(file_);</div>
+<div class="line">        }</div>
+<div class="line">                </div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a8d9c9967c67e1748ed3abc168fd0387a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool backup_file </td>
+          <td>(</td>
+          <td class="paramtype">ofstream &amp;&#160;</td>
+          <td class="paramname"><em>f1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>file</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copia il file nello stream. </p>
+<p>Copia il contenuto del file nello stream </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">f1</td><td>Stream in cui copiare il file </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>File da copiare </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Successo (TRUE) o fallimento (FALSE) </dd></dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <span class="keywordflow">if</span> (!f1){</div>
+<div class="line">                <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;Lo stream passato non è valido&quot;</span>&lt;&lt;endl)</div>
+<div class="line">                return false;</div>
+<div class="line">        }</div>
+<div class="line">        </div>
+<div class="line">        streambuf *buf = f1.rdbuf();</div>
+<div class="line">        ifstream f2(file);</div>
+<div class="line">        if (!f2){</div>
+<div class="line">                <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;Errore nell&#39;apertura del file&quot;</span>&lt;&lt;endl)</div>
+<div class="line">                <a class="code" href="debug_8h.html#a43e8ca05b2c0abb00d31e535b4186b7e" title="Mostra stato variabili ed errori veri e propri.">D2</a>(cout&lt;&lt;&quot;File: &quot;&lt;&lt;file&lt;&lt;endl)</div>
+<div class="line">                return false;</div>
+<div class="line">        }</div>
+<div class="line">        </div>
+<div class="line">        <span class="comment">//Scrittura markup</span></div>
+<div class="line">        f1&lt;&lt;&quot;&lt;file &quot;&lt;&lt;file&lt;&lt;&quot;&gt;&quot;&lt;&lt;endl;</div>
+<div class="line">        </div>
+<div class="line">        <span class="comment">//Scrittura contenuto file</span></div>
+<div class="line">        while( !f2.eof() ){</div>
+<div class="line">                f2&gt;&gt;noskipws&gt;&gt;buf;</div>
+<div class="line">                f1.flush();</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//Indico la fine del markup e quindi del file scritto</span></div>
+<div class="line">        f1&lt;&lt;<a class="code" href="file__IO_8cc.html#a38d19e747bdb249f2c8b044ab34b1876" title="End of text.">ETX</a>&lt;&lt;endl;</div>
+<div class="line"></div>
+<div class="line">        f2.close();</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a48aa2e48d9f514715dfb3e0426874085"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcampo__t.html">campo_t</a>* carica_campo </td>
+          <td>(</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>file</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcircolo__t.html">circolo_t</a> *&#160;</td>
+          <td class="paramname"><em>circolo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Carica il campo da file. </p>
+<p>Carica il campo dal file e lo aggancia al circolo </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>File del campo </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">circolo</td><td>Circolo al quale agganciare il campo </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Puntatore al campo appena creato </dd></dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <a class="code" href="structcampo__t.html" title="Struttura rappresentate i campi.">campo_t</a> *campo = 0;</div>
+<div class="line">        <span class="keywordtype">int</span> numero;</div>
+<div class="line">        <a class="code" href="struttura__dati_8h.html#a0c12af1750520ca1d5e0a1b120ed33b7" title="Tipo che rappresenta il tipo di terreno.">terreno_t</a> terreno;</div>
+<div class="line">        <a class="code" href="struttura__dati_8h.html#ad0f5a2191c29d4cd4c52506513493755" title="Tipo che rappresenta il tipo di copertura del campo.">copertura_t</a> copertura;</div>
+<div class="line">        <span class="keywordtype">char</span> *note = 0;</div>
+<div class="line"></div>
+<div class="line">        ifstream f1(file);</div>
+<div class="line">        <span class="keywordflow">if</span> (!f1){</div>
+<div class="line">                <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;Errore nell&#39;apertura del file&quot;</span>&lt;&lt;endl)</div>
+<div class="line">                return 0;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        f1&gt;&gt;numero;</div>
+<div class="line">        f1&gt;&gt;copertura;</div>
+<div class="line">        f1&gt;&gt;terreno;</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//Lunghezza file</span></div>
+<div class="line">        f1.ignore();</div>
+<div class="line">        <span class="keywordtype">int</span> pos = f1.tellg();</div>
+<div class="line">        f1.seekg(0, f1.end);</div>
+<div class="line">        <span class="keywordtype">int</span> size = f1.tellg();</div>
+<div class="line">        f1.seekg(pos, f1.beg);</div>
+<div class="line">        </div>
+<div class="line">        note = new <span class="keywordtype">char</span>[size-pos+1];    </div>
+<div class="line">        </div>
+<div class="line">        <span class="comment">//Recupero informazioni</span></div>
+<div class="line">        f1.getline(note, size-pos, EOF);</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//Chiusura file</span></div>
+<div class="line">        f1.close();</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//Creazione circolo</span></div>
+<div class="line">        campo = <a class="code" href="accesso__dati_8cc.html#a377ecb279ec8310e63e4b6c1196e703b" title="Aggiunge un campo al Circolo.">aggiungi_campo</a>(numero, copertura, terreno, note, NULL, circolo);</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//Deallocazione memoria utilizzata</span></div>
+<div class="line">        delete[] note;</div>
+<div class="line"></div>
+<div class="line">        return campo;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ae58c887a1fc340538de88e9c46ff3100"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcircolo__t.html">circolo_t</a>* carica_circolo </td>
+          <td>(</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>nome</em>[]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Carica da file i dati del circolo Carica dalla directory del programma i dati del circolo. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nome</td><td>Nome del circolo da caricare </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>puntatore al circolo caricato </dd></dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <span class="comment">//Caricamento dati Circolo</span></div>
+<div class="line">        <a class="code" href="structcircolo__t.html" title="Struttura reppresentante il Circolo.">circolo_t</a> *<a class="code" href="handler_8cc.html#afdb5d4cc28256fee3f79b189c6a6ef58">circolo</a> = 0;</div>
+<div class="line">        <span class="keywordtype">char</span> *testo = 0;</div>
+<div class="line">        <span class="keywordtype">char</span> **campi_c = 0;</div>
+<div class="line">        <span class="keywordtype">int</span> size = 0;</div>
+<div class="line">        <span class="keywordtype">char</span> *file_c = <a class="code" href="file__IO_8cc.html#ab55bf4cf291db643b75f0bcfeb2bc2c9" title="Ritorna il file del circolo.">get_file_circolo</a>(nome);</div>
+<div class="line">        </div>
+<div class="line">        ifstream f1(file_c);</div>
+<div class="line">        <span class="keywordflow">if</span> (!f1){</div>
+<div class="line">                <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;Errore apertura file&quot;</span>&lt;&lt;endl)</div>
+<div class="line">                <a class="code" href="debug_8h.html#a43e8ca05b2c0abb00d31e535b4186b7e" title="Mostra stato variabili ed errori veri e propri.">D2</a>(cout&lt;&lt;&quot;File: &quot;&lt;&lt;file_c&lt;&lt;endl)</div>
+<div class="line">                return 0;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//Lunghezza file</span></div>
+<div class="line">        f1.seekg(0, f1.end);</div>
+<div class="line">        size = f1.tellg();</div>
+<div class="line">        f1.seekg(0, f1.beg);</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//Creazione buffer</span></div>
+<div class="line">        testo = new <span class="keywordtype">char</span>[size+1];</div>
+<div class="line">        </div>
+<div class="line">        <span class="comment">//Recupero informazioni</span></div>
+<div class="line">        f1.getline(testo, size, EOF);</div>
+<div class="line">        campi_c = g_strsplit(testo, &quot;\n&quot;, 0);</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//Chiusura file</span></div>
+<div class="line">        f1.close();</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//Creazione circolo</span></div>
+<div class="line">        circolo = <a class="code" href="accesso__dati_8cc.html#a5f411b92b995ff84d3acd8bc0da1191e" title="Inizializza il Circolo con i dati della società.">inizializza_circolo</a>(campi_c[0], campi_c[1], campi_c[2], campi_c[3]);</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//Deallocazione memoria utilizzata</span></div>
+<div class="line">        g_strfreev(campi_c);</div>
+<div class="line">        g_free(file_c);</div>
+<div class="line">        delete[] testo;</div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//Caricamento giocatori del circolo</span></div>
+<div class="line">        const <span class="keywordtype">char</span> *file_g = 0;</div>
+<div class="line">        <span class="keywordtype">char</span> *n_dir_g = <a class="code" href="file__IO_8cc.html#a46e5fbfc2de2a13577465c4714f9f92c" title="Ritorna la directory del giocatore.">get_dir_giocatore</a>(nome);</div>
+<div class="line">        GDir *dir_g = g_dir_open(n_dir_g, 0, NULL);</div>
+<div class="line"></div>
+<div class="line">        if (dir_g != NULL){</div>
+<div class="line"></div>
+<div class="line">                <span class="keywordflow">while</span>( (file_g = g_dir_read_name(dir_g)) ){</div>
+<div class="line">                        <span class="keywordflow">if</span> ( <a class="code" href="file__IO_8cc.html#a5be4d4dad972d003a60acda0a2e90339" title="Controlla se un file è nascosto.">file_nascosto</a>(file_g) )</div>
+<div class="line">                                <span class="keywordflow">continue</span>;</div>
+<div class="line">                        </div>
+<div class="line">                        <span class="keywordtype">char</span> *giocatore = g_build_filename(n_dir_g, file_g, NULL);</div>
+<div class="line">        </div>
+<div class="line">                        <a class="code" href="file__IO_8cc.html#ad16db5f64f651d7614e4b39e29289c88" title="Carica un giocatore da file Carica i dati del giocatore dal file e aggancia il giocatore al circolo...">carica_giocatore</a>(giocatore, circolo);</div>
+<div class="line"></div>
+<div class="line">                        <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;Giocatore caricato&quot;</span>&lt;&lt;endl)</div>
+<div class="line">                        <a class="code" href="debug_8h.html#a43e8ca05b2c0abb00d31e535b4186b7e" title="Mostra stato variabili ed errori veri e propri.">D2</a>(cout&lt;&lt;giocatore&lt;&lt;endl)</div>
+<div class="line"></div>
+<div class="line">                        g_free(giocatore);</div>
+<div class="line">                }</div>
+<div class="line">        </div>
+<div class="line">                g_dir_close(dir_g);</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        g_free(n_dir_g);</div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//Caricamento campi del circolo</span></div>
+<div class="line">        const <span class="keywordtype">char</span> *file = 0;</div>
+<div class="line">        <a class="code" href="structcampo__t.html" title="Struttura rappresentate i campi.">campo_t</a> *campo_caricato = 0;    </div>
+<div class="line">        <span class="keywordtype">char</span> *ora = 0;</div>
+<div class="line">        <span class="keywordtype">char</span> *dati = 0;</div>
+<div class="line">        <span class="keywordtype">char</span> *campo = 0;</div>
+<div class="line">        <span class="keywordtype">char</span> *campi = g_build_filename(DATA_PATH, nome, <a class="code" href="file__IO_8cc.html#a2ff7122334a9754353adef957ff1007f" title="Cartella dei campi.">CAMPI_DIR</a>, NULL);</div>
+<div class="line">        GDir *dir = g_dir_open(campi, 0, NULL);</div>
+<div class="line">        </div>
+<div class="line">        if (dir != NULL){</div>
+<div class="line"></div>
+<div class="line">                <span class="keywordflow">while</span>( (file = g_dir_read_name(dir)) ){</div>
+<div class="line">                        <span class="keywordflow">if</span> ( <a class="code" href="file__IO_8cc.html#a5be4d4dad972d003a60acda0a2e90339" title="Controlla se un file è nascosto.">file_nascosto</a>(file) )</div>
+<div class="line">                                <span class="keywordflow">continue</span>;</div>
+<div class="line">        </div>
+<div class="line">                        campo = g_build_filename(campi, file, NULL);</div>
+<div class="line">        </div>
+<div class="line">                        <span class="keywordflow">if</span> ( !g_file_test(campo, G_FILE_TEST_IS_DIR) ){</div>
+<div class="line">                                g_free(campo);</div>
+<div class="line">                                <span class="keywordflow">continue</span>;</div>
+<div class="line">                        }</div>
+<div class="line">        </div>
+<div class="line">                        dati = g_build_filename(campo, <a class="code" href="file__IO_8cc.html#a99f3c14c7a2142b632d6fe6ecdf09f6d" title="File contenente i dati del campo.">DATI_CAMPO</a>, NULL);</div>
+<div class="line">        </div>
+<div class="line">                        campo_caricato = <a class="code" href="file__IO_8cc.html#a48aa2e48d9f514715dfb3e0426874085" title="Carica il campo da file.">carica_campo</a>(dati, circolo);</div>
+<div class="line"></div>
+<div class="line">                        <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;Campo caricato&quot;</span>&lt;&lt;endl)</div>
+<div class="line">                        <a class="code" href="debug_8h.html#a43e8ca05b2c0abb00d31e535b4186b7e" title="Mostra stato variabili ed errori veri e propri.">D2</a>(cout&lt;&lt;dati&lt;&lt;endl)</div>
+<div class="line">        </div>
+<div class="line">                        g_free(dati);</div>
+<div class="line">        </div>
+<div class="line">                        dati = g_build_filename(campo, <a class="code" href="file__IO_8cc.html#a5da5b71bb34d1b4eed8ed9eb40e3f682" title="Cartella delle ore.">ORE_DIR</a>, NULL); </div>
+<div class="line"></div>
+<div class="line">                        g_free(campo);</div>
+<div class="line"></div>
+<div class="line">                        GDir *dir_ore = g_dir_open(dati, 0, NULL);</div>
+<div class="line">        </div>
+<div class="line">                        if (dir_ore == NULL){</div>
+<div class="line">                                g_free(dati);</div>
+<div class="line">                                <span class="keywordflow">continue</span>;</div>
+<div class="line">                        }</div>
+<div class="line">                        </div>
+<div class="line">                        <span class="keywordflow">while</span>( (file = g_dir_read_name(dir_ore)) ){</div>
+<div class="line">                                <span class="keywordflow">if</span> ( <a class="code" href="file__IO_8cc.html#a5be4d4dad972d003a60acda0a2e90339" title="Controlla se un file è nascosto.">file_nascosto</a>(file) )</div>
+<div class="line">                                        <span class="keywordflow">continue</span>;</div>
+<div class="line">        </div>
+<div class="line">                                ora = g_build_filename(dati, file, NULL);</div>
+<div class="line">                                </div>
+<div class="line">                                <a class="code" href="file__IO_8cc.html#a6a67616e7c83305dc149ecbfe9e3554f" title="Carica l&#39;ora dal file.">carica_ora</a>(ora, campo_caricato, circolo);</div>
+<div class="line"></div>
+<div class="line">                                <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;Ora caricata&quot;</span>&lt;&lt;endl)</div>
+<div class="line">                                <a class="code" href="debug_8h.html#a43e8ca05b2c0abb00d31e535b4186b7e" title="Mostra stato variabili ed errori veri e propri.">D2</a>(cout&lt;&lt;ora&lt;&lt;endl)</div>
+<div class="line">                </div>
+<div class="line">                                g_free(ora);</div>
+<div class="line">                        }</div>
+<div class="line">        </div>
+<div class="line">                        g_dir_close(dir_ore);</div>
+<div class="line">                        g_free(dati);</div>
+<div class="line">        </div>
+<div class="line">                }</div>
+<div class="line">        </div>
+<div class="line">                g_dir_close(dir);</div>
+<div class="line"></div>
+<div class="line">        } <span class="comment">// if (dir != NULL)</span></div>
+<div class="line"></div>
+<div class="line">        g_free(campi);</div>
+<div class="line"></div>
+<div class="line">        return circolo;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ad16db5f64f651d7614e4b39e29289c88"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structgiocatore__t.html">giocatore_t</a>* carica_giocatore </td>
+          <td>(</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>file</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcircolo__t.html">circolo_t</a> *&#160;</td>
+          <td class="paramname"><em>circolo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Carica un giocatore da file Carica i dati del giocatore dal file e aggancia il giocatore al circolo. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>File del giocatore </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">circolo</td><td>Circolo al quale agganciare il giocatore </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Puntatore al giocatore appena creato </dd></dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <a class="code" href="structgiocatore__t.html" title="Struttura rappresentante i giocatori.">giocatore_t</a> *giocatore = 0;</div>
+<div class="line">        <span class="keywordtype">char</span> *testo = 0;</div>
+<div class="line">        <span class="keywordtype">char</span> **campi = 0;</div>
+<div class="line">        <span class="keywordtype">int</span> size = 0;</div>
+<div class="line"></div>
+<div class="line">        ifstream f1(file);</div>
+<div class="line">        <span class="keywordflow">if</span> (!f1){</div>
+<div class="line">                <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;Errore nell&#39;apertura del file&quot;</span>&lt;&lt;endl)</div>
+<div class="line">                return 0;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//Lunghezza file</span></div>
+<div class="line">        f1.seekg(0, f1.end);</div>
+<div class="line">        size = f1.tellg();</div>
+<div class="line">        f1.seekg(0, f1.beg);</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//Creazione buffer</span></div>
+<div class="line">        testo = new <span class="keywordtype">char</span>[size+1];</div>
+<div class="line">        </div>
+<div class="line">        <span class="comment">//Recupero informazioni</span></div>
+<div class="line">        f1.getline(testo, size, EOF);</div>
+<div class="line">        campi = g_strsplit(testo, &quot;\n&quot;, 0);</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//Chiusura file</span></div>
+<div class="line">        f1.close();</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//Creazione circolo</span></div>
+<div class="line">        giocatore = <a class="code" href="accesso__dati_8cc.html#a866ed70e148eecf0441dfb6ac0a5ebe2" title="Aggiunge o modifica un giocatore al Circolo.">aggiungi_giocatore</a>(campi[1], campi[2], campi[3], campi[4], campi[5], campi[6], campi[7], campi[8], NULL, circolo);</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//Ripristino id e socio</span></div>
+<div class="line">        giocatore-&gt;ID = atoi(campi[0]);</div>
+<div class="line">        giocatore-&gt;socio = atoi(campi[9]);</div>
+<div class="line">        giocatore-&gt;retta = atoi(campi[10]);</div>
+<div class="line"></div>
+<div class="line">        if (giocatore-&gt;socio) </div>
+<div class="line">                circolo-&gt;n_soci++;</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//Deallocazione memoria utilizzata</span></div>
+<div class="line">        g_strfreev(campi);</div>
+<div class="line">        delete[] testo;</div>
+<div class="line"></div>
+<div class="line">        return giocatore;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a6a67616e7c83305dc149ecbfe9e3554f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structora__t.html">ora_t</a>* carica_ora </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>file</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcampo__t.html">campo_t</a> *&#160;</td>
+          <td class="paramname"><em>campo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcircolo__t.html">circolo_t</a> *&#160;</td>
+          <td class="paramname"><em>circolo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Carica l'ora dal file. </p>
+<p>Carica l'ora dal file selezionato e la aggancia al campo </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>File dell'ora </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">campo</td><td>Campo al quale agganciare </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">circolo</td><td>Circolo del campo </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Puntatore all'ora creata </dd></dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;Carica ora&quot;</span>&lt;&lt;endl)</div>
+<div class="line"></div>
+<div class="line">        <a class="code" href="structora__t.html" title="Struttura rappresentante le ore prenotate.">ora_t</a> *ora;</div>
+<div class="line">        <span class="keywordtype">char</span> data[11];</div>
+<div class="line">        <span class="keywordtype">int</span> orario, durata, <span class="keywordtype">id</span>;</div>
+<div class="line">        <a class="code" href="structgiocatore__t.html" title="Struttura rappresentante i giocatori.">giocatore_t</a> *prenotante;</div>
+<div class="line"></div>
+<div class="line">        ifstream f1(file);</div>
+<div class="line">        if (!f1){</div>
+<div class="line">                <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;Errore nell&#39;apertura del file&quot;</span>&lt;&lt;endl)</div>
+<div class="line">                return 0;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        f1&gt;&gt;orario;</div>
+<div class="line">        f1&gt;&gt;data;</div>
+<div class="line">        f1&gt;&gt;durata;</div>
+<div class="line">        f1&gt;&gt;<span class="keywordtype">id</span>;</div>
+<div class="line"></div>
+<div class="line">        GList *list = 0;</div>
+<div class="line">        list = <a class="code" href="accesso__dati_8h.html#a8c471a7dcca8667fd9f4019c9fe2e40f" title="Cerca all&#39;interno della lista gli elementi corrispondeti ai dati passati, il confronto è tra interi...">cerca_lista_int</a>(circolo-&gt;giocatori, ID, <span class="keywordtype">id</span>, <a class="code" href="structgiocatore__t.html" title="Struttura rappresentante i giocatori.">giocatore_t</a>);</div>
+<div class="line">        prenotante = (giocatore_t *) list-&gt;data;</div>
+<div class="line">        g_list_free(list);</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//Chiusura file</span></div>
+<div class="line">        f1.close();</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//Creazione circolo</span></div>
+<div class="line">        ora = <a class="code" href="accesso__dati_8cc.html#afb27649ae77b89edeb03bc022d948820" title="Aggiunge un ora al campo.">aggiungi_ora</a>(orario, data, durata, prenotante, campo);</div>
+<div class="line"></div>
+<div class="line">        return ora;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a51256bf33628453f9e0e7c99b76e7374"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool circolo_esistente </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>nome_cir</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Controlla se esiste un circolo con tale nome. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nome_cir</td><td>Nome del circolo </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>esito </dd></dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <span class="keywordtype">char</span> *dir = <a class="code" href="file__IO_8cc.html#aa82e7288bfea5165a7d63b66eaea48d5" title="Ritorna la directory del circolo.">get_dir_circolo</a>(nome_cir);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">bool</span> stato = g_file_test(dir, G_FILE_TEST_IS_DIR);</div>
+<div class="line"></div>
+<div class="line">        g_free(dir);</div>
+<div class="line">        </div>
+<div class="line">        <span class="keywordflow">return</span> stato;</div>
+<div class="line">}       </div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aac1855264c07df3797f68fe2e8c92600"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool controlla_directory </td>
+          <td>(</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>path</em>[]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Controlla l'esistenza della directory e se non esiste la crea. </p>
+<p>Se la directory esiste ritorna subito TRUE altrimenti ricostruisce l'albero delle directory per crearla </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>Indirizzo della directory </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>TRUE se la directory esiste o è stata creata, FALSE se non è stato possibile crearla </dd></dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <span class="keywordflow">if</span> ( g_file_test(path, G_FILE_TEST_IS_DIR) ) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"></div>
+<div class="line">        <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;Cartella non presente&quot;</span>&lt;&lt;endl);</div>
+<div class="line">        <span class="comment">//Se non esiste la crea</span></div>
+<div class="line">        <span class="keywordtype">char</span> *file = 0;</div>
+<div class="line">        <span class="keywordtype">char</span> *file_ = 0;</div>
+<div class="line">        <span class="keywordtype">char</span> **cartelle = g_strsplit(path, <span class="stringliteral">&quot;/&quot;</span>, 0);</div>
+<div class="line">        <span class="keywordtype">int</span> len = g_strv_length(cartelle);</div>
+<div class="line">        <a class="code" href="debug_8h.html#a43e8ca05b2c0abb00d31e535b4186b7e" title="Mostra stato variabili ed errori veri e propri.">D2</a>(cout&lt;&lt;<span class="stringliteral">&quot;len: &quot;</span>&lt;&lt;len&lt;&lt;endl)</div>
+<div class="line">        </div>
+<div class="line">        file = g_build_filename(cartelle[0], NULL);</div>
+<div class="line">        for (<span class="keywordtype">int</span> i = 0; i &lt; len; i++){</div>
+<div class="line">                <span class="keywordflow">if</span> ( !g_file_test(file, G_FILE_TEST_IS_DIR) ){</div>
+<div class="line"></div>
+<div class="line">                        <a class="code" href="debug_8h.html#a43e8ca05b2c0abb00d31e535b4186b7e" title="Mostra stato variabili ed errori veri e propri.">D2</a>(cout&lt;&lt;<span class="stringliteral">&quot;Creazione cartella: &quot;</span>&lt;&lt;file&lt;&lt;endl)</div>
+<div class="line">                        if ( g_mkdir(file, S_IRWXU) != 0 ){</div>
+<div class="line">                                <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;Impossibile creare cartella&quot;</span>&lt;&lt;endl)</div>
+<div class="line">                                return false;</div>
+<div class="line">                        }</div>
+<div class="line">                }</div>
+<div class="line">        </div>
+<div class="line">                file_ = g_build_filename(file, cartelle[i+1], NULL);</div>
+<div class="line">                g_free(file);</div>
+<div class="line">                file = file_;</div>
+<div class="line">        }</div>
+<div class="line">        </div>
+<div class="line">        g_free(file_);</div>
+<div class="line">        g_strfreev(cartelle);</div>
+<div class="line"></div>
+<div class="line">        return true;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ae0db214f2e6d02992b5a15f693352ed8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void elimina_file_campo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcampo__t.html">campo_t</a> *&#160;</td>
+          <td class="paramname"><em>campo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcircolo__t.html">circolo_t</a> *&#160;</td>
+          <td class="paramname"><em>circolo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elimina il file del campo. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">circolo</td><td>Circolo a cui è associato il campo </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">campo</td><td>Campo da eliminare </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Successo (TRUE) o fallimento (FALSE) </dd></dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <span class="keywordtype">char</span> *file = <a class="code" href="file__IO_8cc.html#a44e4811fccd8c6536e391767ec5159af" title="Ritorna la directory del campo.">get_dir_campo</a>(circolo-&gt;<a class="code" href="structcircolo__t.html#aa697bc3b2bef882ea48ca71972765d03">nome</a>-&gt;str, campo-&gt;<a class="code" href="structcampo__t.html#a6e0a6002a8c0d360f22d4a30bc1e37d0">numero</a>);</div>
+<div class="line">        </div>
+<div class="line">        <a class="code" href="file__IO_8cc.html#a0f46dea7b759350133eea572963509ff" title="Elimina ricorsivamente le sottodirectory della directory passata.">elimina_sub_directory</a>(file);</div>
+<div class="line">        g_rmdir(file);</div>
+<div class="line"></div>
+<div class="line">        g_free(file);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a75d94cb4abf6c12c555117417dbd21c1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void elimina_file_circolo </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>nome_cir</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elimina l'intera struttura delle directory rapprensentanti il circolo. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nome_cir</td><td>Nome del circolo </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <span class="keywordtype">char</span> *dir = <a class="code" href="file__IO_8cc.html#aa82e7288bfea5165a7d63b66eaea48d5" title="Ritorna la directory del circolo.">get_dir_circolo</a>(nome_cir);</div>
+<div class="line">        </div>
+<div class="line">        <a class="code" href="file__IO_8cc.html#a0f46dea7b759350133eea572963509ff" title="Elimina ricorsivamente le sottodirectory della directory passata.">elimina_sub_directory</a>(dir);</div>
+<div class="line">        g_rmdir(dir);</div>
+<div class="line"></div>
+<div class="line">        g_free(dir);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a80f1a81cceb1888d0c0f1dba4a465ed1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool elimina_file_giocatore </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgiocatore__t.html">giocatore_t</a> *&#160;</td>
+          <td class="paramname"><em>giocatore</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcircolo__t.html">circolo_t</a> *&#160;</td>
+          <td class="paramname"><em>circolo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elimina il file del giocatore. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">circolo</td><td>Circolo a cui è associato il giocatore </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">giocatore</td><td>Giocatore da eliminare </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Successo (TRUE) o fallimento (FALSE) </dd></dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;Elimina file giocatore&quot;</span>&lt;&lt;endl);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">int</span> res;</div>
+<div class="line">        <span class="keywordtype">char</span> *file = <a class="code" href="file__IO_8cc.html#a9c562f044dccef37a99e8301cddfe32f" title="Ritorna il file del giocatore.">get_file_giocatore</a>(circolo-&gt;<a class="code" href="structcircolo__t.html#aa697bc3b2bef882ea48ca71972765d03">nome</a>-&gt;str, giocatore-&gt;<a class="code" href="structgiocatore__t.html#a2284034bca0df79f2d06364347e9d75b">ID</a>);</div>
+<div class="line">        </div>
+<div class="line">        res = g_remove(file);</div>
+<div class="line"></div>
+<div class="line">        g_free(file);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (res == -1)</div>
+<div class="line">                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aa4be40bc80a7ce416b6b3270455775d4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool elimina_file_ora </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structora__t.html">ora_t</a> *&#160;</td>
+          <td class="paramname"><em>ora</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcampo__t.html">campo_t</a> *&#160;</td>
+          <td class="paramname"><em>campo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcircolo__t.html">circolo_t</a> *&#160;</td>
+          <td class="paramname"><em>circolo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elimina il file dell'ora. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">circolo</td><td>Circolo a cui è associato il campo </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">campo</td><td>Campo a cui è associata l'ora </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ora</td><td>Ora da eliminare </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Successo (TRUE) o fallimento (FALSE) </dd></dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;Elimina file ora&quot;</span>&lt;&lt;endl)</div>
+<div class="line">        </div>
+<div class="line">        int res;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">char</span> *file = <a class="code" href="file__IO_8cc.html#a8a13d72c3cb10a5bf8b1397b0dc17c5e" title="Ritorna il file dell&#39;ora.">get_file_ora</a>(circolo-&gt;nome-&gt;str, 1, ora);</div>
+<div class="line"></div>
+<div class="line">        <a class="code" href="debug_8h.html#a43e8ca05b2c0abb00d31e535b4186b7e" title="Mostra stato variabili ed errori veri e propri.">D2</a>(cout&lt;&lt;file&lt;&lt;endl);</div>
+<div class="line">        </div>
+<div class="line">        res = g_remove(file);</div>
+<div class="line"></div>
+<div class="line">        g_free(file);</div>
+<div class="line"></div>
+<div class="line">        if (res == -1)</div>
+<div class="line">                return false;</div>
+<div class="line">        </div>
+<div class="line">        return true;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a0f46dea7b759350133eea572963509ff"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void elimina_sub_directory </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>dir_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Elimina ricorsivamente le sottodirectory della directory passata. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dir_</td><td>Directory alla quale eliminare le sotto directory </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        GDir *dir = g_dir_open(dir_, 0, NULL);</div>
+<div class="line">        <span class="keyword">const</span> <span class="keywordtype">char</span> *file = 0;</div>
+<div class="line">        <span class="keywordtype">char</span> *file_ = 0;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">while</span>( (file = g_dir_read_name(dir)) ){</div>
+<div class="line">                file_ = g_build_filename(dir_, file, NULL);</div>
+<div class="line"></div>
+<div class="line">                <span class="keywordflow">if</span> ( g_file_test(file_, G_FILE_TEST_IS_DIR) )</div>
+<div class="line">                        <a class="code" href="file__IO_8cc.html#a0f46dea7b759350133eea572963509ff" title="Elimina ricorsivamente le sottodirectory della directory passata.">elimina_sub_directory</a>(file_);</div>
+<div class="line">                <span class="keywordflow">if</span> ( g_file_test(file_, G_FILE_TEST_IS_REGULAR) )</div>
+<div class="line">                        g_remove(file_);</div>
+<div class="line"></div>
+<div class="line">                g_free(file_);</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        g_rmdir(dir_);</div>
+<div class="line">        </div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a5be4d4dad972d003a60acda0a2e90339"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool file_nascosto </td>
+          <td>(</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>file</em>[]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Controlla se un file è nascosto. </p>
+<p>Esamina il nome del file e stabilisce se è nascosto; Funziona solo su linux </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>File da esaminare </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>TRUE se è nascosto, FALSE altrimenti </dd></dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <span class="keywordflow">if</span> (file[0] == <span class="charliteral">&#39;.&#39;</span>)</div>
+<div class="line">                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a44e4811fccd8c6536e391767ec5159af"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static char* get_dir_campo </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>nome_cir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ritorna la directory del campo. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nome_cir</td><td>Nome del circolo </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>Numero del campo </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Percorso della directory </dd></dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        ostringstream numero;</div>
+<div class="line">        numero&lt;&lt;n;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">char</span> *percorso = g_build_filename(DATA_PATH, nome_cir, <a class="code" href="file__IO_8cc.html#a2ff7122334a9754353adef957ff1007f" title="Cartella dei campi.">CAMPI_DIR</a>, numero.str().c_str(), NULL);</div>
+<div class="line">        <span class="keywordflow">return</span> percorso;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aa82e7288bfea5165a7d63b66eaea48d5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* get_dir_circolo </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>nome_cir</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ritorna la directory del circolo. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nome_cir</td><td>Nome del circolo </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Percorso della directory </dd></dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <span class="keywordflow">return</span> g_build_filename(DATA_PATH, nome_cir, NULL);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a46e5fbfc2de2a13577465c4714f9f92c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static char* get_dir_giocatore </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>nome_cir</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ritorna la directory del giocatore. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nome_cir</td><td>Nome del circolo </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Percorso della directory </dd></dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <span class="keywordflow">return</span> g_build_filename(DATA_PATH, nome_cir, <a class="code" href="file__IO_8cc.html#a113e87d03f38fe75cedb3d5709ae9282" title="Cartella dei giocatori.">GIOCATORI_DIR</a>, NULL);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a03b8142b4f95d1627df5e0f52e53f6ca"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static char* get_dir_ora </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>nome_cir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>campo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ritorna la directory dell'ora. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nome_cir</td><td>Nome del Circolo </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">campo</td><td>Numero del campo </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Percorso della directory </dd></dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        ostringstream numero;</div>
+<div class="line">        numero&lt;&lt;campo;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">return</span> g_build_filename(DATA_PATH, nome_cir, <a class="code" href="file__IO_8cc.html#a2ff7122334a9754353adef957ff1007f" title="Cartella dei campi.">CAMPI_DIR</a>, numero.str().c_str(), <a class="code" href="file__IO_8cc.html#a5da5b71bb34d1b4eed8ed9eb40e3f682" title="Cartella delle ore.">ORE_DIR</a>, NULL);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="acfd577bf437af73a5b4e83d32911a9f6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static char* get_file_campo </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>nome_cir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ritorna il file del campo. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nome_cir</td><td>Nome Circolo </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>Numero campo </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Percorso del file </dd></dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <span class="keywordtype">char</span> *dir = <a class="code" href="file__IO_8cc.html#a44e4811fccd8c6536e391767ec5159af" title="Ritorna la directory del campo.">get_dir_campo</a>(nome_cir, n);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">char</span> *file = g_build_filename(dir, <a class="code" href="file__IO_8cc.html#a99f3c14c7a2142b632d6fe6ecdf09f6d" title="File contenente i dati del campo.">DATI_CAMPO</a>, NULL);   </div>
+<div class="line">        </div>
+<div class="line">        g_free(dir);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">return</span> file;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ab55bf4cf291db643b75f0bcfeb2bc2c9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static char* get_file_circolo </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>nome_cir</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ritorna il file del circolo. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nome_cir</td><td>Nome del circolo </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Percorso del file </dd></dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <span class="keywordtype">char</span> *dir = <a class="code" href="file__IO_8cc.html#aa82e7288bfea5165a7d63b66eaea48d5" title="Ritorna la directory del circolo.">get_dir_circolo</a>(nome_cir);</div>
+<div class="line">        <span class="keywordtype">char</span> *file = g_build_filename(dir, <a class="code" href="file__IO_8cc.html#a5a1a7a8b73922583ea389cdc7b12575c" title="File contenente i dati del circolo.">DATI_CIRCOLO</a>, NULL);</div>
+<div class="line"></div>
+<div class="line">        g_free(dir);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">return</span> file;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a9c562f044dccef37a99e8301cddfe32f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static char* get_file_giocatore </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>nome_cir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ritorna il file del giocatore. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nome_cir</td><td>Nome del circolo </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ID</td><td>Id del giocatore </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Percorso del file </dd></dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        ostringstream file;</div>
+<div class="line">        file&lt;&lt;ID&lt;&lt;<a class="code" href="file__IO_8cc.html#ab0b03ad19de1e26bd0293def15f73d75" title="Estensione dei file.">FILE_EXT</a>;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">char</span> *dir = <a class="code" href="file__IO_8cc.html#a46e5fbfc2de2a13577465c4714f9f92c" title="Ritorna la directory del giocatore.">get_dir_giocatore</a>(nome_cir);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">char</span> *percorso = g_build_filename(dir, file.str().c_str(), NULL);</div>
+<div class="line"></div>
+<div class="line">        g_free(dir);    </div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">return</span> percorso;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a8a13d72c3cb10a5bf8b1397b0dc17c5e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static char* get_file_ora </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>nome_cir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>campo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structora__t.html">ora_t</a> *&#160;</td>
+          <td class="paramname"><em>ora</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ritorna il file dell'ora. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nome_cir</td><td>Nome del circolo </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">campo</td><td>Numero del campo </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ora</td><td>Ora </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Percorso al file dell'ora </dd></dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;get_file_ora&quot;</span>&lt;&lt;endl)</div>
+<div class="line">        ostringstream file;</div>
+<div class="line">        file&lt;&lt;ora-&gt;data-&gt;str&lt;&lt;&quot;_&quot;&lt;&lt;ora-&gt;orario&lt;&lt;<a class="code" href="file__IO_8cc.html#ab0b03ad19de1e26bd0293def15f73d75" title="Estensione dei file.">FILE_EXT</a>;</div>
+<div class="line"></div>
+<div class="line">        <a class="code" href="debug_8h.html#a43e8ca05b2c0abb00d31e535b4186b7e" title="Mostra stato variabili ed errori veri e propri.">D2</a>(cout&lt;&lt;file&lt;&lt;endl);</div>
+<div class="line">        </div>
+<div class="line">        <span class="keywordtype">char</span> *dir = <a class="code" href="file__IO_8cc.html#a03b8142b4f95d1627df5e0f52e53f6ca" title="Ritorna la directory dell&#39;ora.">get_dir_ora</a>(nome_cir, campo);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">char</span> *percorso = g_build_filename(dir, file.str().c_str(), NULL);</div>
+<div class="line"></div>
+<div class="line">        g_free(dir);</div>
+<div class="line"></div>
+<div class="line">        return percorso;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a76f8fd85c112dc80647fa4892339570c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* get_nome_backup </td>
+          <td>(</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>file</em>[]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ritorna il nome del circolo ai cui fa riferimento il file di backup. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>File di backup </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Nome del circolo, 0 in caso di errori </dd></dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;get nome backup&quot;</span>&lt;&lt;endl)</div>
+<div class="line"></div>
+<div class="line">        ifstream f1(file);</div>
+<div class="line">        if (!f1){</div>
+<div class="line">                <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;impossibile aprire il file&quot;</span>&lt;&lt;endl)</div>
+<div class="line">                <a class="code" href="debug_8h.html#a43e8ca05b2c0abb00d31e535b4186b7e" title="Mostra stato variabili ed errori veri e propri.">D2</a>(cout&lt;&lt;&quot;file: &quot;&lt;&lt;file&lt;&lt;endl);</div>
+<div class="line">                return 0;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        f1&gt;&gt;noskipws;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">char</span> c;</div>
+<div class="line">        while ( (f1&gt;&gt;c) &amp;&amp; (c != &#39;=&#39;) )</div>
+<div class="line">                ;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">int</span> inizio = f1.tellg();</div>
+<div class="line">        <a class="code" href="debug_8h.html#a43e8ca05b2c0abb00d31e535b4186b7e" title="Mostra stato variabili ed errori veri e propri.">D2</a>(cout&lt;&lt;&quot;inizio: &quot;&lt;&lt;inizio&lt;&lt;endl)</div>
+<div class="line"></div>
+<div class="line">        while ( (f1&gt;&gt;c) &amp;&amp; (c != &#39;&gt;&#39;) )</div>
+<div class="line">                ;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">int</span> fine = f1.tellg();</div>
+<div class="line">        fine--;</div>
+<div class="line">        <a class="code" href="debug_8h.html#a43e8ca05b2c0abb00d31e535b4186b7e" title="Mostra stato variabili ed errori veri e propri.">D2</a>(cout&lt;&lt;&quot;fine: &quot;&lt;&lt;fine&lt;&lt;endl)</div>
+<div class="line"></div>
+<div class="line">        if (!f1){</div>
+<div class="line">                <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;file corrotto&quot;</span>&lt;&lt;endl)</div>
+<div class="line">                return 0;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">char</span> *nome = new <span class="keywordtype">char</span>[fine-inizio+1];</div>
+<div class="line"></div>
+<div class="line">        f1.seekg(inizio, f1.beg);</div>
+<div class="line">        for (<span class="keywordtype">int</span> i = 0; i&lt;(fine-inizio); i++)</div>
+<div class="line">                f1&gt;&gt;nome[i];</div>
+<div class="line">        nome[fine-inizio] = &#39;\0&#39;;</div>
+<div class="line"></div>
+<div class="line">        <a class="code" href="debug_8h.html#a43e8ca05b2c0abb00d31e535b4186b7e" title="Mostra stato variabili ed errori veri e propri.">D2</a>(cout&lt;&lt;&quot;Nome <a class="code" href="file__IO_8cc.html#a6b5cce7059635c9b27474d6b4d54d4f6" title="Crea un backup del circolo.">backup</a>: &quot;&lt;&lt;nome&lt;&lt;endl)</div>
+<div class="line"></div>
+<div class="line">        return nome;    </div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="af38d16c9199443fd7c34b26fa2d4e7e0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static istream&amp; operator&gt;&gt; </td>
+          <td>(</td>
+          <td class="paramtype">istream &amp;&#160;</td>
+          <td class="paramname"><em>is</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struttura__dati_8h.html#ad0f5a2191c29d4cd4c52506513493755">copertura_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Operatore per la lettura del tipo copertura_t. </p>
+<p>Utilizza un intero temporaneo e lo converte </p>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <span class="keywordtype">int</span> tmp;</div>
+<div class="line">        is&gt;&gt;tmp;</div>
+<div class="line">        c = <span class="keyword">static_cast&lt;</span><a class="code" href="struttura__dati_8h.html#ad0f5a2191c29d4cd4c52506513493755" title="Tipo che rappresenta il tipo di copertura del campo.">copertura_t</a><span class="keyword">&gt;</span>(tmp);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">return</span> is;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ac4ff66902af0718f2e7ee39fe55a71f3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static istream&amp; operator&gt;&gt; </td>
+          <td>(</td>
+          <td class="paramtype">istream &amp;&#160;</td>
+          <td class="paramname"><em>is</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struttura__dati_8h.html#a0c12af1750520ca1d5e0a1b120ed33b7">terreno_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Operatore per la lettura del tipo terreno_t. </p>
+<p>Utilizza un intero temporaneo e lo converte </p>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <span class="keywordtype">int</span> tmp;</div>
+<div class="line">        is&gt;&gt;tmp;</div>
+<div class="line">        t = <span class="keyword">static_cast&lt;</span><a class="code" href="struttura__dati_8h.html#a0c12af1750520ca1d5e0a1b120ed33b7" title="Tipo che rappresenta il tipo di terreno.">terreno_t</a><span class="keyword">&gt;</span>(tmp);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">return</span> is;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="af656044d932e2dc1a62b5a39576d1f0e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ripristina </td>
+          <td>(</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>file</em>[]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ripristina un backup. </p>
+<p>Ripristina l'albero di directory rappresentante un circolo da un file di backup </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>File di backup </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>successo (TRUE) o fallimento (FALSE) </dd></dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        ifstream f1(file);</div>
+<div class="line">        <span class="keywordflow">if</span> (!f1){</div>
+<div class="line">                <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;Errore nell&#39;apertura del file&quot;</span>&lt;&lt;endl)</div>
+<div class="line">                <a class="code" href="debug_8h.html#a43e8ca05b2c0abb00d31e535b4186b7e" title="Mostra stato variabili ed errori veri e propri.">D2</a>(cout&lt;&lt;&quot;File: &quot;&lt;&lt;file&lt;&lt;endl)</div>
+<div class="line">                return false;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//salto la prima riga del file (contiene intestazione)</span></div>
+<div class="line">        <span class="keywordtype">char</span> c;</div>
+<div class="line">        f1&gt;&gt;noskipws;</div>
+<div class="line">        while( (f1&gt;&gt;c) &amp;&amp; (c != &#39;\n&#39;) )</div>
+<div class="line">                ; </div>
+<div class="line">        </div>
+<div class="line">        <span class="keywordtype">char</span> markup[10];</div>
+<div class="line">        <span class="keywordtype">char</span> *file_n = 0;</div>
+<div class="line">        <span class="keywordtype">int</span> inizio, fine;</div>
+<div class="line">        ofstream fout;</div>
+<div class="line">        </div>
+<div class="line">        while( f1.peek() != EOF ){</div>
+<div class="line">                f1.getline(markup, 10, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line">        </div>
+<div class="line">                inizio = f1.tellg();</div>
+<div class="line">                <span class="keywordflow">while</span> ( (f1&gt;&gt;c) &amp;&amp; (c != <span class="charliteral">&#39;&gt;&#39;</span>) )</div>
+<div class="line">                        ;</div>
+<div class="line">                fine = f1.tellg();</div>
+<div class="line">                f1.seekg(inizio, f1.beg);</div>
+<div class="line">                file_n = <span class="keyword">new</span> <span class="keywordtype">char</span>[fine-inizio];</div>
+<div class="line">                f1.get(file_n, fine-inizio);</div>
+<div class="line">                file_n[fine-inizio] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line">        </div>
+<div class="line">                <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;markup: &quot;</span>&lt;&lt;markup&lt;&lt;endl)</div>
+<div class="line">                </div>
+<div class="line">                <span class="comment">//controllo markup (può essere o &quot;&lt;file&quot; o &quot;&lt;cartella&quot;)</span></div>
+<div class="line">                if ( g_strcmp0(markup, &quot;&lt;file&quot;) == 0 ){</div>
+<div class="line">                        fout.open(file_n);</div>
+<div class="line">                        <span class="keywordflow">if</span> (!fout){</div>
+<div class="line">                                <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;Impossibile scrivere il file&quot;</span>&lt;&lt;endl)</div>
+<div class="line">                                <a class="code" href="debug_8h.html#a43e8ca05b2c0abb00d31e535b4186b7e" title="Mostra stato variabili ed errori veri e propri.">D2</a>(cout&lt;&lt;&quot;file: &quot;&lt;&lt;file_n&lt;&lt;endl)</div>
+<div class="line">                                return false;</div>
+<div class="line">                        }</div>
+<div class="line">                        f1.ignore(); <span class="comment">//ignoro il carattere &gt;</span></div>
+<div class="line">                        f1.ignore(); <span class="comment">//ignoro il carattere \n</span></div>
+<div class="line">                        </div>
+<div class="line">                        while ( (f1&gt;&gt;c) &amp;&amp; (c != <a class="code" href="file__IO_8cc.html#a38d19e747bdb249f2c8b044ab34b1876" title="End of text.">ETX</a>) )</div>
+<div class="line">                                fout&lt;&lt;c;</div>
+<div class="line">                        </div>
+<div class="line">                        fout.close();</div>
+<div class="line">                } </div>
+<div class="line">                else if ( g_strcmp0(markup, &quot;&lt;cartella&quot;) == 0){</div>
+<div class="line">                        <span class="keywordflow">if</span> ( !<a class="code" href="file__IO_8cc.html#aac1855264c07df3797f68fe2e8c92600" title="Controlla l&#39;esistenza della directory e se non esiste la crea.">controlla_directory</a>(file_n) ){</div>
+<div class="line">                                <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;impossibile creare la cartella&quot;</span>&lt;&lt;endl)</div>
+<div class="line">                                <a class="code" href="debug_8h.html#a43e8ca05b2c0abb00d31e535b4186b7e" title="Mostra stato variabili ed errori veri e propri.">D2</a>(cout&lt;&lt;&quot;cartella: &quot;&lt;&lt;file_n&lt;&lt;endl);</div>
+<div class="line">                                return false;</div>
+<div class="line">                        }</div>
+<div class="line">                        f1.ignore(); <span class="comment">//ignoro il carattere &gt;</span></div>
+<div class="line">                }</div>
+<div class="line">                else {</div>
+<div class="line">                        <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;file corrotto&quot;</span>&lt;&lt;endl)</div>
+<div class="line">                        <a class="code" href="debug_8h.html#a43e8ca05b2c0abb00d31e535b4186b7e" title="Mostra stato variabili ed errori veri e propri.">D2</a>(cout&lt;&lt;&quot;file: &quot;&lt;&lt;file&lt;&lt;endl)</div>
+<div class="line">                        return false;</div>
+<div class="line">                }</div>
+<div class="line">                </div>
+<div class="line">                f1.ignore(); <span class="comment">//ignore il carattere \n alla fine della riga</span></div>
+<div class="line">                delete[] file_n;</div>
+<div class="line">        }</div>
+<div class="line">        </div>
+<div class="line">        f1.close();</div>
+<div class="line">        </div>
+<div class="line">        return true;    </div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a1946bbd82e8da6a23d39f144da47261c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool salva_campo </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcampo__t.html">campo_t</a> *&#160;</td>
+          <td class="paramname"><em>campo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcircolo__t.html">circolo_t</a> *&#160;</td>
+          <td class="paramname"><em>circolo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Salva il campo su file Salva il campo su un file nella directory del circolo. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">campo</td><td>Campo da salvare </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">circolo</td><td>Circolo del campo </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>successo (TRUE) o fallimento (FALSE) </dd></dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <span class="keywordtype">char</span> *dir = <a class="code" href="file__IO_8cc.html#a44e4811fccd8c6536e391767ec5159af" title="Ritorna la directory del campo.">get_dir_campo</a>(circolo-&gt;<a class="code" href="structcircolo__t.html#aa697bc3b2bef882ea48ca71972765d03">nome</a>-&gt;str, campo-&gt;<a class="code" href="structcampo__t.html#a6e0a6002a8c0d360f22d4a30bc1e37d0">numero</a>);</div>
+<div class="line">        <span class="keywordtype">char</span> *file = <a class="code" href="file__IO_8cc.html#acfd577bf437af73a5b4e83d32911a9f6" title="Ritorna il file del campo.">get_file_campo</a>(circolo-&gt;<a class="code" href="structcircolo__t.html#aa697bc3b2bef882ea48ca71972765d03">nome</a>-&gt;str, campo-&gt;<a class="code" href="structcampo__t.html#a6e0a6002a8c0d360f22d4a30bc1e37d0">numero</a>);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (campo == 0) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">        <span class="keywordflow">if</span> (circolo == 0) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> ( !<a class="code" href="file__IO_8cc.html#aac1855264c07df3797f68fe2e8c92600" title="Controlla l&#39;esistenza della directory e se non esiste la crea.">controlla_directory</a>(dir) ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"></div>
+<div class="line">        g_free(dir);</div>
+<div class="line"></div>
+<div class="line">        ofstream f1(file);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (!f1){</div>
+<div class="line">                <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;Errore nell&#39;apertura del file&quot;</span>&lt;&lt;endl)</div>
+<div class="line">                <a class="code" href="debug_8h.html#a43e8ca05b2c0abb00d31e535b4186b7e" title="Mostra stato variabili ed errori veri e propri.">D2</a>(cout&lt;&lt;&quot;File: &quot;&lt;&lt;file&lt;&lt;endl)          </div>
+<div class="line">                g_free(file);           </div>
+<div class="line">                return false;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//Scrittura file</span></div>
+<div class="line">        f1&lt;&lt;campo-&gt;numero&lt;&lt;endl;</div>
+<div class="line">        f1&lt;&lt;campo-&gt;copertura&lt;&lt;endl;</div>
+<div class="line">        f1&lt;&lt;campo-&gt;terreno&lt;&lt;endl;</div>
+<div class="line">        f1&lt;&lt;campo-&gt;note-&gt;str&lt;&lt;endl;</div>
+<div class="line"></div>
+<div class="line">        if (!f1){</div>
+<div class="line">                <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;Errore in scrittura&quot;</span>&lt;&lt;endl)</div>
+<div class="line">                f1.close();</div>
+<div class="line">                g_remove(file);</div>
+<div class="line">                g_free(file);</div>
+<div class="line">                return false;           </div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        f1.close();</div>
+<div class="line">        g_free(file);</div>
+<div class="line"></div>
+<div class="line">        return true;    </div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a09f4d48bb1bddd3b628ba62f8d276c49"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool salva_circolo </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcircolo__t.html">circolo_t</a> *&#160;</td>
+          <td class="paramname"><em>circolo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Salva su file i dati del circolo. </p>
+<p>Salva nella directory del programma i dati del circolo in formato testuale </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">circolo</td><td>Circolo da salvare </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>successo (TRUE) o fallimento (FALSE) </dd></dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <span class="keywordtype">char</span> *file = <a class="code" href="file__IO_8cc.html#ab55bf4cf291db643b75f0bcfeb2bc2c9" title="Ritorna il file del circolo.">get_file_circolo</a>(circolo-&gt;<a class="code" href="structcircolo__t.html#aa697bc3b2bef882ea48ca71972765d03">nome</a>-&gt;str);</div>
+<div class="line">        <span class="keywordtype">char</span> *dir = <a class="code" href="file__IO_8cc.html#aa82e7288bfea5165a7d63b66eaea48d5" title="Ritorna la directory del circolo.">get_dir_circolo</a>(circolo-&gt;<a class="code" href="structcircolo__t.html#aa697bc3b2bef882ea48ca71972765d03">nome</a>-&gt;str);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (circolo == 0) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//Controllo esistenza cartella del circolo, se non esiste la crea</span></div>
+<div class="line">        <span class="keywordflow">if</span> ( !<a class="code" href="file__IO_8cc.html#aac1855264c07df3797f68fe2e8c92600" title="Controlla l&#39;esistenza della directory e se non esiste la crea.">controlla_directory</a>(dir) ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//Apertura file per la scrittura</span></div>
+<div class="line">        ofstream f1(file);</div>
+<div class="line"></div>
+<div class="line">        g_free(dir);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span>(!f1){</div>
+<div class="line">                <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;Errore nell&#39;apertura del file&quot;</span>&lt;&lt;endl)</div>
+<div class="line">                <a class="code" href="debug_8h.html#a43e8ca05b2c0abb00d31e535b4186b7e" title="Mostra stato variabili ed errori veri e propri.">D2</a>(cout&lt;&lt;&quot;File: &quot;&lt;&lt;file&lt;&lt;endl)</div>
+<div class="line">                g_free(file);</div>
+<div class="line">                return false;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        </div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//Scrittura file</span></div>
+<div class="line">        f1&lt;&lt;circolo-&gt;nome-&gt;str&lt;&lt;endl;</div>
+<div class="line">        f1&lt;&lt;circolo-&gt;indirizzo-&gt;str&lt;&lt;endl;</div>
+<div class="line">        f1&lt;&lt;circolo-&gt;email-&gt;str&lt;&lt;endl;</div>
+<div class="line">        f1&lt;&lt;circolo-&gt;telefono-&gt;str&lt;&lt;endl;</div>
+<div class="line"></div>
+<div class="line">        if(!f1){</div>
+<div class="line">                <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;Errore in scrittura&quot;</span>&lt;&lt;endl)</div>
+<div class="line">                f1.close();</div>
+<div class="line">                g_remove(file);</div>
+<div class="line">                g_free(file);</div>
+<div class="line">                return false;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        f1.close();</div>
+<div class="line">        g_free(file);</div>
+<div class="line"></div>
+<div class="line">        return true;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aef6d85bdb65df00e55be504b21ea5a12"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool salva_giocatore </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structgiocatore__t.html">giocatore_t</a> *&#160;</td>
+          <td class="paramname"><em>giocatore</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcircolo__t.html">circolo_t</a> *&#160;</td>
+          <td class="paramname"><em>circolo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Salva il giocatore su file. </p>
+<p>Salva il giocatore su un file nella directory del circolo </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">giocatore</td><td>Giocatore da salvare </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">circolo</td><td>Circolo del giocatore </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>successo (TRUE) o fallimento (FALSE) </dd></dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <span class="keywordtype">char</span> *dir = <a class="code" href="file__IO_8cc.html#a46e5fbfc2de2a13577465c4714f9f92c" title="Ritorna la directory del giocatore.">get_dir_giocatore</a>(circolo-&gt;<a class="code" href="structcircolo__t.html#aa697bc3b2bef882ea48ca71972765d03">nome</a>-&gt;str);</div>
+<div class="line">        <span class="keywordtype">char</span> *file = <a class="code" href="file__IO_8cc.html#a9c562f044dccef37a99e8301cddfe32f" title="Ritorna il file del giocatore.">get_file_giocatore</a>(circolo-&gt;<a class="code" href="structcircolo__t.html#aa697bc3b2bef882ea48ca71972765d03">nome</a>-&gt;str, giocatore-&gt;<a class="code" href="structgiocatore__t.html#a2284034bca0df79f2d06364347e9d75b">ID</a>);</div>
+<div class="line">        </div>
+<div class="line">        <span class="keywordflow">if</span> (giocatore == 0) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">        <span class="keywordflow">if</span> (circolo == 0) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> ( !<a class="code" href="file__IO_8cc.html#aac1855264c07df3797f68fe2e8c92600" title="Controlla l&#39;esistenza della directory e se non esiste la crea.">controlla_directory</a>(dir) ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"></div>
+<div class="line">        g_free(dir);</div>
+<div class="line"></div>
+<div class="line">        ofstream f1(file);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (!f1){</div>
+<div class="line">                <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;Errore nell&#39;apertura del file&quot;</span>&lt;&lt;endl)</div>
+<div class="line">                <a class="code" href="debug_8h.html#a43e8ca05b2c0abb00d31e535b4186b7e" title="Mostra stato variabili ed errori veri e propri.">D2</a>(cout&lt;&lt;&quot;File: &quot;&lt;&lt;file&lt;&lt;endl)          </div>
+<div class="line">                g_free(file);           </div>
+<div class="line">                return false;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//Scrittura file</span></div>
+<div class="line">        f1&lt;&lt;giocatore-&gt;ID&lt;&lt;endl;</div>
+<div class="line">        f1&lt;&lt;giocatore-&gt;nome-&gt;str&lt;&lt;endl;</div>
+<div class="line">        f1&lt;&lt;giocatore-&gt;cognome-&gt;str&lt;&lt;endl;</div>
+<div class="line">        f1&lt;&lt;giocatore-&gt;nascita-&gt;str&lt;&lt;endl;</div>
+<div class="line">        f1&lt;&lt;giocatore-&gt;tessera-&gt;str&lt;&lt;endl;</div>
+<div class="line">        f1&lt;&lt;giocatore-&gt;telefono-&gt;str&lt;&lt;endl;</div>
+<div class="line">        f1&lt;&lt;giocatore-&gt;email-&gt;str&lt;&lt;endl;</div>
+<div class="line">        f1&lt;&lt;giocatore-&gt;classifica-&gt;str&lt;&lt;endl;</div>
+<div class="line">        f1&lt;&lt;giocatore-&gt;circolo-&gt;str&lt;&lt;endl;</div>
+<div class="line">        f1&lt;&lt;giocatore-&gt;socio&lt;&lt;endl;</div>
+<div class="line">        f1&lt;&lt;giocatore-&gt;retta&lt;&lt;endl;</div>
+<div class="line"></div>
+<div class="line">        if (!f1){</div>
+<div class="line">                <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;Errore in scrittura&quot;</span>&lt;&lt;endl)</div>
+<div class="line">                f1.close();</div>
+<div class="line">                g_remove(file);</div>
+<div class="line">                g_free(file);</div>
+<div class="line">                return false;           </div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        f1.close();</div>
+<div class="line">        g_free(file);</div>
+<div class="line"></div>
+<div class="line">        return true;    </div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ab7a55ef58177bf8857c1d1121ce6c637"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool salva_ora </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structora__t.html">ora_t</a> *&#160;</td>
+          <td class="paramname"><em>ora</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcampo__t.html">campo_t</a> *&#160;</td>
+          <td class="paramname"><em>campo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcircolo__t.html">circolo_t</a> *&#160;</td>
+          <td class="paramname"><em>circolo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Salva l'ora su file. </p>
+<p>Salva l'ora su file, se archivia è true allora l'ora viene salvata nell'archivio </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ora</td><td>Ora da salvare </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">campo</td><td>Campo dell'ora </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">circolo</td><td>Circolo dell'ora </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">archivia</td><td>Indica se l'ora deve essere archiviata </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>successo (TRUE) o fallimento (FALSE) </dd></dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <span class="keywordtype">int</span> prenotante;</div>
+<div class="line">        <span class="keywordtype">char</span> *dir = <a class="code" href="file__IO_8cc.html#a03b8142b4f95d1627df5e0f52e53f6ca" title="Ritorna la directory dell&#39;ora.">get_dir_ora</a>(circolo-&gt;<a class="code" href="structcircolo__t.html#aa697bc3b2bef882ea48ca71972765d03">nome</a>-&gt;str, campo-&gt;<a class="code" href="structcampo__t.html#a6e0a6002a8c0d360f22d4a30bc1e37d0">numero</a>);</div>
+<div class="line">        <span class="keywordtype">char</span> *file = <a class="code" href="file__IO_8cc.html#a8a13d72c3cb10a5bf8b1397b0dc17c5e" title="Ritorna il file dell&#39;ora.">get_file_ora</a>(circolo-&gt;<a class="code" href="structcircolo__t.html#aa697bc3b2bef882ea48ca71972765d03">nome</a>-&gt;str, campo-&gt;<a class="code" href="structcampo__t.html#a6e0a6002a8c0d360f22d4a30bc1e37d0">numero</a>, ora);</div>
+<div class="line">        </div>
+<div class="line">        <span class="keywordflow">if</span> (ora == 0) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">        <span class="keywordflow">if</span> (campo == 0) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> ( !<a class="code" href="file__IO_8cc.html#aac1855264c07df3797f68fe2e8c92600" title="Controlla l&#39;esistenza della directory e se non esiste la crea.">controlla_directory</a>(dir) ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"></div>
+<div class="line">        prenotante = ora-&gt;<a class="code" href="structora__t.html#aff5567fde9f9f0bdb0414e67d2bd30bf">prenotante</a>-&gt;<a class="code" href="structgiocatore__t.html#a2284034bca0df79f2d06364347e9d75b">ID</a>;</div>
+<div class="line"></div>
+<div class="line">        ofstream f1(file);</div>
+<div class="line"></div>
+<div class="line">        g_free(dir);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (!f1){</div>
+<div class="line">                <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;Errore nell&#39;apertura del file&quot;</span>&lt;&lt;endl)</div>
+<div class="line">                <a class="code" href="debug_8h.html#a43e8ca05b2c0abb00d31e535b4186b7e" title="Mostra stato variabili ed errori veri e propri.">D2</a>(cout&lt;&lt;&quot;File: &quot;&lt;&lt;file&lt;&lt;endl)          </div>
+<div class="line">                g_free(file);           </div>
+<div class="line">                return false;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//Scrittura file</span></div>
+<div class="line">        f1&lt;&lt;ora-&gt;orario&lt;&lt;endl;</div>
+<div class="line">        f1&lt;&lt;ora-&gt;data-&gt;str&lt;&lt;endl;</div>
+<div class="line">        f1&lt;&lt;ora-&gt;durata&lt;&lt;endl;</div>
+<div class="line">        f1&lt;&lt;prenotante&lt;&lt;endl;</div>
+<div class="line"></div>
+<div class="line">        if (!f1){</div>
+<div class="line">                <a class="code" href="debug_8h.html#afff1e38d74b3116b7a77d0272adf2dbf" title="Mostra i vari passaggi fondamentali.">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;Errore in scrittura&quot;</span>&lt;&lt;endl)</div>
+<div class="line">                f1.close();</div>
+<div class="line">                g_remove(file);</div>
+<div class="line">                g_free(file);</div>
+<div class="line">                return false;           </div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        f1.close();</div>
+<div class="line">        g_free(file);</div>
+<div class="line"></div>
+<div class="line">        return true;    </div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2>Documentazione delle variabili</h2>
+<a class="anchor" id="a4e41eb5148197c7f1dd04e765e648feb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char ARCHIVIO_DIR[] = &quot;archivio&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cartella delle ore archiviate. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2ff7122334a9754353adef957ff1007f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char CAMPI_DIR[] = &quot;campi&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cartella dei campi. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4498167a41f7467a5dddeb2bfaea59b6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char DATA_PATH[] = &quot;data&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Directory dove il programma memorizza i dati. </p>
+
+</div>
+</div>
+<a class="anchor" id="a99f3c14c7a2142b632d6fe6ecdf09f6d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char DATI_CAMPO[] = &quot;campo.txt&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>File contenente i dati del campo. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5a1a7a8b73922583ea389cdc7b12575c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char DATI_CIRCOLO[] = &quot;circolo.txt&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>File contenente i dati del circolo. </p>
+
+</div>
+</div>
+<a class="anchor" id="a38d19e747bdb249f2c8b044ab34b1876"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char ETX = 3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>End of text. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab0b03ad19de1e26bd0293def15f73d75"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char FILE_EXT[] = &quot;.txt&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Estensione dei file. </p>
+
+</div>
+</div>
+<a class="anchor" id="a113e87d03f38fe75cedb3d5709ae9282"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char GIOCATORI_DIR[] = &quot;giocatori&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cartella dei giocatori. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5da5b71bb34d1b4eed8ed9eb40e3f682"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char ORE_DIR[] = &quot;ore&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cartella delle ore. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generato Mer 8 Ott 2014 19:12:40 per ACE da &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
+</body>
+</html>
