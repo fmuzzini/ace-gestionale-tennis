@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>ACE:  File sorgente struttura_dati.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.ico"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">ACE
+   </div>
+   <div id="projectbrief">Gestionale Circolo Tennis</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.8.1.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Pagina&#160;Principale</span></a></li>
+      <li><a href="annotated.html"><span>Classi</span></a></li>
+      <li class="current"><a href="files.html"><span>File</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Elenco&#160;dei&#160;file</span></a></li>
+      <li><a href="globals.html"><span>Elementi&#160;dei&#160;file</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tutto</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classi</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>File</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funzioni</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variabili</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Ridefinizioni di tipo (typedef)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Tipi enumerati (enum)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valori del tipo enumerato</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Definizioni</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pagine</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">struttura_dati.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="struttura__dati_8h.html">Vai alla documentazione di questo file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef STRUTTURA_DATI</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define STRUTTURA_DATI</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;glib.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/* Inizio Header del modulo Struttura dati */</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="struttura__dati_8h.html#a9d6ea45de8f2a4276f4e6ecd19e8d80e">   17</a></span>&#160;<span class="keyword">typedef</span> GList *<a class="code" href="struttura__dati_8h.html#a9d6ea45de8f2a4276f4e6ecd19e8d80e" title="Definizione dei tipi di lista.">lista_ore</a>, *<a class="code" href="struttura__dati_8h.html#a2ce396e44bb6d2fe43daf5ed28611266" title="Definizione dei tipi di lista.">lista_giocatori</a>, *<a class="code" href="struttura__dati_8h.html#a7b0ec232639e878f55aaf0698a30de79" title="Definizione dei tipi di lista.">lista_campi</a>;       <span class="comment">//@}</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="struttura__dati_8h.html#adc042033824a4d30262dea3d11937921">   22</a></span>&#160;<span class="keyword">typedef</span> GString *<a class="code" href="struttura__dati_8h.html#adc042033824a4d30262dea3d11937921" title="Definizione del tipo stringa.">stringa</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="structcircolo__t.html">   29</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structcircolo__t.html" title="Struttura reppresentante il Circolo.">circolo_t</a> {</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="structcircolo__t.html#aa697bc3b2bef882ea48ca71972765d03">   30</a></span>&#160;        <a class="code" href="struttura__dati_8h.html#adc042033824a4d30262dea3d11937921" title="Definizione del tipo stringa.">stringa</a> <a class="code" href="structcircolo__t.html#aa697bc3b2bef882ea48ca71972765d03">nome</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="structcircolo__t.html#a2328697f2d980b0e400944e7340aeade">   31</a></span>&#160;        <a class="code" href="struttura__dati_8h.html#adc042033824a4d30262dea3d11937921" title="Definizione del tipo stringa.">stringa</a> <a class="code" href="structcircolo__t.html#a2328697f2d980b0e400944e7340aeade">indirizzo</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="structcircolo__t.html#acc39a66165c7378ded7ff8bcbc684135">   32</a></span>&#160;        <a class="code" href="struttura__dati_8h.html#adc042033824a4d30262dea3d11937921" title="Definizione del tipo stringa.">stringa</a> <a class="code" href="structcircolo__t.html#acc39a66165c7378ded7ff8bcbc684135">email</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="structcircolo__t.html#a7943de242b2ed1b21f02e055097e6576">   33</a></span>&#160;        <a class="code" href="struttura__dati_8h.html#adc042033824a4d30262dea3d11937921" title="Definizione del tipo stringa.">stringa</a> <a class="code" href="structcircolo__t.html#a7943de242b2ed1b21f02e055097e6576">telefono</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="structcircolo__t.html#ad936c96509d0ba268f3fba9ce0157222">   34</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="structcircolo__t.html#ad936c96509d0ba268f3fba9ce0157222">n_campi</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="structcircolo__t.html#aa22213a01ed8b0e7d612bdf815db337f">   35</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="structcircolo__t.html#aa22213a01ed8b0e7d612bdf815db337f">n_soci</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="structcircolo__t.html#a75ce9d50155a8bc368a10b13f516fd27">   36</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="structcircolo__t.html#a75ce9d50155a8bc368a10b13f516fd27">pros_id</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="structcircolo__t.html#aa17088e0fc000cfbc4c6b08c0c18cef2">   37</a></span>&#160;        <a class="code" href="struttura__dati_8h.html#a2ce396e44bb6d2fe43daf5ed28611266" title="Definizione dei tipi di lista.">lista_giocatori</a> <a class="code" href="structcircolo__t.html#aa17088e0fc000cfbc4c6b08c0c18cef2">giocatori</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="structcircolo__t.html#ac09c9e7d077f71951c457652a874565f">   38</a></span>&#160;        <a class="code" href="struttura__dati_8h.html#a7b0ec232639e878f55aaf0698a30de79" title="Definizione dei tipi di lista.">lista_campi</a> <a class="code" href="structcircolo__t.html#ac09c9e7d077f71951c457652a874565f">campi</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="structgiocatore__t.html">   44</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structgiocatore__t.html" title="Struttura rappresentante i giocatori.">giocatore_t</a> {</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="structgiocatore__t.html#a2284034bca0df79f2d06364347e9d75b">   45</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="structgiocatore__t.html#a2284034bca0df79f2d06364347e9d75b">ID</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="structgiocatore__t.html#ac3f1b0dcd6f3439adbc2e86db6bea952">   46</a></span>&#160;        <a class="code" href="struttura__dati_8h.html#adc042033824a4d30262dea3d11937921" title="Definizione del tipo stringa.">stringa</a> <a class="code" href="structgiocatore__t.html#ac3f1b0dcd6f3439adbc2e86db6bea952">nome</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="structgiocatore__t.html#ad02b92861fc7ee234cad9bb5a730a408">   47</a></span>&#160;        <a class="code" href="struttura__dati_8h.html#adc042033824a4d30262dea3d11937921" title="Definizione del tipo stringa.">stringa</a> <a class="code" href="structgiocatore__t.html#ad02b92861fc7ee234cad9bb5a730a408">cognome</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="structgiocatore__t.html#a22cdca2a4d519bfbd64649d4f4cb266f">   48</a></span>&#160;        <a class="code" href="struttura__dati_8h.html#adc042033824a4d30262dea3d11937921" title="Definizione del tipo stringa.">stringa</a> <a class="code" href="structgiocatore__t.html#a22cdca2a4d519bfbd64649d4f4cb266f">nascita</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="structgiocatore__t.html#aed14cc86d81c10cf2cc50165cfc5a59f">   49</a></span>&#160;        <a class="code" href="struttura__dati_8h.html#adc042033824a4d30262dea3d11937921" title="Definizione del tipo stringa.">stringa</a> <a class="code" href="structgiocatore__t.html#aed14cc86d81c10cf2cc50165cfc5a59f">tessera</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="structgiocatore__t.html#a7666d4d5062f1c86860a2fbc41ba1042">   50</a></span>&#160;        <a class="code" href="struttura__dati_8h.html#adc042033824a4d30262dea3d11937921" title="Definizione del tipo stringa.">stringa</a> <a class="code" href="structgiocatore__t.html#a7666d4d5062f1c86860a2fbc41ba1042">telefono</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="structgiocatore__t.html#a90aeb6b0953f3416e27ef9e1a121e743">   51</a></span>&#160;        <a class="code" href="struttura__dati_8h.html#adc042033824a4d30262dea3d11937921" title="Definizione del tipo stringa.">stringa</a> <a class="code" href="structgiocatore__t.html#a90aeb6b0953f3416e27ef9e1a121e743">email</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="structgiocatore__t.html#abac0936681f2728909612be2f0e47a46">   52</a></span>&#160;        <a class="code" href="struttura__dati_8h.html#adc042033824a4d30262dea3d11937921" title="Definizione del tipo stringa.">stringa</a> <a class="code" href="structgiocatore__t.html#abac0936681f2728909612be2f0e47a46">classifica</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="code" href="structgiocatore__t.html#a5275e8614d0c0d2270d0cf9929214ebf">   53</a></span>&#160;        <a class="code" href="struttura__dati_8h.html#adc042033824a4d30262dea3d11937921" title="Definizione del tipo stringa.">stringa</a> <a class="code" href="structgiocatore__t.html#a5275e8614d0c0d2270d0cf9929214ebf">circolo</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="structgiocatore__t.html#ab483a08573f49ac1b96761f869921826">   54</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="structgiocatore__t.html#ab483a08573f49ac1b96761f869921826">socio</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="structgiocatore__t.html#aa9cd22efd9d0fa8a1de98dafcaeacdbd">   55</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="structgiocatore__t.html#aa9cd22efd9d0fa8a1de98dafcaeacdbd">retta</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="structora__t.html">   66</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structora__t.html" title="Struttura rappresentante le ore prenotate.">ora_t</a> {</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="structora__t.html#aa0a139446f6b1e6d08ad37d2f7de8125">   67</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="structora__t.html#aa0a139446f6b1e6d08ad37d2f7de8125">orario</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="structora__t.html#a39c8c649c092efd6aa20c0f9bb6bc437">   68</a></span>&#160;        <a class="code" href="struttura__dati_8h.html#adc042033824a4d30262dea3d11937921" title="Definizione del tipo stringa.">stringa</a> <a class="code" href="structora__t.html#a39c8c649c092efd6aa20c0f9bb6bc437">data</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="code" href="structora__t.html#abd8b8cd2025d6d097f5a415868ccbd68">   69</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="structora__t.html#abd8b8cd2025d6d097f5a415868ccbd68">durata</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="structora__t.html#aff5567fde9f9f0bdb0414e67d2bd30bf">   70</a></span>&#160;        <a class="code" href="structgiocatore__t.html" title="Struttura rappresentante i giocatori.">giocatore_t</a> *<a class="code" href="structora__t.html#aff5567fde9f9f0bdb0414e67d2bd30bf">prenotante</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="struttura__dati_8h.html#ad0f5a2191c29d4cd4c52506513493755a8c38e218bbbd030490bf90a71baad2b9">   76</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="struttura__dati_8h.html#ad0f5a2191c29d4cd4c52506513493755" title="Tipo che rappresenta il tipo di copertura del campo.">copertura_t</a> {<a class="code" href="struttura__dati_8h.html#ad0f5a2191c29d4cd4c52506513493755ac6682081af331187c2350b6200571123">INDOOR</a> = 0, <a class="code" href="struttura__dati_8h.html#ad0f5a2191c29d4cd4c52506513493755a8c38e218bbbd030490bf90a71baad2b9">OUTDOOR</a>};</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="code" href="struttura__dati_8h.html#a0c12af1750520ca1d5e0a1b120ed33b7">   82</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="struttura__dati_8h.html#a0c12af1750520ca1d5e0a1b120ed33b7" title="Tipo che rappresenta il tipo di terreno.">terreno_t</a> {<a class="code" href="struttura__dati_8h.html#a0c12af1750520ca1d5e0a1b120ed33b7a772329657a044e6e767b6016feb1e23c">ERBA</a> = 0, <a class="code" href="struttura__dati_8h.html#a0c12af1750520ca1d5e0a1b120ed33b7a05a72952ce3fe2b329035258407741bb">ERBA_SINTETICA</a>, <a class="code" href="struttura__dati_8h.html#a0c12af1750520ca1d5e0a1b120ed33b7af716ec1950763e4a93a6a0b029dc9ca5">TERRA</a>, <a class="code" href="struttura__dati_8h.html#a0c12af1750520ca1d5e0a1b120ed33b7a6846ea149ed5fe29f199e562567a1ddb">SINTETICO</a>, <a class="code" href="struttura__dati_8h.html#a0c12af1750520ca1d5e0a1b120ed33b7ae110ec4d5d1ec9bff232bf97b86c8a5a">CEMENTO</a>};</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="structcampo__t.html">   88</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structcampo__t.html" title="Struttura rappresentate i campi.">campo_t</a> {</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="code" href="structcampo__t.html#a6e0a6002a8c0d360f22d4a30bc1e37d0">   89</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="structcampo__t.html#a6e0a6002a8c0d360f22d4a30bc1e37d0">numero</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="code" href="structcampo__t.html#a98a13af547edea0107d7def51feeb923">   90</a></span>&#160;        <a class="code" href="struttura__dati_8h.html#ad0f5a2191c29d4cd4c52506513493755" title="Tipo che rappresenta il tipo di copertura del campo.">copertura_t</a> <a class="code" href="structcampo__t.html#a98a13af547edea0107d7def51feeb923">copertura</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="code" href="structcampo__t.html#ab875e984264bf393977eb07cfe2f7341">   91</a></span>&#160;        <a class="code" href="struttura__dati_8h.html#a0c12af1750520ca1d5e0a1b120ed33b7" title="Tipo che rappresenta il tipo di terreno.">terreno_t</a> <a class="code" href="structcampo__t.html#ab875e984264bf393977eb07cfe2f7341">terreno</a>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="code" href="structcampo__t.html#aada0759d9033cc156fbea6ef35a272e0">   92</a></span>&#160;        <a class="code" href="struttura__dati_8h.html#adc042033824a4d30262dea3d11937921" title="Definizione del tipo stringa.">stringa</a> <a class="code" href="structcampo__t.html#aada0759d9033cc156fbea6ef35a272e0">note</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="code" href="structcampo__t.html#aab5d62794b2dd7a9ca1b2db014d70702">   93</a></span>&#160;        <a class="code" href="struttura__dati_8h.html#a9d6ea45de8f2a4276f4e6ecd19e8d80e" title="Definizione dei tipi di lista.">lista_ore</a> <a class="code" href="structcampo__t.html#aab5d62794b2dd7a9ca1b2db014d70702">ore</a>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;};</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">/* Fine header del modulo struttura dati */</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generato Mer 8 Ott 2014 19:12:40 per ACE da &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
+</body>
+</html>

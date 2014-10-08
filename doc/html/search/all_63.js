@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['campi',['campi',['../structcircolo__t.html#ac09c9e7d077f71951c457652a874565f',1,'circolo_t']]],
+  ['campi_5fdir',['CAMPI_DIR',['../file__IO_8cc.html#a2ff7122334a9754353adef957ff1007f',1,'file_IO.cc']]],
+  ['campo_5ft',['campo_t',['../structcampo__t.html',1,'']]],
+  ['carica_5fcampo',['carica_campo',['../file__IO_8cc.html#a48aa2e48d9f514715dfb3e0426874085',1,'carica_campo(const char file[], circolo_t *circolo):&#160;file_IO.cc'],['../file__IO_8h.html#a48aa2e48d9f514715dfb3e0426874085',1,'carica_campo(const char file[], circolo_t *circolo):&#160;file_IO.cc']]],
+  ['carica_5fcircolo',['carica_circolo',['../file__IO_8cc.html#ae58c887a1fc340538de88e9c46ff3100',1,'carica_circolo(const char nome[]):&#160;file_IO.cc'],['../file__IO_8h.html#ae58c887a1fc340538de88e9c46ff3100',1,'carica_circolo(const char nome[]):&#160;file_IO.cc']]],
+  ['carica_5fgiocatore',['carica_giocatore',['../file__IO_8cc.html#ad16db5f64f651d7614e4b39e29289c88',1,'carica_giocatore(const char file[], circolo_t *circolo):&#160;file_IO.cc'],['../file__IO_8h.html#ad16db5f64f651d7614e4b39e29289c88',1,'carica_giocatore(const char file[], circolo_t *circolo):&#160;file_IO.cc']]],
+  ['carica_5fora',['carica_ora',['../file__IO_8cc.html#a6a67616e7c83305dc149ecbfe9e3554f',1,'carica_ora(char file[], campo_t *campo, circolo_t *circolo):&#160;file_IO.cc'],['../file__IO_8h.html#a6a67616e7c83305dc149ecbfe9e3554f',1,'carica_ora(char file[], campo_t *campo, circolo_t *circolo):&#160;file_IO.cc']]],
+  ['cemento',['CEMENTO',['../struttura__dati_8h.html#a0c12af1750520ca1d5e0a1b120ed33b7ae110ec4d5d1ec9bff232bf97b86c8a5a',1,'struttura_dati.h']]],
+  ['cerca_5flista_5fint',['cerca_lista_int',['../accesso__dati_8h.html#a8c471a7dcca8667fd9f4019c9fe2e40f',1,'accesso_dati.h']]],
+  ['circolo',['circolo',['../structgiocatore__t.html#a5275e8614d0c0d2270d0cf9929214ebf',1,'giocatore_t::circolo()'],['../handler_8cc.html#afdb5d4cc28256fee3f79b189c6a6ef58',1,'circolo():&#160;handler.cc']]],
+  ['circolo_5fesistente',['circolo_esistente',['../file__IO_8cc.html#a51256bf33628453f9e0e7c99b76e7374',1,'circolo_esistente(const char *nome_cir):&#160;file_IO.cc'],['../file__IO_8h.html#a51256bf33628453f9e0e7c99b76e7374',1,'circolo_esistente(const char *nome_cir):&#160;file_IO.cc']]],
+  ['circolo_5ft',['circolo_t',['../structcircolo__t.html',1,'']]],
+  ['classifica',['classifica',['../structgiocatore__t.html#abac0936681f2728909612be2f0e47a46',1,'giocatore_t']]],
+  ['cognome',['cognome',['../structgiocatore__t.html#ad02b92861fc7ee234cad9bb5a730a408',1,'giocatore_t']]],
+  ['confronta_5fdata',['confronta_data',['../accesso__dati_8cc.html#ab774400a4017e261feb47c49d7fb30c2',1,'accesso_dati.cc']]],
+  ['controlla_5fdirectory',['controlla_directory',['../file__IO_8cc.html#aac1855264c07df3797f68fe2e8c92600',1,'file_IO.cc']]],
+  ['controlla_5fdisponibilita_5fora',['controlla_disponibilita_ora',['../handler_8cc.html#a1f004e54cac4b7773c81f83c79e8999a',1,'handler.cc']]],
+  ['controlla_5fformato_5fora',['controlla_formato_ora',['../handler_8cc.html#aa1ebd22d0b9b412732437f261124f538',1,'handler.cc']]],
+  ['controllo_5festensione',['controllo_estensione',['../handler_8cc.html#a5cd77391ccb43a307314fc973742ed31',1,'handler.cc']]],
+  ['copertura',['copertura',['../structcampo__t.html#a98a13af547edea0107d7def51feeb923',1,'campo_t']]],
+  ['copertura_5ft',['copertura_t',['../struttura__dati_8h.html#ad0f5a2191c29d4cd4c52506513493755',1,'struttura_dati.h']]],
+  ['coperture',['coperture',['../handler_8cc.html#a8333082ae85ce61a16c133d8da371716',1,'handler.cc']]]
+];
