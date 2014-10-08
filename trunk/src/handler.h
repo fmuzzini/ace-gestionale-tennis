@@ -1,5 +1,6 @@
 /**
- * @file File contente l'interfaccia del modulo handler.cc
+ * @file 
+ * File contente l'interfaccia del modulo handler.cc
  */
 
 #ifndef HANDLER

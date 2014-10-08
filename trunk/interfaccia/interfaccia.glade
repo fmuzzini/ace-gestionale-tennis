@@ -1826,6 +1826,17 @@ Gestionale Circolo Tennis</property>
                         <signal name="activate" handler="mostra_finestra" object="about" swapped="no"/>
                       </object>
                     </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="imagemenuitem3">
+                        <property name="label">gtk-help</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate" handler="mostra_finestra" object="aiuto" swapped="no"/>
+                      </object>
+                    </child>
                   </object>
                 </child>
               </object>
@@ -1854,7 +1865,11 @@ Gestionale Circolo Tennis</property>
                       <object class="GtkLabel" id="label20">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">Aprire o Creare un Circolo dal menù file</property>
+                        <property name="label" translatable="yes">Aprire o Creare un Circolo dal menù File
+
+Si possono aggiungere giocatori e campi dal menu Modifica.
+
+Per istruzioni più dettagliate aprire Aiuto.</property>
                         <property name="justify">center</property>
                         <property name="ellipsize">middle</property>
                       </object>

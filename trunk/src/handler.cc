@@ -520,7 +520,10 @@ void handler_aggiungi_giocatore(GtkButton *button, gpointer user_data)
 void handler_inizializza_cir(GtkButton *button, gpointer user_data)
 {
 	if ( circolo != 0 && !alert("Verrà chiuso il circolo attuale. Continuare?") )
-		return;	
+		return;
+
+	if ( circolo != 0 )
+		elimina_circolo(circolo);	
 
 	GtkEntry *entry_nome = GTK_ENTRY( gtk_builder_get_object(build, "nome_cir") );
 	GtkEntry *entry_indirizzo = GTK_ENTRY( gtk_builder_get_object(build, "indirizzo_cir") );
@@ -531,6 +534,11 @@ void handler_inizializza_cir(GtkButton *button, gpointer user_data)
 	const char *indirizzo = gtk_entry_get_text(entry_indirizzo);
 	const char *email = gtk_entry_get_text(entry_email);
 	const char *telefono = gtk_entry_get_text(entry_telefono);
+
+	if (nome[0] == '\0'){
+		finestra_errore("Inserire un nome per il circolo");
+		return;
+	}
 
 	if ( (circolo = inizializza_circolo(nome, indirizzo, email, telefono)) == 0 )
 		finestra_errore("Impossibile creare il circolo");
@@ -909,109 +917,34 @@ void handler_carica_circolo(GtkButton *button, gpointer user_data)
 	if ( circolo != 0 && !alert("Verrà chiuso il circolo attuale. Continuare?") )
 		return;
 
-	GtkTreeIter iter;
-	GtkTreeModel *model;
-	//GDir *dir;
-	char *circolo_sel = 0;
+	if ( circolo != 0 )
+		elimina_circolo(circolo);
+	
+	char *circolo_sel = 0;	
 	GtkWidget *window = GTK_WIDGET( gtk_builder_get_object(build, "carica_circolo") );
-	GtkTreeView *view = GTK_TREE_VIEW( gtk_builder_get_object(build, "circolo_view") );
-	GtkTreeSelection *selezione = gtk_tree_view_get_selection(view);
 
-	if ( !gtk_tree_selection_get_selected(selezione, &model, &iter) ){
-		finestra_errore("Selezionare un elemento");
-		return;
+	if ( user_data != 0 )
+		circolo_sel = (char *) user_data;
+	else {	
+
+		GtkTreeIter iter;
+		GtkTreeModel *model;
+		GtkTreeView *view = GTK_TREE_VIEW( gtk_builder_get_object(build, "circolo_view") );
+		GtkTreeSelection *selezione = gtk_tree_view_get_selection(view);
+	
+		if ( !gtk_tree_selection_get_selected(selezione, &model, &iter) ){
+			finestra_errore("Selezionare un elemento");
+			return;
+		}
+		gtk_tree_model_get(model, &iter, 0, &circolo_sel, -1);
+	
 	}
-	gtk_tree_model_get(model, &iter, 0, &circolo_sel, -1);
 	
 	circolo = carica_circolo(circolo_sel);
-	
-	/*if (circolo == 0){
-		finestra_errore("Impossibile caricare il circolo");
+
+	if (user_data == 0)
 		g_free(circolo_sel);
-		return;
-	}
 
-	const char *file = 0;
-	char *giocatore = 0;
-	char *giocatori = g_build_filename(DATA_PATH, circolo_sel, GIOCATORI_DIR, NULL);
-	dir = g_dir_open(giocatori, 0, NULL);
-
-	if (dir != NULL){
-
-		while( (file = g_dir_read_name(dir)) ){
-			if ( file_nascosto(file) )
-				continue;
-			
-			giocatore = g_build_filename(giocatori, file, NULL);
-	
-			carica_giocatore(giocatore, circolo);
-		}
-	
-		g_dir_close(dir);
-	}
-	
-	g_free(giocatori);
-	g_free(giocatore);
-
-	campo_t *campo_caricato = 0;	
-	char *ora = 0;
-	char *dati = 0;
-	char *campo = 0;
-	char *campi = g_build_filename(DATA_PATH, circolo_sel, CAMPI_DIR, NULL);
-	dir = g_dir_open(campi, 0, NULL);
-	
-	if (dir != NULL){
-
-		while( (file = g_dir_read_name(dir)) ){
-			if ( file_nascosto(file) )
-				continue;
-	
-			campo = g_build_filename(campi, file, NULL);
-	
-			if ( !g_file_test(campo, G_FILE_TEST_IS_DIR) )
-				continue;
-	
-			dati = g_build_filename(campo, DATI_CAMPO, NULL);
-	
-			campo_caricato = carica_campo(dati, circolo);
-			
-			if( campo_caricato == 0){
-				finestra_errore("Impossibile caricare un campo");
-			}
-	
-			g_free(dati);
-	
-			dati = g_build_filename(campo, ORE_DIR, NULL); 
-			GDir *dir_ore = g_dir_open(dati, 0, NULL);
-	
-			if (dir_ore == NULL){
-				g_free(dati);
-				continue;
-			}
-			
-			while( (file = g_dir_read_name(dir_ore)) ){
-				if ( file_nascosto(file) )
-					continue;
-	
-				ora = g_build_filename(dati, file, NULL);
-				
-				carica_ora(ora, campo_caricato, circolo);
-		
-				g_free(ora);
-			}
-	
-			g_dir_close(dir_ore);
-			g_free(dati);
-	
-		}
-	
-		g_dir_close(dir);
-
-	}*/ // if (dir != NULL)
-
-	g_free(circolo_sel);
-	//g_free(campo);
-	//g_free(campi);
 	nascondi_finestra(window, NULL, NULL);
 	disegna_tabella_ore();	
 }
@@ -1057,9 +990,28 @@ void handler_ripristina(GtkMenuItem *button, gpointer user_data)
 	if (response == GTK_RESPONSE_YES){
 		file = gtk_file_chooser_get_filename(scegli_file);
 		D1(cout<<"nome: "<<file<<endl);
-		
+		D1(cout<<"nome: "<<file<<endl);
+		char *nome_cir = get_nome_backup(file);
+
+		if ( circolo_esistente(nome_cir) ){
+			//Circolo già presente
+			D1(cout<<"Circolo esistente"<<endl)
+			if ( alert("Questo backup fa riferimento ad un circolo presente. Vuoi sovrascriverlo?") ){
+				elimina_file_circolo(nome_cir);
+			}
+			else
+			{
+				g_free(file);
+				g_free(nome_cir);
+				return;
+			}
+		}
+
 		stato = ripristina(file);
+		handler_carica_circolo(NULL, nome_cir);
+
 		g_free(file);
+		g_free(nome_cir);
 	}
 
 	if (stato == false)

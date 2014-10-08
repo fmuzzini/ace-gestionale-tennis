@@ -263,7 +263,7 @@ bool elimina_socio(giocatore_t *socio, circolo_t *circolo)
 	
 }
 
-bool elimina_giocatore(giocatore_t *&giocatore, circolo_t *circolo)
+bool elimina_giocatore(giocatore_t *giocatore, circolo_t *circolo)
 {
 	D1(cout<<"elimina giocatore"<<endl)
 
@@ -299,14 +299,13 @@ bool elimina_giocatore(giocatore_t *&giocatore, circolo_t *circolo)
 	D1(cout<<"giocatore deallocato"<<endl)
 
 	circolo->giocatori = g_list_remove(circolo->giocatori, giocatore);
-	giocatore = 0;
 
 	D1(cout<<"giocatore eliminato dalla lista"<<endl)
 
 	return true;	
 }
 
-bool elimina_campo(campo_t *&campo, circolo_t *circolo)
+bool elimina_campo(campo_t *campo, circolo_t *circolo)
 {
 	D1(cout<<"Elimina campo"<<endl)
 
@@ -320,12 +319,11 @@ bool elimina_campo(campo_t *&campo, circolo_t *circolo)
 
 	circolo->campi = g_list_remove(circolo->campi, campo);
 	circolo->n_campi--;
-	campo = 0;
 	
 	return true;
 }
 
-bool elimina_ora(ora_t *&ora, campo_t *campo)
+bool elimina_ora(ora_t *ora, campo_t *campo)
 {
 	D1(cout<<"Elimina ora"<<endl)
 
@@ -334,7 +332,6 @@ bool elimina_ora(ora_t *&ora, campo_t *campo)
 
 	dealloca_ora(ora);
 	campo->ore = g_list_remove(campo->ore, ora);
-	ora = 0;
 
 	return true;
 	
