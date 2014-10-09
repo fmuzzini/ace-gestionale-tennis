@@ -43,10 +43,12 @@ const int ORA_CHIUSURA = 23;
  * Se il nome del file non ha estensione l'aggiunge
  * @param[in,out] file File da controllare
  */
-static inline void controllo_estensione(char *&file, const char *estensione)
+static void controllo_estensione(char *&file, const char *estensione)
 {
 	if ( g_str_has_suffix(file, estensione) )
 		return;
+	
+	D1(cout<<"Aggiungo estensione"<<endl)	
 
 	char *tmp = g_strconcat(file, estensione, NULL);
 	g_free(file);
@@ -562,7 +564,7 @@ void handler_inizializza_cir(GtkButton *button, gpointer user_data)
 {
 	GtkEntry *entry_nome = GTK_ENTRY( gtk_builder_get_object(build, "nome_cir") );
 	GtkEntry *entry_indirizzo = GTK_ENTRY( gtk_builder_get_object(build, "indirizzo_cir") );
-	GtkEntry *entry_email = GTK_ENTRY( gtk_builder_get_object(build, "indirizzo_cir") );
+	GtkEntry *entry_email = GTK_ENTRY( gtk_builder_get_object(build, "email_cir") );
 	GtkEntry *entry_telefono = GTK_ENTRY( gtk_builder_get_object(build, "telefono_cir") );
 
 	const char *nome = gtk_entry_get_text(entry_nome);
@@ -957,10 +959,6 @@ void handler_apri_circolo(GtkMenuItem *button, gpointer user_data)
 
 	g_dir_close(dir);
 
-	gtk_widget_set_sensitive( GTK_WIDGET( gtk_builder_get_object(build, "menu_modifica") ), TRUE);
-	gtk_widget_set_sensitive( GTK_WIDGET( gtk_builder_get_object(build, "menu_backup") ), TRUE);
-	gtk_widget_set_sensitive( GTK_WIDGET( gtk_builder_get_object(build, "menu_visualizza") ), TRUE);
-
 	mostra_finestra(NULL, window);
 }
 
@@ -998,7 +996,11 @@ void handler_carica_circolo(GtkButton *button, gpointer user_data)
 		g_free(circolo_sel);
 
 	nascondi_finestra(window, NULL, NULL);
-	disegna_tabella_ore();	
+	disegna_tabella_ore();
+
+	gtk_widget_set_sensitive( GTK_WIDGET( gtk_builder_get_object(build, "menu_modifica") ), TRUE);
+	gtk_widget_set_sensitive( GTK_WIDGET( gtk_builder_get_object(build, "menu_backup") ), TRUE);
+	gtk_widget_set_sensitive( GTK_WIDGET( gtk_builder_get_object(build, "menu_visualizza") ), TRUE);
 }
 
 void handler_backup(GtkMenuItem *button, gpointer user_data)
@@ -1016,7 +1018,9 @@ void handler_backup(GtkMenuItem *button, gpointer user_data)
 	response = gtk_dialog_run( GTK_DIALOG(scegli_file) );
 	if (response == GTK_RESPONSE_YES){
 		file = gtk_file_chooser_get_filename(scegli_file);
-		D1(cout<<"nome: "<<file<<endl);
+		
+		D2(cout<<"nome: "<<file<<endl);
+
 		stato = backup(file, circolo);
 		g_free(file);
 	}
@@ -1030,7 +1034,7 @@ void handler_backup(GtkMenuItem *button, gpointer user_data)
 void handler_ripristina(GtkMenuItem *button, gpointer user_data)
 {
 	gint response;
-	bool stato = false;
+	bool stato = true;
 	char *file = 0;
 	GtkFileChooser *scegli_file = GTK_FILE_CHOOSER( gtk_builder_get_object(build, "scegli_file") );
 	
@@ -1041,7 +1045,7 @@ void handler_ripristina(GtkMenuItem *button, gpointer user_data)
 	response = gtk_dialog_run( GTK_DIALOG(scegli_file) );
 	if (response == GTK_RESPONSE_YES){
 		file = gtk_file_chooser_get_filename(scegli_file);
-		D1(cout<<"nome: "<<file<<endl);
+		
 		D1(cout<<"nome: "<<file<<endl);
 		char *nome_cir = get_nome_backup(file);
 
@@ -1075,6 +1079,19 @@ void handler_ripristina(GtkMenuItem *button, gpointer user_data)
 void handler_file_ok(GtkWidget *widget, GdkEvent *event, gpointer user_data)
 {
 	GtkFileChooser *chooser = GTK_FILE_CHOOSER(user_data);
+
+	char *file = 0;
+
+	file = gtk_file_chooser_get_filename(chooser);
+
+	g_free(file);
+
+		if (!file){
+			finestra_errore("Percorso non valido");
+			gtk_dialog_response( GTK_DIALOG(chooser), GTK_RESPONSE_REJECT);
+			return;
+		}
+
 	if ( gtk_file_chooser_get_action(chooser) == GTK_FILE_CHOOSER_ACTION_SAVE ){
 		char *file = get_current_name(chooser);
 		
@@ -1141,7 +1158,7 @@ void handler_elimina_ora(GtkButton *button, gpointer user_data)
 	campo_t *campo = (campo_t *) g_object_get_data(box_v, "campo");
 	ora_t *ora = (ora_t *) g_object_get_data(box_v, "ora");
 
-	D1(cout<<campo<<endl);
+	D1(cout<<campo->numero<<endl);
 	D2(cout<<ora<<endl);
 
 	elimina_file_ora(ora, campo, circolo);
@@ -1219,7 +1236,7 @@ void handler_elimina_circolo(GtkButton *button, gpointer user_data)
 
 	dir_cir = get_dir_circolo(circolo_sel);
 
-	D2(cout<<circolo_sel<<" "<<circolo->nome->str<<endl)
+	D2(cout<<circolo_sel<<endl)
 
 	if ( circolo != 0 && g_strcmp0(circolo_sel, circolo->nome->str) == 0 ){
 		finestra_errore("Il circolo è attualmente in uso. Impossibile eliminarlo");

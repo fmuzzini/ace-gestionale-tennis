@@ -313,7 +313,12 @@ bool file_nascosto(const char file[])
 
 char *get_dir_circolo(const char *nome_cir)
 {
-	return g_build_filename(DATA_PATH, nome_cir, NULL);
+	char *nome = g_uri_escape_string(nome_cir, NULL, FALSE);
+	char *dir = g_build_filename(DATA_PATH, nome_cir, NULL);
+
+	g_free(nome);
+	
+	return dir;
 }
 
 bool salva_circolo(const circolo_t *circolo)
@@ -808,7 +813,7 @@ bool ripristina(const char file[])
 		f1.seekg(inizio, f1.beg);
 		file_n = new char[fine-inizio];
 		f1.get(file_n, fine-inizio);
-		file_n[fine-inizio] = '\0';
+		file_n[fine-inizio-1] = '\0';
 	
 		D1(cout<<"markup: "<<markup<<endl)
 		
@@ -928,7 +933,7 @@ bool elimina_file_ora(ora_t *ora, campo_t *campo, circolo_t *circolo)
 	
 	int res;
 
-	char *file = get_file_ora(circolo->nome->str, 1, ora);
+	char *file = get_file_ora(circolo->nome->str, campo->numero, ora);
 
 	D2(cout<<file<<endl);
 	
@@ -944,8 +949,12 @@ bool elimina_file_ora(ora_t *ora, campo_t *campo, circolo_t *circolo)
 
 void elimina_file_circolo(const char *nome_cir)
 {
+	D1(cout<<"Elimina file circolo"<<endl)
+	
 	char *dir = get_dir_circolo(nome_cir);
 	
+	D2(cout<<"dir: "<<dir<<endl)
+
 	elimina_sub_directory(dir);
 	g_rmdir(dir);
 
