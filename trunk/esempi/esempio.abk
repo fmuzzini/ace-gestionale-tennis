@@ -1,0 +1,52 @@
+<ACE BACKUP circolo=Circolo di esempio>
+<cartella data/Circolo di esempio>
+<cartella data/Circolo di esempio/giocatori>
+<file data/Circolo di esempio/giocatori/2.txt>
+2
+Mario
+Rossi
+01/01/1950
+58756
+663653
+mario@tennis.it
+3.2
+Circolo Immaginario
+0
+0
+
+<file data/Circolo di esempio/giocatori/1.txt>
+1
+Filippo
+Muzzini
+27/06/1993
+1234
+43214
+filippo@tennis.it
+4.4
+Circolo di esempio
+1
+0
+
+<file data/Circolo di esempio/circolo.txt>
+Circolo di esempio
+Via Roma
+circolo@tennis.it
+123456
+
+<cartella data/Circolo di esempio/campi>
+<cartella data/Circolo di esempio/campi/2>
+<file data/Circolo di esempio/campi/2/campo.txt>
+2
+1
+2
+Campo intitolato a Tizio
+
+<cartella data/Circolo di esempio/campi/2/ore>
+<cartella data/Circolo di esempio/campi/1>
+<file data/Circolo di esempio/campi/1/campo.txt>
+1
+0
+3
+
+
+<cartella data/Circolo di esempio/campi/1/ore>
